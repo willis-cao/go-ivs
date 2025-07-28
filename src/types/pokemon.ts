@@ -24,11 +24,12 @@ export interface IVs {
 }
 
 export interface PvPRanking {
-  league: string
+  league: League
   rank: number
   percentage: number
   maxCP: number
   level: number
+  percentPerfect: number
 }
 
 export interface PokemonIVResult {

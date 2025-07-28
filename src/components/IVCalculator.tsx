@@ -207,6 +207,7 @@ const IVCalculator: React.FC = () => {
               <h3>Great League</h3>
               <div className="league-limit">≤ 1500 CP</div>
               <div className="ranking-number">#{getLeagueRanking('Great League')?.rank || '-'}</div>
+              <div className="percent-perfect">{(getLeagueRanking('Great League')?.percentPerfect || 0).toFixed(2)}%</div>
               <div className="actual-cp">{getLeagueRanking('Great League')?.maxCP || '-'} CP</div>
             </div>
             
@@ -214,6 +215,7 @@ const IVCalculator: React.FC = () => {
               <h3>Ultra League</h3>
               <div className="league-limit">≤ 2500 CP</div>
               <div className="ranking-number">#{getLeagueRanking('Ultra League')?.rank || '-'}</div>
+              <div className="percent-perfect">{(getLeagueRanking('Ultra League')?.percentPerfect || 0).toFixed(2)}%</div>
               <div className="actual-cp">{getLeagueRanking('Ultra League')?.maxCP || '-'} CP</div>
             </div>
             
@@ -221,6 +223,7 @@ const IVCalculator: React.FC = () => {
               <h3>Master League</h3>
               <div className="league-limit">No CP Limit</div>
               <div className="ranking-number">#{getLeagueRanking('Master League')?.rank || '-'}</div>
+              <div className="percent-perfect">{(getLeagueRanking('Master League')?.percentPerfect || 0).toFixed(2)}%</div>
               <div className="actual-cp">{getLeagueRanking('Master League')?.maxCP || '-'} CP</div>
             </div>
             
@@ -228,6 +231,7 @@ const IVCalculator: React.FC = () => {
               <h3>Little Cup</h3>
               <div className="league-limit">≤ 500 CP</div>
               <div className="ranking-number">#{getLeagueRanking('Little Cup')?.rank || '-'}</div>
+              <div className="percent-perfect">{(getLeagueRanking('Little Cup')?.percentPerfect || 0).toFixed(2)}%</div>
               <div className="actual-cp">{getLeagueRanking('Little Cup')?.maxCP || '-'} CP</div>
             </div>
           </div>
