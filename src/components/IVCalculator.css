@@ -149,48 +149,137 @@
 
 /* Results Section */
 .results-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 20px;
-  padding: 30px;
-  color: white;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-  min-height: 400px;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  flex-grow: 1;
+  gap: 20px;
 }
 
+/* Pokemon Display */
 .pokemon-display {
-  margin-bottom: 30px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.pokemon-display .name-sprite-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 .pokemon-display img {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 16px;
+  width: 80px;
+  height: 80px;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  flex-shrink: 0;
 }
 
 .pokemon-display h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0 0 8px 0;
-  text-transform: capitalize;
-}
-
-.iv-display {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #ecf0f1;
+  margin: 0;
+  text-transform: capitalize;
+  color: #2c3e50;
+}
+
+.pokemon-display .iv-display {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 8px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Evolution Sections */
+.evolution-section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.evolution-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 8px;
+}
+
+.evolution-label .name-sprite-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.evolution-label img {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  flex-shrink: 0;
+}
+
+.evolution-label h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: capitalize;
+  color: #2c3e50;
+}
+
+.evolution-label .iv-display {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 8px 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Pokemon Ranking Module */
+.pokemon-ranking-module {
   background: rgba(255, 255, 255, 0.1);
-  padding: 8px 16px;
-  border-radius: 20px;
-  display: inline-block;
-  min-width: 120px;
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive layout for wider screens */
+@media (min-width: 768px) {
+  .pokemon-display {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .evolution-label {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .evolution-label .name-sprite-container {
+    margin-bottom: 0;
+  }
 }
 
 /* Rankings Grid */
@@ -205,52 +294,76 @@
 .ranking-card {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: 20px;
+  padding: 40px 20px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.5);
   min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 160px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* League-specific colors */
+.ranking-card[data-league="Great League"] {
+  background: rgba(100, 149, 237, 0.4); /* Darker blue */
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.ranking-card[data-league="Ultra League"] {
+  background: rgba(255, 215, 0, 0.4); /* Darker yellow/gold */
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.ranking-card[data-league="Master League"] {
+  background: rgba(147, 112, 219, 0.4); /* Darker purple/lavender */
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.ranking-card[data-league="Little Cup"] {
+  background: rgba(144, 238, 144, 0.3); /* Light green */
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .ranking-card h3 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin: 0 0 12px 0;
+  margin: 0 0 4px 0;
   opacity: 0.9;
 }
 
+.league-limit {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-bottom: 2px;
+}
+
 .ranking-number {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 8px;
-  min-height: 3rem;
+  margin-bottom: 4px;
+  min-height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.league-limit {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-bottom: 4px;
-}
-
 .percent-perfect {
-  font-size: 1.1rem;
-  font-weight: 600;
-  opacity: 0.9;
-  margin-bottom: 4px;
-}
-
-.actual-cp {
   font-size: 1rem;
   font-weight: 600;
   opacity: 0.9;
+  margin-bottom: 2px;
 }
 
-
+.actual-cp {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
 
 /* Desktop Layout - Horizontal Extension */
 @media (min-width: 1024px) {

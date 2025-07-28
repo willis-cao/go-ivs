@@ -18,9 +18,9 @@ export interface Pokemon {
 }
 
 export interface IVs {
-  attack: number
-  defense: number
-  stamina: number
+  attack: number | null
+  defense: number | null
+  stamina: number | null
 }
 
 export interface PvPRanking {

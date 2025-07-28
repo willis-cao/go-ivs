@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Pokemon, IVs, PokemonIVResult } from '../types/pokemon'
-import { getAllPokemon, findPokemonByName, searchPokemon } from '../data/pokemonFromAPI'
+import { getAllPokemon, findPokemonByName, searchPokemon, findPokemonById } from '../data/pokemonFromAPI'
 import { calculatePvPRanking, calculateTotalIV, calculateIVPercentage, validateIVs, findOptimalLevel } from '../utils/ivCalculator'
+import PokemonRankingModule from './PokemonRankingModule'
 import './IVCalculator.css'
 
 const IVCalculator: React.FC = () => {
   const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | null>(null)
-  const [ivs, setIvs] = useState<IVs>({ attack: 0, defense: 0, stamina: 0 })
+  const [ivs, setIvs] = useState<IVs>({ attack: null, defense: null, stamina: null })
   const [results, setResults] = useState<PokemonIVResult | null>(null)
+  const [evolutionResults, setEvolutionResults] = useState<PokemonIVResult[]>([])
   const [searchTerm, setSearchTerm] = useState('')
   const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
@@ -23,6 +25,26 @@ const IVCalculator: React.FC = () => {
   useEffect(() => {
     pokemonInputRef.current?.focus()
   }, [])
+
+  // Handle clicks outside of Pokemon suggestions
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element
+      const pokemonInputWrapper = document.querySelector('.pokemon-input-wrapper')
+      
+      if (pokemonInputWrapper && !pokemonInputWrapper.contains(target)) {
+        setShowSuggestions(false)
+      }
+    }
+
+    if (showSuggestions) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [showSuggestions])
 
   useEffect(() => {
     const pokemon = getAllPokemon()
@@ -40,6 +62,7 @@ const IVCalculator: React.FC = () => {
     setSearchTerm(pokemon.name)
     setShowSuggestions(false)
     setResults(null)
+    setEvolutionResults([])
     // Focus on attack input after selection
     setTimeout(() => attackInputRef.current?.focus(), 100)
   }
@@ -66,11 +89,25 @@ const IVCalculator: React.FC = () => {
     }
   }
 
-  const handleIVChange = (field: keyof IVs, value: number) => {
-    const newIvs = { ...ivs, [field]: value }
+  const handleIVChange = (field: keyof IVs, value: string) => {
+    // Handle empty string or invalid input
+    if (value === '' || value === null || value === undefined) {
+      const newIvs = { ...ivs, [field]: null }
+      setIvs(newIvs)
+      return
+    }
+    
+    // Parse the value and ensure it's within valid range
+    const numValue = parseInt(value)
+    if (isNaN(numValue) || numValue < 0 || numValue > 15) {
+      return // Don't update if invalid
+    }
+    
+    const newIvs = { ...ivs, [field]: numValue }
     setIvs(newIvs)
     
     if (selectedPokemon && validateIVs(newIvs)) {
+      // Calculate results for selected Pokemon
       const pvpRankings = calculatePvPRanking(selectedPokemon, newIvs)
       const totalIV = calculateTotalIV(newIvs)
       const ivPercentage = calculateIVPercentage(newIvs)
@@ -82,25 +119,39 @@ const IVCalculator: React.FC = () => {
         totalIV,
         ivPercentage
       })
+
+      // Calculate results for evolution chain
+      const evolutionChain = selectedPokemon.evolutionChain
+      const evolutionResultsArray: PokemonIVResult[] = []
+      
+      if (evolutionChain) {
+        const currentIndex = evolutionChain.indexOf(selectedPokemon.id)
+        if (currentIndex !== -1) {
+          // Only show Pokemon that come AFTER the current Pokemon in the evolution chain
+          for (let i = currentIndex + 1; i < evolutionChain.length; i++) {
+            const evolutionId = evolutionChain[i]
+            const evolutionPokemon = findPokemonById(evolutionId)
+            if (evolutionPokemon) {
+              const evolutionPvpRankings = calculatePvPRanking(evolutionPokemon, newIvs)
+              const evolutionTotalIV = calculateTotalIV(newIvs)
+              const evolutionIvPercentage = calculateIVPercentage(newIvs)
+              
+              evolutionResultsArray.push({
+                pokemon: evolutionPokemon,
+                ivs: newIvs,
+                pvpRankings: evolutionPvpRankings,
+                totalIV: evolutionTotalIV,
+                ivPercentage: evolutionIvPercentage
+              })
+            }
+          }
+        }
+      }
+      
+      setEvolutionResults(evolutionResultsArray)
     } else {
       setResults(null)
-    }
-  }
-
-  const getLeagueRanking = (leagueName: string) => {
-    if (!results) return null
-    return results.pvpRankings.find(r => r.league === leagueName)
-  }
-
-  const getPokemonInfo = () => {
-    if (!selectedPokemon || !results) return null
-    
-    const greatLeagueRanking = getLeagueRanking('Great League')
-    const optimal = findOptimalLevel(selectedPokemon, ivs, 'Great League')
-    
-    return {
-      cp: optimal.cp,
-      level: optimal.level
+      setEvolutionResults([])
     }
   }
 
@@ -152,8 +203,8 @@ const IVCalculator: React.FC = () => {
                 type="number"
                 min="0"
                 max="15"
-                value={ivs.attack === 0 ? '0' : ivs.attack || ''}
-                onChange={(e) => handleIVChange('attack', parseInt(e.target.value) || 0)}
+                value={ivs.attack === null ? '' : ivs.attack.toString()}
+                onChange={(e) => handleIVChange('attack', e.target.value)}
                 onKeyDown={(e) => handleIVKeyDown(e, defenseInputRef)}
                 className="iv-input"
               />
@@ -167,8 +218,8 @@ const IVCalculator: React.FC = () => {
                 type="number"
                 min="0"
                 max="15"
-                value={ivs.defense === 0 ? '0' : ivs.defense || ''}
-                onChange={(e) => handleIVChange('defense', parseInt(e.target.value) || 0)}
+                value={ivs.defense === null ? '' : ivs.defense.toString()}
+                onChange={(e) => handleIVChange('defense', e.target.value)}
                 onKeyDown={(e) => handleIVKeyDown(e, staminaInputRef)}
                 className="iv-input"
               />
@@ -182,8 +233,8 @@ const IVCalculator: React.FC = () => {
                 type="number"
                 min="0"
                 max="15"
-                value={ivs.stamina === 0 ? '0' : ivs.stamina || ''}
-                onChange={(e) => handleIVChange('stamina', parseInt(e.target.value) || 0)}
+                value={ivs.stamina === null ? '' : ivs.stamina.toString()}
+                onChange={(e) => handleIVChange('stamina', e.target.value)}
                 className="iv-input"
               />
             </div>
@@ -194,47 +245,24 @@ const IVCalculator: React.FC = () => {
       {/* Results Section */}
       {results && (
         <div className="results-section">
-          <div className="pokemon-display">
-            <img src={selectedPokemon?.sprites.official_artwork} alt={selectedPokemon?.name} />
-            <h2>{selectedPokemon?.name}</h2>
-            <div className="iv-display">
-              {ivs.attack}/{ivs.defense}/{ivs.stamina}
-            </div>
-          </div>
+          {/* Current Pokemon Module */}
+          <PokemonRankingModule
+            pokemon={results.pokemon}
+            ivs={results.ivs}
+            pvpRankings={results.pvpRankings}
+            isEvolution={false}
+          />
 
-          <div className="rankings-grid">
-            <div className="ranking-card great-league">
-              <h3>Great League</h3>
-              <div className="league-limit">≤ 1500 CP</div>
-              <div className="ranking-number">#{getLeagueRanking('Great League')?.rank || '-'}</div>
-              <div className="percent-perfect">{(getLeagueRanking('Great League')?.percentPerfect || 0).toFixed(2)}%</div>
-              <div className="actual-cp">{getLeagueRanking('Great League')?.maxCP || '-'} CP</div>
-            </div>
-            
-            <div className="ranking-card ultra-league">
-              <h3>Ultra League</h3>
-              <div className="league-limit">≤ 2500 CP</div>
-              <div className="ranking-number">#{getLeagueRanking('Ultra League')?.rank || '-'}</div>
-              <div className="percent-perfect">{(getLeagueRanking('Ultra League')?.percentPerfect || 0).toFixed(2)}%</div>
-              <div className="actual-cp">{getLeagueRanking('Ultra League')?.maxCP || '-'} CP</div>
-            </div>
-            
-            <div className="ranking-card master-league">
-              <h3>Master League</h3>
-              <div className="league-limit">No CP Limit</div>
-              <div className="ranking-number">#{getLeagueRanking('Master League')?.rank || '-'}</div>
-              <div className="percent-perfect">{(getLeagueRanking('Master League')?.percentPerfect || 0).toFixed(2)}%</div>
-              <div className="actual-cp">{getLeagueRanking('Master League')?.maxCP || '-'} CP</div>
-            </div>
-            
-            <div className="ranking-card little-cup">
-              <h3>Little Cup</h3>
-              <div className="league-limit">≤ 500 CP</div>
-              <div className="ranking-number">#{getLeagueRanking('Little Cup')?.rank || '-'}</div>
-              <div className="percent-perfect">{(getLeagueRanking('Little Cup')?.percentPerfect || 0).toFixed(2)}%</div>
-              <div className="actual-cp">{getLeagueRanking('Little Cup')?.maxCP || '-'} CP</div>
-            </div>
-          </div>
+          {/* Evolution Modules */}
+          {evolutionResults.map((evolutionResult) => (
+            <PokemonRankingModule
+              key={evolutionResult.pokemon.id}
+              pokemon={evolutionResult.pokemon}
+              ivs={evolutionResult.ivs}
+              pvpRankings={evolutionResult.pvpRankings}
+              isEvolution={true}
+            />
+          ))}
         </div>
       )}
     </div>

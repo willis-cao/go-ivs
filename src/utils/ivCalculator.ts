@@ -126,27 +126,22 @@ function halfLevelIndexToLevel(halfLevelIndex: number): number {
 
 // Correct Pokemon GO CP calculation formula
 export const calculateCP = (pokemon: Pokemon, ivs: IVs, level: number): number => {
+  const attack = (pokemon.baseStats.attack + (ivs.attack || 0))
+  const defense = (pokemon.baseStats.defense + (ivs.defense || 0))
+  const stamina = (pokemon.baseStats.stamina + (ivs.stamina || 0))
+  
   const halfLevelIndex = levelToHalfLevelIndex(level)
-  const cpMultiplier = CP_MULTIPLIERS[halfLevelIndex] || 0.094
+  const cpMultiplier = CP_MULTIPLIERS[halfLevelIndex]
   
-  // Pokemon GO uses the base stats directly
-  const attack = pokemon.baseStats.attack + ivs.attack
-  const defense = pokemon.baseStats.defense + ivs.defense
-  const stamina = pokemon.baseStats.stamina + ivs.stamina
-  
-  // Correct CP formula: CP = max(10, floor((BaseAttack + IV) * sqrt(BaseDefense + IV) * sqrt(BaseStamina + IV) * CPM^2 / 10))
-  const cp = Math.max(10, Math.floor((attack * Math.sqrt(defense) * Math.sqrt(stamina) * cpMultiplier * cpMultiplier) / 10))
-  
-  return cp
+  return Math.max(10, Math.floor((attack * Math.sqrt(defense) * Math.sqrt(stamina) * cpMultiplier * cpMultiplier) / 10))
 }
 
 export const calculateTotalIV = (ivs: IVs): number => {
-  return ivs.attack + ivs.defense + ivs.stamina
+  return (ivs.attack || 0) + (ivs.defense || 0) + (ivs.stamina || 0)
 }
 
 export const calculateIVPercentage = (ivs: IVs): number => {
-  const total = calculateTotalIV(ivs)
-  return Math.round((total / 45) * 100)
+  return Math.round(((ivs.attack || 0) + (ivs.defense || 0) + (ivs.stamina || 0)) / 45 * 100)
 }
 
 export const findOptimalLevel = (pokemon: Pokemon, ivs: IVs, league: League): { level: number; cp: number } => {
@@ -199,11 +194,11 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs): PvPRanking[] =>
                 betterCombinations++
               } else if (otherTotal === currentTotal) {
                 // If same total, compare individual stats (attack first, then defense, then stamina)
-                if (a > ivs.attack) {
+                if (a > (ivs.attack || 0)) {
                   betterCombinations++
-                } else if (a === ivs.attack && d > ivs.defense) {
+                } else if (a === (ivs.attack || 0) && d > (ivs.defense || 0)) {
                   betterCombinations++
-                } else if (a === ivs.attack && d === ivs.defense && s > ivs.stamina) {
+                } else if (a === (ivs.attack || 0) && d === (ivs.defense || 0) && s > (ivs.stamina || 0)) {
                   betterCombinations++
                 }
               }
@@ -220,9 +215,9 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs): PvPRanking[] =>
       const currentCpMultiplier = CP_MULTIPLIERS[currentHalfLevelIndex]
       
       // Calculate current stat product using correct formula
-      const currentAttack = (pokemon.baseStats.attack + ivs.attack) * currentCpMultiplier
-      const currentDefense = (pokemon.baseStats.defense + ivs.defense) * currentCpMultiplier
-      const currentStamina = Math.floor((pokemon.baseStats.stamina + ivs.stamina) * currentCpMultiplier)
+      const currentAttack = (pokemon.baseStats.attack + (ivs.attack || 0)) * currentCpMultiplier
+      const currentDefense = (pokemon.baseStats.defense + (ivs.defense || 0)) * currentCpMultiplier
+      const currentStamina = Math.floor((pokemon.baseStats.stamina + (ivs.stamina || 0)) * currentCpMultiplier)
       const currentStatProduct = currentStamina * currentAttack * currentDefense
       
       let betterCombinations = 0
@@ -279,7 +274,8 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs): PvPRanking[] =>
               } else if (otherStatProduct === currentStatProduct) {
                 // If same stat product, prefer higher total IVs
                 const otherTotal = a + d + s
-                if (otherTotal > totalIV) {
+                const currentTotal = (ivs.attack || 0) + (ivs.defense || 0) + (ivs.stamina || 0)
+                if (otherTotal > currentTotal) {
                   betterCombinations++
                 }
               }
@@ -312,7 +308,7 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs): PvPRanking[] =>
 }
 
 export const validateIVs = (ivs: IVs): boolean => {
-  return ivs.attack >= 0 && ivs.attack <= 15 &&
-         ivs.defense >= 0 && ivs.defense <= 15 &&
-         ivs.stamina >= 0 && ivs.stamina <= 15
+  return ivs.attack !== null && ivs.attack >= 0 && ivs.attack <= 15 &&
+         ivs.defense !== null && ivs.defense >= 0 && ivs.defense <= 15 &&
+         ivs.stamina !== null && ivs.stamina >= 0 && ivs.stamina <= 15
 } 
