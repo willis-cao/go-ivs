@@ -2,6 +2,8 @@
 
 A React + TypeScript web application for calculating Pokemon GO IVs and PvP rankings across all leagues.
 
+**🌐 Live Demo: [https://go-ivs.vercel.app/](https://go-ivs.vercel.app/)**
+
 ## Key Features
 
 - **Instant PvP Rankings**: Get rankings for Great League (≤1500 CP), Ultra League (≤2500 CP), Master League (no limit), and Little Cup (≤500 CP)
