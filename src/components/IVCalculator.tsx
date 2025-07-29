@@ -677,6 +677,19 @@ const IVCalculator: React.FC = () => {
       ) : (
         <div className="welcome-section">
           <div className="welcome-content">
+            <div className="welcome-icon">
+              {/* Clean shield shape - simple inverted pentagon */}
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{stopColor: '#667eea', stopOpacity: 1}} />
+                    <stop offset="100%" style={{stopColor: '#764ba2', stopOpacity: 1}} />
+                  </linearGradient>
+                </defs>
+                <path d="M 20 25 L 60 15 L 100 25 Q 100 75 60 110 Q 20 75 20 25 Z" fill="url(#shieldGrad)" stroke="#ffffff" strokeWidth="3"/>
+                <text x="60" y="70" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fontSize="32" fontWeight="800" textAnchor="middle" fill="#ffffff">IV</text>
+              </svg>
+            </div>
             <h1 className="welcome-title">GO IVs</h1>
             <p className="welcome-subtitle">Start typing the name of a Pokemon to begin...</p>
             <div className="welcome-links">
