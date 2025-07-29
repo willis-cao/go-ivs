@@ -39,7 +39,12 @@ const IVCalculator: React.FC = () => {
 
   // Focus on Pokemon search on mount
   useEffect(() => {
-    pokemonInputRef.current?.focus()
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      pokemonInputRef.current?.focus()
+    }, 100)
+    
+    return () => clearTimeout(timer)
   }, [])
 
   // Handle clicks outside of Pokemon suggestions
@@ -638,7 +643,7 @@ const IVCalculator: React.FC = () => {
       </div>
 
       {/* Results Section */}
-      {results && (
+      {results ? (
         <div className="results-section">
           {/* Current Pokemon Module */}
           <PokemonRankingModule
@@ -662,6 +667,23 @@ const IVCalculator: React.FC = () => {
               showLittleCup={showLittleCup}
             />
           ))}
+        </div>
+      ) : (
+        <div className="welcome-section">
+          <div className="welcome-content">
+            <h1 className="welcome-title">GO IVs</h1>
+            <p className="welcome-subtitle">Start typing the name of a Pokemon to begin...</p>
+            <div className="welcome-links">
+              <a 
+                href="https://github.com/willis-cao/go-ivs" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="github-link"
+              >
+                View on GitHub
+              </a>
+            </div>
+          </div>
         </div>
       )}
     </div>
