@@ -600,3 +600,24 @@
     height: 100px;
   }
 } 
+
+/* Ranking emphasis based on position */
+.ranking-card.ranking-top-100 {
+  border: 4px solid rgba(255, 165, 0, 0.8);
+  transform: scale(1.02);
+}
+
+.ranking-card.ranking-top-20 {
+  border: 4px solid rgba(76, 175, 80, 1);
+  transform: scale(1.05);
+}
+
+.ranking-card.ranking-top-20 .ranking-number {
+  font-weight: 800;
+}
+
+.ranking-card.ranking-top-100 .ranking-number {
+  font-weight: 700;
+}
+
+ 
