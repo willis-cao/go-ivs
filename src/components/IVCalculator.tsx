@@ -24,6 +24,11 @@ const IVCalculator: React.FC = () => {
   const [suggestionIndex, setSuggestionIndex] = useState(0)
   const [history, setHistory] = useState<HistoryEntry[]>([])
   
+  // Advanced Options state
+  const [showAdvancedOptions, setShowAdvancedOptions] = useState(false)
+  const [bestBuddyBoost, setBestBuddyBoost] = useState(true)
+  const [useXLCandy, setUseXLCandy] = useState(true)
+  
   // Refs for focus management
   const pokemonInputRef = useRef<HTMLInputElement>(null)
   const atkInputRef = useRef<HTMLInputElement>(null)
@@ -216,12 +221,25 @@ const IVCalculator: React.FC = () => {
     }
   }
 
-  const calculateResults = (pokemon: Pokemon, newIvs: IVs, cp?: number | null) => {
+  const handleAdvancedOptionChange = () => {
+    // Recalculate results when advanced options change
+    console.log('Advanced options changed:', { bestBuddyBoost, useXLCandy })
+    if (selectedPokemon && validateIVs(ivs)) {
+      console.log('Recalculating with new options')
+      calculateResults(selectedPokemon, ivs, currentCP)
+    }
+  }
+
+  const calculateResults = (pokemon: Pokemon, newIvs: IVs, cp?: number | null, newBestBuddyBoost?: boolean, newUseXLCandy?: boolean) => {
     // Use the passed CP value or fall back to currentCP state
     const cpToUse = cp !== undefined ? cp : currentCP
     
+    // Use passed advanced options or fall back to state
+    const buddyBoost = newBestBuddyBoost !== undefined ? newBestBuddyBoost : bestBuddyBoost
+    const xlCandy = newUseXLCandy !== undefined ? newUseXLCandy : useXLCandy
+    
     // Calculate results for selected Pokemon
-    const pvpRankings = calculatePvPRanking(pokemon, newIvs, cpToUse)
+    const pvpRankings = calculatePvPRanking(pokemon, newIvs, cpToUse, buddyBoost, xlCandy)
     const totalIV = calculateTotalIV(newIvs)
     const ivPercentage = calculateIVPercentage(newIvs)
     
@@ -252,7 +270,7 @@ const IVCalculator: React.FC = () => {
               evolutionCP = calculateCP(evolutionPokemon, newIvs, currentLevel)
             }
             
-            const evolutionPvpRankings = calculatePvPRanking(evolutionPokemon, newIvs, evolutionCP)
+            const evolutionPvpRankings = calculatePvPRanking(evolutionPokemon, newIvs, evolutionCP, buddyBoost, xlCandy)
             const evolutionTotalIV = calculateTotalIV(newIvs)
             const evolutionIvPercentage = calculateIVPercentage(newIvs)
             
@@ -375,6 +393,68 @@ const IVCalculator: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* Advanced Options Panel */}
+        <div className="advanced-options-section">
+          <button
+            className="advanced-options-toggle"
+            onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
+          >
+            Advanced Options {showAdvancedOptions ? '▼' : '▶'}
+          </button>
+          
+          {showAdvancedOptions && (
+            <div className="advanced-options-panel">
+              <div className="advanced-option">
+                <label className="checkbox-label">
+                  <input
+                    type="checkbox"
+                    checked={bestBuddyBoost}
+                    onChange={(e) => {
+                      const newBestBuddyBoost = e.target.checked
+                      setBestBuddyBoost(newBestBuddyBoost)
+                      // Recalculate immediately with new values
+                      if (selectedPokemon && validateIVs(ivs)) {
+                        const newMaxLevel = (useXLCandy ? 50 : 40) + (newBestBuddyBoost ? 1 : 0)
+                        console.log('Best Buddy changed to:', newBestBuddyBoost, 'New max level:', newMaxLevel)
+                        calculateResults(selectedPokemon, ivs, currentCP, newBestBuddyBoost, useXLCandy)
+                      }
+                    }}
+                  />
+                  <span className="checkmark"></span>
+                  Best Buddy Boost (Max Level +1)
+                </label>
+                <div className="option-description">
+                  When checked, increase the max level by 1.
+                </div>
+              </div>
+              
+              <div className="advanced-option">
+                <label className="checkbox-label">
+                  <input
+                    type="checkbox"
+                    checked={useXLCandy}
+                    onChange={(e) => {
+                      const newUseXLCandy = e.target.checked
+                      setUseXLCandy(newUseXLCandy)
+                      // Recalculate immediately with new values
+                      if (selectedPokemon && validateIVs(ivs)) {
+                        const newMaxLevel = (newUseXLCandy ? 50 : 40) + (bestBuddyBoost ? 1 : 0)
+                        console.log('XL Candy changed to:', newUseXLCandy, 'New max level:', newMaxLevel)
+                        calculateResults(selectedPokemon, ivs, currentCP, bestBuddyBoost, newUseXLCandy)
+                      }
+                    }}
+                  />
+                  <span className="checkmark"></span>
+                  Use XL Candy (Max Level 50)
+                </label>
+                <div className="option-description">
+                  When unchecked, the maximum level taken into consideration is 40.
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* History Section */}
         {history.length > 0 && (

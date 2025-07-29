@@ -144,14 +144,14 @@ export const calculateIVPercentage = (ivs: IVs): number => {
   return Math.round(((ivs.attack || 0) + (ivs.defense || 0) + (ivs.stamina || 0)) / 45 * 100)
 }
 
-export const findOptimalLevel = (pokemon: Pokemon, ivs: IVs, league: League): { level: number; cp: number } => {
+export const findOptimalLevel = (pokemon: Pokemon, ivs: IVs, league: League, maxLevel: number): { level: number; cp: number } => {
   const cpLimit = LEAGUE_LIMITS[league]
   let optimalLevel = 1
   let optimalCP = 0
 
-  // Check levels from 1 to 51 (max level in Pokemon GO)
+  // Check levels from 1 to maxLevel (max level in Pokemon GO)
   // We need to check every 0.5 level (half-levels) for true optimality
-  for (let level = 1; level <= 51; level += 0.5) {
+  for (let level = 1; level <= maxLevel; level += 0.5) {
     const cp = calculateCP(pokemon, ivs, level)
     if (cp <= cpLimit && cp > optimalCP) {
       optimalCP = cp
@@ -162,10 +162,19 @@ export const findOptimalLevel = (pokemon: Pokemon, ivs: IVs, league: League): { 
   return { level: optimalLevel, cp: optimalCP }
 }
 
-export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: number | null): PvPRanking[] => {
+export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: number | null, bestBuddyBoost: boolean = false, useXLCandy: boolean = true): PvPRanking[] => {
   const rankings: PvPRanking[] = []
   const totalIV = calculateTotalIV(ivs)
   const ivPercentage = calculateIVPercentage(ivs)
+
+  // Determine max level based on advanced options
+  let maxLevel = 40 // Default max level
+  if (useXLCandy) {
+    maxLevel = 50
+  }
+  if (bestBuddyBoost) {
+    maxLevel += 1 // 41 if XL Candy is off, 51 if XL Candy is on
+  }
 
   // If currentCP is provided, we need to reverse-calculate the level
   let currentLevel: number | null = null
@@ -184,8 +193,8 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
 
     if (league === 'Master League') {
       // For Master League, rank based on total IVs (15/15/15 is #1)
-      // Always calculate at level 51 for ranking display
-      level = 51
+      // Always calculate at max level for ranking display (Master League shows max CP)
+      level = maxLevel
       cp = calculateCP(pokemon, ivs, level)
       
       // If current CP is provided, check if it exceeds any reasonable limit
@@ -230,7 +239,7 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
       percentPerfect = (totalIV / 45) * 100
     } else {
       // For Great and Ultra League, rank based on stat product at optimal level
-      const optimal = findOptimalLevel(pokemon, ivs, league)
+      const optimal = findOptimalLevel(pokemon, ivs, league, maxLevel)
       level = optimal.level
       cp = optimal.cp
 
@@ -267,7 +276,7 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
         for (let d = 0; d <= 15; d++) {
           for (let s = 0; s <= 15; s++) {
             const otherIvs = { attack: a, defense: d, stamina: s }
-            const otherOptimal = findOptimalLevel(pokemon, otherIvs, league)
+            const otherOptimal = findOptimalLevel(pokemon, otherIvs, league, maxLevel)
             
             if (otherOptimal.cp > 0 && otherOptimal.cp <= LEAGUE_LIMITS[league]) {
               const otherHalfLevelIndex = levelToHalfLevelIndex(otherOptimal.level)
@@ -291,7 +300,7 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
         for (let d = 0; d <= 15; d++) {
           for (let s = 0; s <= 15; s++) {
             const otherIvs = { attack: a, defense: d, stamina: s }
-            const otherOptimal = findOptimalLevel(pokemon, otherIvs, league)
+            const otherOptimal = findOptimalLevel(pokemon, otherIvs, league, maxLevel)
             
             // Only compare if the other combination can fit within the league CP limit
             // and has a valid CP (greater than 0)
