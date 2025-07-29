@@ -28,6 +28,7 @@ const IVCalculator: React.FC = () => {
   const [showAdvancedOptions, setShowAdvancedOptions] = useState(false)
   const [bestBuddyBoost, setBestBuddyBoost] = useState(true)
   const [useXLCandy, setUseXLCandy] = useState(true)
+  const [showLittleCup, setShowLittleCup] = useState(true)
   
   // Refs for focus management
   const pokemonInputRef = useRef<HTMLInputElement>(null)
@@ -72,13 +73,137 @@ const IVCalculator: React.FC = () => {
     setSuggestionIndex(0)
   }, [searchTerm])
 
+  const generateRankingSummary = (pokemon: Pokemon, ivs: IVs, cp: number | null, bestBuddyBoost: boolean, useXLCandy: boolean, showLittleCup: boolean): string => {
+    if (!validateIVs(ivs)) return ''
+    
+    // Calculate rankings for the main Pokemon
+    const pvpRankings = calculatePvPRanking(pokemon, ivs, cp, bestBuddyBoost, useXLCandy, showLittleCup)
+    
+    // Get all rankings (main Pokemon + evolutions)
+    const allRankings: { league: string, rank: number, pokemonName: string }[] = []
+    
+    // Add main Pokemon rankings
+    pvpRankings.forEach(ranking => {
+      if (ranking.rank >= 1 && ranking.rank <= 100) {
+        allRankings.push({
+          league: ranking.league,
+          rank: ranking.rank,
+          pokemonName: pokemon.name
+        })
+      }
+    })
+    
+    // Add evolution rankings
+    const evolutionChain = pokemon.evolutionChain
+    if (evolutionChain) {
+      const currentIndex = evolutionChain.indexOf(pokemon.id)
+      if (currentIndex !== -1) {
+        for (let i = currentIndex + 1; i < evolutionChain.length; i++) {
+          const evolutionId = evolutionChain[i]
+          const evolutionPokemon = findPokemonById(evolutionId)
+          if (evolutionPokemon) {
+            let evolutionCP = null
+            if (cp !== null && cp !== undefined) {
+              const currentLevel = reverseCalculateLevel(pokemon, ivs, cp)
+              evolutionCP = calculateCP(evolutionPokemon, ivs, currentLevel)
+            }
+            
+            const evolutionPvpRankings = calculatePvPRanking(evolutionPokemon, ivs, evolutionCP, bestBuddyBoost, useXLCandy, showLittleCup)
+            evolutionPvpRankings.forEach(ranking => {
+              if (ranking.rank >= 1 && ranking.rank <= 100) {
+                allRankings.push({
+                  league: ranking.league,
+                  rank: ranking.rank,
+                  pokemonName: evolutionPokemon.name
+                })
+              }
+            })
+          }
+        }
+      }
+    }
+    
+    // Sort by evolution order (base Pokemon first, then evolutions), then by league order (GL->UL->ML->LC)
+    const leagueOrder = ['GL', 'UL', 'ML', 'LC']
+    const leagueAbbreviations: { [key: string]: string } = {
+      'Great League': 'GL',
+      'Ultra League': 'UL', 
+      'Master League': 'ML',
+      'Little Cup': 'LC'
+    }
+    
+    const sortedRankings = allRankings.sort((a, b) => {
+      // First sort by evolution order (base Pokemon first)
+      const isBaseA = a.pokemonName === pokemon.name
+      const isBaseB = b.pokemonName === pokemon.name
+      
+      if (isBaseA && !isBaseB) return -1
+      if (!isBaseA && isBaseB) return 1
+      
+      // If both are same evolution level, sort by league order
+      const leagueA = leagueAbbreviations[a.league]
+      const leagueB = leagueAbbreviations[b.league]
+      const leagueIndexA = leagueOrder.indexOf(leagueA)
+      const leagueIndexB = leagueOrder.indexOf(leagueB)
+      
+      return leagueIndexA - leagueIndexB
+    })
+    
+    // Build summary string with all rankings
+    const summaryParts: string[] = []
+    sortedRankings.forEach(ranking => {
+      const leagueAbbr = leagueAbbreviations[ranking.league]
+      const rankText = ranking.rank.toString()
+      const pokemonSuffix = ranking.pokemonName !== pokemon.name ? ` (${ranking.pokemonName})` : ''
+      const fullRanking = `${leagueAbbr} #${rankText}${pokemonSuffix}`
+      
+      if (ranking.rank <= 20) {
+        summaryParts.push(`**${fullRanking}**`)
+      } else {
+        summaryParts.push(fullRanking)
+      }
+    })
+    
+    const finalSummary = summaryParts.join(', ')
+    return finalSummary
+  }
+
+  const renderRankingSummary = (summary: string) => {
+    if (!summary) return null
+    
+    // Split by commas and process each part
+    const parts = summary.split(', ')
+    return parts.map((part, index) => {
+      // Check if this part contains bold formatting (**entire ranking**)
+      const boldMatch = part.match(/^\*\*(.*)\*\*$/)
+      if (boldMatch) {
+        return (
+          <span key={index}>
+            <strong>{boldMatch[1]}</strong>
+            {index < parts.length - 1 ? ', ' : ''}
+          </span>
+        )
+      } else {
+        return (
+          <span key={index}>
+            {part}
+            {index < parts.length - 1 ? ', ' : ''}
+          </span>
+        )
+      }
+    })
+  }
+
   const addToHistory = (pokemon: Pokemon, ivs: IVs, cp: number | null) => {
+    const rankingSummary = generateRankingSummary(pokemon, ivs, cp, bestBuddyBoost, useXLCandy, showLittleCup)
+    
     const newEntry: HistoryEntry = {
       id: `${pokemon.id}-${ivs.attack}-${ivs.defense}-${ivs.stamina}-${cp}`,
       pokemon,
       ivs: { ...ivs },
       cp,
-      timestamp: Date.now()
+      timestamp: Date.now(),
+      rankingSummary
     }
     
     setHistory(prev => [newEntry, ...prev.filter(entry => entry.id !== newEntry.id)])
@@ -223,23 +348,22 @@ const IVCalculator: React.FC = () => {
 
   const handleAdvancedOptionChange = () => {
     // Recalculate results when advanced options change
-    console.log('Advanced options changed:', { bestBuddyBoost, useXLCandy })
     if (selectedPokemon && validateIVs(ivs)) {
-      console.log('Recalculating with new options')
       calculateResults(selectedPokemon, ivs, currentCP)
     }
   }
 
-  const calculateResults = (pokemon: Pokemon, newIvs: IVs, cp?: number | null, newBestBuddyBoost?: boolean, newUseXLCandy?: boolean) => {
+  const calculateResults = (pokemon: Pokemon, newIvs: IVs, cp?: number | null, newBestBuddyBoost?: boolean, newUseXLCandy?: boolean, newShowLittleCup?: boolean) => {
     // Use the passed CP value or fall back to currentCP state
     const cpToUse = cp !== undefined ? cp : currentCP
     
     // Use passed advanced options or fall back to state
     const buddyBoost = newBestBuddyBoost !== undefined ? newBestBuddyBoost : bestBuddyBoost
     const xlCandy = newUseXLCandy !== undefined ? newUseXLCandy : useXLCandy
+    const littleCup = newShowLittleCup !== undefined ? newShowLittleCup : showLittleCup
     
     // Calculate results for selected Pokemon
-    const pvpRankings = calculatePvPRanking(pokemon, newIvs, cpToUse, buddyBoost, xlCandy)
+    const pvpRankings = calculatePvPRanking(pokemon, newIvs, cpToUse, buddyBoost, xlCandy, littleCup)
     const totalIV = calculateTotalIV(newIvs)
     const ivPercentage = calculateIVPercentage(newIvs)
     
@@ -270,7 +394,7 @@ const IVCalculator: React.FC = () => {
               evolutionCP = calculateCP(evolutionPokemon, newIvs, currentLevel)
             }
             
-            const evolutionPvpRankings = calculatePvPRanking(evolutionPokemon, newIvs, evolutionCP, buddyBoost, xlCandy)
+            const evolutionPvpRankings = calculatePvPRanking(evolutionPokemon, newIvs, evolutionCP, buddyBoost, xlCandy, littleCup)
             const evolutionTotalIV = calculateTotalIV(newIvs)
             const evolutionIvPercentage = calculateIVPercentage(newIvs)
             
@@ -416,8 +540,7 @@ const IVCalculator: React.FC = () => {
                       // Recalculate immediately with new values
                       if (selectedPokemon && validateIVs(ivs)) {
                         const newMaxLevel = (useXLCandy ? 50 : 40) + (newBestBuddyBoost ? 1 : 0)
-                        console.log('Best Buddy changed to:', newBestBuddyBoost, 'New max level:', newMaxLevel)
-                        calculateResults(selectedPokemon, ivs, currentCP, newBestBuddyBoost, useXLCandy)
+                        calculateResults(selectedPokemon, ivs, currentCP, newBestBuddyBoost, useXLCandy, showLittleCup)
                       }
                     }}
                   />
@@ -440,8 +563,7 @@ const IVCalculator: React.FC = () => {
                       // Recalculate immediately with new values
                       if (selectedPokemon && validateIVs(ivs)) {
                         const newMaxLevel = (newUseXLCandy ? 50 : 40) + (bestBuddyBoost ? 1 : 0)
-                        console.log('XL Candy changed to:', newUseXLCandy, 'New max level:', newMaxLevel)
-                        calculateResults(selectedPokemon, ivs, currentCP, bestBuddyBoost, newUseXLCandy)
+                        calculateResults(selectedPokemon, ivs, currentCP, bestBuddyBoost, newUseXLCandy, showLittleCup)
                       }
                     }}
                   />
@@ -452,14 +574,36 @@ const IVCalculator: React.FC = () => {
                   When unchecked, the maximum level taken into consideration is 40.
                 </div>
               </div>
+              
+              <div className="advanced-option">
+                <label className="checkbox-label">
+                  <input
+                    type="checkbox"
+                    checked={showLittleCup}
+                    onChange={(e) => {
+                      const newShowLittleCup = e.target.checked
+                      setShowLittleCup(newShowLittleCup)
+                      // Recalculate immediately with new values
+                      if (selectedPokemon && validateIVs(ivs)) {
+                        calculateResults(selectedPokemon, ivs, currentCP, bestBuddyBoost, useXLCandy, newShowLittleCup)
+                      }
+                    }}
+                  />
+                  <span className="checkmark"></span>
+                  Show Little Cup Rankings
+                </label>
+                <div className="option-description">
+                  When unchecked, Little Cup rankings will not be calculated or displayed.
+                </div>
+              </div>
             </div>
           )}
         </div>
 
         {/* History Section */}
-        {history.length > 0 && (
-          <div className="history-section">
-            <h3>History</h3>
+        <div className="history-section">
+          <h3>History</h3>
+          {history.length > 0 ? (
             <div className="history-list">
               {history.map((entry) => (
                 <div
@@ -476,12 +620,21 @@ const IVCalculator: React.FC = () => {
                       </span>
                       {entry.cp && <span className="history-cp">{entry.cp} CP</span>}
                     </div>
+                    {entry.rankingSummary && (
+                      <div className="history-ranking-summary">
+                        {renderRankingSummary(entry.rankingSummary)}
+                      </div>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
-          </div>
-        )}
+          ) : (
+            <div className="history-empty">
+              Your previous searches will be saved here.
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Results Section */}
@@ -494,6 +647,7 @@ const IVCalculator: React.FC = () => {
             pvpRankings={results.pvpRankings}
             isEvolution={false}
             currentCP={currentCP}
+            showLittleCup={showLittleCup}
           />
 
           {/* Evolution Modules */}
@@ -505,6 +659,7 @@ const IVCalculator: React.FC = () => {
               pvpRankings={evolutionResult.pvpRankings}
               isEvolution={true}
               currentCP={currentCP}
+              showLittleCup={showLittleCup}
             />
           ))}
         </div>

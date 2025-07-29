@@ -162,7 +162,7 @@ export const findOptimalLevel = (pokemon: Pokemon, ivs: IVs, league: League, max
   return { level: optimalLevel, cp: optimalCP }
 }
 
-export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: number | null, bestBuddyBoost: boolean = false, useXLCandy: boolean = true): PvPRanking[] => {
+export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: number | null, bestBuddyBoost: boolean = false, useXLCandy: boolean = true, showLittleCup: boolean = true): PvPRanking[] => {
   const rankings: PvPRanking[] = []
   const totalIV = calculateTotalIV(ivs)
   const ivPercentage = calculateIVPercentage(ivs)
@@ -182,7 +182,9 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
     currentLevel = reverseCalculateLevel(pokemon, ivs, currentCP)
   }
 
-  const leagues: League[] = ['Great League', 'Ultra League', 'Master League', 'Little Cup']
+  const leagues: League[] = showLittleCup 
+    ? ['Great League', 'Ultra League', 'Master League', 'Little Cup']
+    : ['Great League', 'Ultra League', 'Master League']
 
   leagues.forEach(league => {
     let rank = 0

@@ -29,6 +29,7 @@ export interface HistoryEntry {
   ivs: IVs
   cp: number | null
   timestamp: number
+  rankingSummary: string
 }
 
 export interface PvPRanking {

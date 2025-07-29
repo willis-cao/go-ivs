@@ -287,6 +287,15 @@
   gap: 15px;
   margin-bottom: 30px;
   width: 100%;
+  margin-top: 20px;
+}
+
+/* When Little Cup is hidden, center the remaining 3 boxes */
+.rankings-grid.three-leagues {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ranking-card {
@@ -400,15 +409,18 @@
   align-items: center;
   gap: 12px;
   padding: 8px 12px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.4); /* Increased opacity for more contrast */
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease;
   min-height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Increased border opacity */
+  margin-bottom: 6px; /* Add spacing between entries */
 }
 
 .history-entry:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.6); /* Even more contrast on hover */
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 .history-entry img {
@@ -445,6 +457,22 @@
 .history-cp {
   color: #7f8c8d;
   font-weight: 500;
+}
+
+.history-ranking-summary {
+  font-size: 0.8rem;
+  color: #34495e;
+  font-weight: 500;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+.history-empty {
+  text-align: center;
+  color: #7f8c8d;
+  font-style: italic;
+  padding: 40px 20px;
+  font-size: 0.9rem;
 }
 
 /* Advanced Options Section */

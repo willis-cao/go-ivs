@@ -7,6 +7,7 @@ interface PokemonRankingModuleProps {
   pvpRankings: PvPRanking[]
   isEvolution?: boolean
   currentCP?: number | null
+  showLittleCup?: boolean
 }
 
 const PokemonRankingModule: React.FC<PokemonRankingModuleProps> = ({
@@ -14,15 +15,19 @@ const PokemonRankingModule: React.FC<PokemonRankingModuleProps> = ({
   ivs,
   pvpRankings,
   isEvolution = false,
-  currentCP = null
+  currentCP = null,
+  showLittleCup = true
 }) => {
   const getLeagueRanking = (leagueName: string) => {
     return pvpRankings.find(r => r.league === leagueName)
   }
 
   const renderRankingCards = () => {
+    const hasLittleCup = pvpRankings.some(r => r.league === 'Little Cup')
+    const gridClass = showLittleCup && hasLittleCup ? 'rankings-grid' : 'rankings-grid three-leagues'
+    
     return (
-      <div className="rankings-grid">
+      <div className={gridClass}>
         {pvpRankings.map((ranking) => (
           <div
             key={ranking.league}
