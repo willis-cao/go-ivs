@@ -1,13 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Pokemon, IVs, PokemonIVResult } from '../types/pokemon'
+import { 
+  calculatePvPRanking, 
+  calculateTotalIV, 
+  calculateIVPercentage, 
+  validateIVs,
+  reverseCalculateLevel,
+  calculateCP
+} from '../utils/ivCalculator'
 import { getAllPokemon, findPokemonByName, searchPokemon, findPokemonById } from '../data/pokemonFromAPI'
-import { calculatePvPRanking, calculateTotalIV, calculateIVPercentage, validateIVs, findOptimalLevel } from '../utils/ivCalculator'
 import PokemonRankingModule from './PokemonRankingModule'
 import './IVCalculator.css'
 
 const IVCalculator: React.FC = () => {
   const [selectedPokemon, setSelectedPokemon] = useState<Pokemon | null>(null)
   const [ivs, setIvs] = useState<IVs>({ attack: null, defense: null, stamina: null })
+  const [currentCP, setCurrentCP] = useState<number | null>(null)
   const [results, setResults] = useState<PokemonIVResult | null>(null)
   const [evolutionResults, setEvolutionResults] = useState<PokemonIVResult[]>([])
   const [searchTerm, setSearchTerm] = useState('')
@@ -17,9 +25,10 @@ const IVCalculator: React.FC = () => {
   
   // Refs for focus management
   const pokemonInputRef = useRef<HTMLInputElement>(null)
-  const attackInputRef = useRef<HTMLInputElement>(null)
-  const defenseInputRef = useRef<HTMLInputElement>(null)
-  const staminaInputRef = useRef<HTMLInputElement>(null)
+  const atkInputRef = useRef<HTMLInputElement>(null)
+  const defInputRef = useRef<HTMLInputElement>(null)
+  const hpInputRef = useRef<HTMLInputElement>(null)
+  const cpInputRef = useRef<HTMLInputElement>(null)
 
   // Focus on Pokemon search on mount
   useEffect(() => {
@@ -60,11 +69,26 @@ const IVCalculator: React.FC = () => {
   const handlePokemonSelect = (pokemon: Pokemon) => {
     setSelectedPokemon(pokemon)
     setSearchTerm(pokemon.name)
+    setFilteredPokemon([])
+    setSuggestionIndex(0)
     setShowSuggestions(false)
     setResults(null)
     setEvolutionResults([])
+    // Clear all input fields when a new Pokemon is selected
+    setIvs({ attack: null, defense: null, stamina: null })
+    setCurrentCP(null)
     // Focus on attack input after selection
-    setTimeout(() => attackInputRef.current?.focus(), 100)
+    setTimeout(() => atkInputRef.current?.focus(), 100)
+  }
+
+  const handlePokemonInputFocus = () => {
+    // Only clear the search query when focusing on the Pokemon input if there's already a selected Pokemon
+    if (selectedPokemon) {
+      setSearchTerm('')
+      setFilteredPokemon([])
+      setSuggestionIndex(0)
+      setShowSuggestions(false)
+    }
   }
 
   const handlePokemonKeyDown = (e: React.KeyboardEvent) => {
@@ -82,10 +106,13 @@ const IVCalculator: React.FC = () => {
     }
   }
 
-  const handleIVKeyDown = (e: React.KeyboardEvent, nextRef: React.RefObject<HTMLInputElement | null>) => {
-    if (e.key === 'Enter' || e.key === 'Tab') {
+  const handleIVKeyDown = (e: React.KeyboardEvent, nextRef?: React.RefObject<HTMLInputElement | null>, prevRef?: React.RefObject<HTMLInputElement | null>) => {
+    if (e.key === 'Enter' || (e.key === 'Tab' && !e.shiftKey)) {
       e.preventDefault()
-      nextRef.current?.focus()
+      nextRef?.current?.focus()
+    } else if (e.key === 'Tab' && e.shiftKey && prevRef) {
+      e.preventDefault()
+      prevRef.current?.focus()
     }
   }
 
@@ -107,52 +134,88 @@ const IVCalculator: React.FC = () => {
     setIvs(newIvs)
     
     if (selectedPokemon && validateIVs(newIvs)) {
-      // Calculate results for selected Pokemon
-      const pvpRankings = calculatePvPRanking(selectedPokemon, newIvs)
-      const totalIV = calculateTotalIV(newIvs)
-      const ivPercentage = calculateIVPercentage(newIvs)
-      
-      setResults({
-        pokemon: selectedPokemon,
-        ivs: newIvs,
-        pvpRankings,
-        totalIV,
-        ivPercentage
-      })
-
-      // Calculate results for evolution chain
-      const evolutionChain = selectedPokemon.evolutionChain
-      const evolutionResultsArray: PokemonIVResult[] = []
-      
-      if (evolutionChain) {
-        const currentIndex = evolutionChain.indexOf(selectedPokemon.id)
-        if (currentIndex !== -1) {
-          // Only show Pokemon that come AFTER the current Pokemon in the evolution chain
-          for (let i = currentIndex + 1; i < evolutionChain.length; i++) {
-            const evolutionId = evolutionChain[i]
-            const evolutionPokemon = findPokemonById(evolutionId)
-            if (evolutionPokemon) {
-              const evolutionPvpRankings = calculatePvPRanking(evolutionPokemon, newIvs)
-              const evolutionTotalIV = calculateTotalIV(newIvs)
-              const evolutionIvPercentage = calculateIVPercentage(newIvs)
-              
-              evolutionResultsArray.push({
-                pokemon: evolutionPokemon,
-                ivs: newIvs,
-                pvpRankings: evolutionPvpRankings,
-                totalIV: evolutionTotalIV,
-                ivPercentage: evolutionIvPercentage
-              })
-            }
-          }
-        }
-      }
-      
-      setEvolutionResults(evolutionResultsArray)
+      calculateResults(selectedPokemon, newIvs, currentCP)
     } else {
       setResults(null)
       setEvolutionResults([])
     }
+  }
+
+  const handleCPChange = (value: string) => {
+    let newCP: number | null = null
+    
+    if (value === '' || value === null || value === undefined) {
+      newCP = null
+    } else {
+      const numValue = parseInt(value)
+      if (isNaN(numValue) || numValue < 0) {
+        newCP = null
+      } else {
+        newCP = numValue
+      }
+    }
+    
+    setCurrentCP(newCP)
+    
+    // Recalculate results if we have a Pokemon and valid IVs
+    if (selectedPokemon && validateIVs(ivs)) {
+      calculateResults(selectedPokemon, ivs, newCP)
+    }
+  }
+
+  const calculateResults = (pokemon: Pokemon, newIvs: IVs, cp?: number | null) => {
+    // Use the passed CP value or fall back to currentCP state
+    const cpToUse = cp !== undefined ? cp : currentCP
+    
+    // Calculate results for selected Pokemon
+    const pvpRankings = calculatePvPRanking(pokemon, newIvs, cpToUse)
+    const totalIV = calculateTotalIV(newIvs)
+    const ivPercentage = calculateIVPercentage(newIvs)
+    
+    setResults({
+      pokemon,
+      ivs: newIvs,
+      pvpRankings,
+      totalIV,
+      ivPercentage
+    })
+
+    // Calculate results for evolution chain
+    const evolutionChain = pokemon.evolutionChain
+    const evolutionResultsArray: PokemonIVResult[] = []
+    
+    if (evolutionChain) {
+      const currentIndex = evolutionChain.indexOf(pokemon.id)
+      if (currentIndex !== -1) {
+        // Only show Pokemon that come AFTER the current Pokemon in the evolution chain
+        for (let i = currentIndex + 1; i < evolutionChain.length; i++) {
+          const evolutionId = evolutionChain[i]
+          const evolutionPokemon = findPokemonById(evolutionId)
+          if (evolutionPokemon) {
+            // If we have a current CP, reverse-calculate the level and then calculate the evolved Pokemon's CP at that level
+            let evolutionCP = null
+            if (cpToUse !== null && cpToUse !== undefined) {
+              const currentLevel = reverseCalculateLevel(pokemon, newIvs, cpToUse)
+              evolutionCP = calculateCP(evolutionPokemon, newIvs, currentLevel)
+            }
+            
+            const evolutionPvpRankings = calculatePvPRanking(evolutionPokemon, newIvs, evolutionCP)
+            const evolutionTotalIV = calculateTotalIV(newIvs)
+            const evolutionIvPercentage = calculateIVPercentage(newIvs)
+            
+            evolutionResultsArray.push({
+              pokemon: evolutionPokemon,
+              ivs: newIvs,
+              pvpRankings: evolutionPvpRankings,
+              totalIV: evolutionTotalIV,
+              ivPercentage: evolutionIvPercentage
+            })
+          }
+        }
+      }
+    }
+    
+    setEvolutionResults(evolutionResultsArray)
   }
 
   return (
@@ -171,7 +234,7 @@ const IVCalculator: React.FC = () => {
                 setShowSuggestions(true)
               }}
               onKeyDown={handlePokemonKeyDown}
-              onFocus={() => setShowSuggestions(true)}
+              onFocus={handlePokemonInputFocus}
               placeholder="Search Pokemon..."
               className="pokemon-input"
             />
@@ -196,46 +259,61 @@ const IVCalculator: React.FC = () => {
         {selectedPokemon && (
           <div className="iv-inputs">
             <div className="iv-input-group">
-              <label htmlFor="attack-input">ATK</label>
+              <label htmlFor="atk-input">ATK</label>
               <input
-                ref={attackInputRef}
-                id="attack-input"
+                ref={atkInputRef}
+                id="atk-input"
                 type="number"
                 min="0"
                 max="15"
                 value={ivs.attack === null ? '' : ivs.attack.toString()}
                 onChange={(e) => handleIVChange('attack', e.target.value)}
-                onKeyDown={(e) => handleIVKeyDown(e, defenseInputRef)}
+                onKeyDown={(e) => handleIVKeyDown(e, defInputRef, pokemonInputRef)}
                 className="iv-input"
               />
             </div>
-            
             <div className="iv-input-group">
-              <label htmlFor="defense-input">DEF</label>
+              <label htmlFor="def-input">DEF</label>
               <input
-                ref={defenseInputRef}
-                id="defense-input"
+                ref={defInputRef}
+                id="def-input"
                 type="number"
                 min="0"
                 max="15"
                 value={ivs.defense === null ? '' : ivs.defense.toString()}
                 onChange={(e) => handleIVChange('defense', e.target.value)}
-                onKeyDown={(e) => handleIVKeyDown(e, staminaInputRef)}
+                onKeyDown={(e) => handleIVKeyDown(e, hpInputRef, atkInputRef)}
                 className="iv-input"
               />
             </div>
-            
             <div className="iv-input-group">
-              <label htmlFor="stamina-input">HP</label>
+              <label htmlFor="hp-input">HP</label>
               <input
-                ref={staminaInputRef}
-                id="stamina-input"
+                ref={hpInputRef}
+                id="hp-input"
                 type="number"
                 min="0"
                 max="15"
                 value={ivs.stamina === null ? '' : ivs.stamina.toString()}
                 onChange={(e) => handleIVChange('stamina', e.target.value)}
+                onKeyDown={(e) => handleIVKeyDown(e, cpInputRef, defInputRef)}
                 className="iv-input"
+              />
+            </div>
+            <div className="iv-input-group cp-group">
+              <label htmlFor="cp-input">
+                CP
+                <span className="optional-text">(optional)</span>
+              </label>
+              <input
+                ref={cpInputRef}
+                id="cp-input"
+                type="number"
+                min="0"
+                value={currentCP === null ? '' : currentCP.toString()}
+                onChange={(e) => handleCPChange(e.target.value)}
+                onKeyDown={(e) => handleIVKeyDown(e, undefined, hpInputRef)}
+                className="iv-input cp-input"
               />
             </div>
           </div>
@@ -251,6 +329,7 @@ const IVCalculator: React.FC = () => {
             ivs={results.ivs}
             pvpRankings={results.pvpRankings}
             isEvolution={false}
+            currentCP={currentCP}
           />
 
           {/* Evolution Modules */}
@@ -261,6 +340,7 @@ const IVCalculator: React.FC = () => {
               ivs={evolutionResult.ivs}
               pvpRankings={evolutionResult.pvpRankings}
               isEvolution={true}
+              currentCP={currentCP}
             />
           ))}
         </div>

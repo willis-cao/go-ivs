@@ -162,55 +162,93 @@ export const findOptimalLevel = (pokemon: Pokemon, ivs: IVs, league: League): { 
   return { level: optimalLevel, cp: optimalCP }
 }
 
-export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs): PvPRanking[] => {
-  const leagues: League[] = ['Great League', 'Ultra League', 'Master League', 'Little Cup']
+export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: number | null): PvPRanking[] => {
   const rankings: PvPRanking[] = []
+  const totalIV = calculateTotalIV(ivs)
+  const ivPercentage = calculateIVPercentage(ivs)
+
+  // If currentCP is provided, we need to reverse-calculate the level
+  let currentLevel: number | null = null
+  if (currentCP !== null && currentCP !== undefined) {
+    currentLevel = reverseCalculateLevel(pokemon, ivs, currentCP)
+  }
+
+  const leagues: League[] = ['Great League', 'Ultra League', 'Master League', 'Little Cup']
 
   leagues.forEach(league => {
-    const { level, cp } = findOptimalLevel(pokemon, ivs, league)
-    const totalIV = calculateTotalIV(ivs)
-    const ivPercentage = calculateIVPercentage(ivs)
-    
-    // Calculate actual ranking based on IV combinations
-    let rank = 1
-    let percentPerfect = 100
-    
+    let rank = 0
+    let percentage = 0
+    let cp = 0
+    let level = 0
+    let percentPerfect = 0
+
     if (league === 'Master League') {
-      // For Master League, perfect IVs (15/15/15) should always be #1
-      if (ivs.attack === 15 && ivs.defense === 15 && ivs.stamina === 15) {
-        rank = 1
-        percentPerfect = 100
-      } else {
-        // Calculate how many IV combinations are better than current one
-        let betterCombinations = 0
-        for (let a = 0; a <= 15; a++) {
-          for (let d = 0; d <= 15; d++) {
-            for (let s = 0; s <= 15; s++) {
-              const otherTotal = a + d + s
-              const currentTotal = totalIV
-              
-              // If other combination has higher total IVs, it's better
-              if (otherTotal > currentTotal) {
+      // For Master League, rank based on total IVs (15/15/15 is #1)
+      // Always calculate at level 51 for ranking display
+      level = 51
+      cp = calculateCP(pokemon, ivs, level)
+      
+      // If current CP is provided, check if it exceeds any reasonable limit
+      if (currentCP !== null && currentCP !== undefined) {
+        const maxReasonableCP = 5000 // Arbitrary high limit for Master League
+        if (currentCP > maxReasonableCP) {
+          rankings.push({
+            league,
+            rank: -1, // Special value to indicate CP exceeds limit
+            percentage: ivPercentage,
+            maxCP: currentCP,
+            level: currentLevel || 0,
+            percentPerfect: 0
+          })
+          return
+        }
+      }
+      
+      // Normal Master League ranking logic
+      let betterCombinations = 0
+      for (let a = 0; a <= 15; a++) {
+        for (let d = 0; d <= 15; d++) {
+          for (let s = 0; s <= 15; s++) {
+            const otherTotal = a + d + s
+            if (otherTotal > totalIV) {
+              betterCombinations++
+            } else if (otherTotal === totalIV) {
+              // If same total, compare individual stats (attack first, then defense, then stamina)
+              if (a > (ivs.attack || 0)) {
                 betterCombinations++
-              } else if (otherTotal === currentTotal) {
-                // If same total, compare individual stats (attack first, then defense, then stamina)
-                if (a > (ivs.attack || 0)) {
-                  betterCombinations++
-                } else if (a === (ivs.attack || 0) && d > (ivs.defense || 0)) {
-                  betterCombinations++
-                } else if (a === (ivs.attack || 0) && d === (ivs.defense || 0) && s > (ivs.stamina || 0)) {
-                  betterCombinations++
-                }
+              } else if (a === (ivs.attack || 0) && d > (ivs.defense || 0)) {
+                betterCombinations++
+              } else if (a === (ivs.attack || 0) && d === (ivs.defense || 0) && s > (ivs.stamina || 0)) {
+                betterCombinations++
               }
             }
           }
         }
-        rank = betterCombinations + 1
-        // For Master League, percent perfect is based on total IVs
-        percentPerfect = (totalIV / 45) * 100
       }
+      rank = betterCombinations + 1
+      // For Master League, percent perfect is based on total IVs
+      percentPerfect = (totalIV / 45) * 100
     } else {
       // For Great and Ultra League, rank based on stat product at optimal level
+      const optimal = findOptimalLevel(pokemon, ivs, league)
+      level = optimal.level
+      cp = optimal.cp
+
+      // If current CP is provided, check if it exceeds the league limit
+      if (currentCP !== null && currentCP !== undefined) {
+        if (currentCP > LEAGUE_LIMITS[league]) {
+          rankings.push({
+            league,
+            rank: -1, // Special value to indicate CP exceeds limit
+            percentage: ivPercentage,
+            maxCP: currentCP,
+            level: currentLevel || 0,
+            percentPerfect: 0
+          })
+          return
+        }
+      }
+
       const currentHalfLevelIndex = levelToHalfLevelIndex(level)
       const currentCpMultiplier = CP_MULTIPLIERS[currentHalfLevelIndex]
       
@@ -299,12 +337,33 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs): PvPRanking[] =>
       rank,
       percentage: ivPercentage,
       maxCP: cp,
-      level,
+      level: currentLevel || level,
       percentPerfect
     })
   })
 
   return rankings
+}
+
+// Function to reverse-calculate level from CP
+export const reverseCalculateLevel = (pokemon: Pokemon, ivs: IVs, cp: number): number => {
+  // Try to find the level that gives us the closest CP
+  let closestLevel = 1
+  let closestCP = 0
+  let minDifference = Infinity
+
+  for (let level = 1; level <= 51; level += 0.5) {
+    const calculatedCP = calculateCP(pokemon, ivs, level)
+    const difference = Math.abs(calculatedCP - cp)
+    
+    if (difference < minDifference) {
+      minDifference = difference
+      closestLevel = level
+      closestCP = calculatedCP
+    }
+  }
+
+  return closestLevel
 }
 
 export const validateIVs = (ivs: IVs): boolean => {
