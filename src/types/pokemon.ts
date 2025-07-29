@@ -15,6 +15,8 @@ export interface Pokemon {
     official_artwork: string
   }
   evolutionChain?: number[]
+  isMega?: boolean // Indicates if this is a Mega form
+  basePokemonId?: number // ID of the base Pokemon (for Mega forms)
 }
 
 export interface IVs {
