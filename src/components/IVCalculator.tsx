@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Pokemon, IVs, PokemonIVResult } from '../types/pokemon'
+import { Pokemon, IVs, PokemonIVResult, HistoryEntry } from '../types/pokemon'
 import { 
   calculatePvPRanking, 
   calculateTotalIV, 
@@ -22,6 +22,7 @@ const IVCalculator: React.FC = () => {
   const [filteredPokemon, setFilteredPokemon] = useState<Pokemon[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [suggestionIndex, setSuggestionIndex] = useState(0)
+  const [history, setHistory] = useState<HistoryEntry[]>([])
   
   // Refs for focus management
   const pokemonInputRef = useRef<HTMLInputElement>(null)
@@ -66,7 +67,52 @@ const IVCalculator: React.FC = () => {
     setSuggestionIndex(0)
   }, [searchTerm])
 
+  const addToHistory = (pokemon: Pokemon, ivs: IVs, cp: number | null) => {
+    const newEntry: HistoryEntry = {
+      id: `${pokemon.id}-${ivs.attack}-${ivs.defense}-${ivs.stamina}-${cp}`,
+      pokemon,
+      ivs: { ...ivs },
+      cp,
+      timestamp: Date.now()
+    }
+    
+    setHistory(prev => [newEntry, ...prev.filter(entry => entry.id !== newEntry.id)])
+  }
+
+  const handleHistoryClick = (entry: HistoryEntry) => {
+    // Check if this is the same as current state
+    const isSamePokemon = selectedPokemon?.id === entry.pokemon.id
+    const isSameIvs = ivs.attack === entry.ivs.attack && 
+                     ivs.defense === entry.ivs.defense && 
+                     ivs.stamina === entry.ivs.stamina
+    const isSameCP = currentCP === entry.cp
+    
+    if (isSamePokemon && isSameIvs && isSameCP) {
+      // Same entry, just recalculate results
+      if (validateIVs(entry.ivs)) {
+        calculateResults(entry.pokemon, entry.ivs, entry.cp)
+      }
+    } else {
+      // Different entry, update state and add to history
+      setSelectedPokemon(entry.pokemon)
+      setIvs(entry.ivs)
+      setCurrentCP(entry.cp)
+      setSearchTerm(entry.pokemon.name)
+      setResults(null)
+      setEvolutionResults([])
+      
+      if (validateIVs(entry.ivs)) {
+        calculateResults(entry.pokemon, entry.ivs, entry.cp)
+      }
+    }
+  }
+
   const handlePokemonSelect = (pokemon: Pokemon) => {
+    // Add current state to history if it exists
+    if (selectedPokemon && validateIVs(ivs)) {
+      addToHistory(selectedPokemon, ivs, currentCP)
+    }
+    
     setSelectedPokemon(pokemon)
     setSearchTerm(pokemon.name)
     setFilteredPokemon([])
@@ -160,6 +206,13 @@ const IVCalculator: React.FC = () => {
     // Recalculate results if we have a Pokemon and valid IVs
     if (selectedPokemon && validateIVs(ivs)) {
       calculateResults(selectedPokemon, ivs, newCP)
+    }
+  }
+
+  const handleInputBlur = () => {
+    // Add to history when user leaves any input field (if we have a Pokemon and valid IVs)
+    if (selectedPokemon && validateIVs(ivs)) {
+      addToHistory(selectedPokemon, ivs, currentCP)
     }
   }
 
@@ -269,6 +322,7 @@ const IVCalculator: React.FC = () => {
                 value={ivs.attack === null ? '' : ivs.attack.toString()}
                 onChange={(e) => handleIVChange('attack', e.target.value)}
                 onKeyDown={(e) => handleIVKeyDown(e, defInputRef, pokemonInputRef)}
+                onBlur={handleInputBlur}
                 className="iv-input"
               />
             </div>
@@ -283,6 +337,7 @@ const IVCalculator: React.FC = () => {
                 value={ivs.defense === null ? '' : ivs.defense.toString()}
                 onChange={(e) => handleIVChange('defense', e.target.value)}
                 onKeyDown={(e) => handleIVKeyDown(e, hpInputRef, atkInputRef)}
+                onBlur={handleInputBlur}
                 className="iv-input"
               />
             </div>
@@ -297,6 +352,7 @@ const IVCalculator: React.FC = () => {
                 value={ivs.stamina === null ? '' : ivs.stamina.toString()}
                 onChange={(e) => handleIVChange('stamina', e.target.value)}
                 onKeyDown={(e) => handleIVKeyDown(e, cpInputRef, defInputRef)}
+                onBlur={handleInputBlur}
                 className="iv-input"
               />
             </div>
@@ -313,8 +369,36 @@ const IVCalculator: React.FC = () => {
                 value={currentCP === null ? '' : currentCP.toString()}
                 onChange={(e) => handleCPChange(e.target.value)}
                 onKeyDown={(e) => handleIVKeyDown(e, undefined, hpInputRef)}
+                onBlur={handleInputBlur}
                 className="iv-input cp-input"
               />
+            </div>
+          </div>
+        )}
+
+        {/* History Section */}
+        {history.length > 0 && (
+          <div className="history-section">
+            <h3>History</h3>
+            <div className="history-list">
+              {history.map((entry) => (
+                <div
+                  key={entry.id}
+                  className="history-entry"
+                  onClick={() => handleHistoryClick(entry)}
+                >
+                  <img src={entry.pokemon.sprites.front_default} alt={entry.pokemon.name} />
+                  <div className="history-details">
+                    <div className="history-name-ivs-cp">
+                      <span className="history-name">{entry.pokemon.name}</span>
+                      <span className="history-ivs">
+                        {entry.ivs.attack ?? '-'}/{entry.ivs.defense ?? '-'}/{entry.ivs.stamina ?? '-'}
+                      </span>
+                      {entry.cp && <span className="history-cp">{entry.cp} CP</span>}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}

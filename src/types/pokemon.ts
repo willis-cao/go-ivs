@@ -23,8 +23,16 @@ export interface IVs {
   stamina: number | null
 }
 
+export interface HistoryEntry {
+  id: string
+  pokemon: Pokemon
+  ivs: IVs
+  cp: number | null
+  timestamp: number
+}
+
 export interface PvPRanking {
-  league: League
+  league: string
   rank: number
   percentage: number
   maxCP: number

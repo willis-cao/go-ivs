@@ -280,47 +280,26 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive layout for wider screens */
-@media (min-width: 768px) {
-  .pokemon-display {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .evolution-label {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .evolution-label .name-sprite-container {
-    margin-bottom: 0;
-  }
-}
-
 /* Rankings Grid */
 .rankings-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
   margin-bottom: 30px;
   width: 100%;
 }
 
 .ranking-card {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  padding: 40px 20px;
+  border-radius: 12px;
+  padding: 20px 15px;
   backdrop-filter: blur(10px);
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  min-height: 120px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 160px;
+  height: 120px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
   overflow: hidden;
@@ -349,145 +328,184 @@
 }
 
 .ranking-card h3 {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  margin: 0 0 4px 0;
+  margin: 0 0 3px 0;
   opacity: 0.9;
 }
 
 .league-limit {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   opacity: 0.8;
   margin-bottom: 2px;
 }
 
 .ranking-number {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 4px;
-  min-height: 2.5rem;
+  margin-bottom: 3px;
+  min-height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .ranking-number.cp-exceeds-limit {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.2;
   text-align: center;
 }
 
 .percent-perfect {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 600;
   opacity: 0.9;
   margin-bottom: 2px;
 }
 
 .actual-cp {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-weight: 600;
   opacity: 0.9;
 }
 
-/* Desktop Layout - Horizontal Extension */
-@media (min-width: 1024px) {
+/* History Section */
+.history-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 20px;
+}
+
+.history-section h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.history-list {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.history-entry {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-height: 40px;
+}
+
+.history-entry:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.history-entry img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.history-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.history-name-ivs-cp {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.history-name {
+  font-weight: 600;
+  color: #2c3e50;
+  flex-shrink: 0;
+}
+
+.history-ivs {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.history-cp {
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* Responsive layout - Desktop (768px+) */
+@media (min-width: 768px) {
   .iv-calculator {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-    padding: 20px 40px;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
   }
   
   .input-section {
+    flex: 1;
+    max-width: 50%;
     margin-bottom: 0;
   }
   
   .results-section {
-    position: sticky;
-    top: 20px;
-    min-height: 500px;
+    flex: 1;
+    max-width: 50%;
   }
   
-  .rankings-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .pokemon-display {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
   }
-}
-
-/* Large Desktop Layout - Even More Horizontal */
-@media (min-width: 1400px) {
-  .iv-calculator {
-    grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
-    padding: 20px 60px;
+  
+  .evolution-label {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .evolution-label .name-sprite-container {
+    margin-bottom: 0;
   }
   
   .rankings-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  
-  .pokemon-info {
-    justify-content: space-around;
-  }
 }
 
-/* Tablet Layout */
-@media (max-width: 1023px) and (min-width: 768px) {
-  .iv-calculator {
-    padding: 20px 30px;
+/* Mobile layout (below 768px) */
+@media (max-width: 767px) {
+  .input-section {
+    margin-bottom: 30px;
+  }
+  
+  .history-section {
+    margin-top: 30px;
   }
   
   .rankings-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile Responsive */
-@media (max-width: 767px) {
-  .iv-calculator {
-    padding: 15px;
-  }
-  
-  .iv-inputs {
-    grid-template-columns: 1fr;
     gap: 15px;
-  }
-  
-  .rankings-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  
-  .pokemon-info {
-    flex-direction: column;
-    gap: 20px;
   }
   
   .pokemon-display img {
     width: 100px;
     height: 100px;
-  }
-  
-  .ranking-number {
-    font-size: 2rem;
-  }
-  
-  .results-section {
-    min-height: 350px;
-  }
-}
-
-@media (max-width: 480px) {
-  .pokemon-input,
-  .iv-input {
-    padding: 14px 0;
-    font-size: 1.1rem;
-  }
-  
-  .results-section {
-    padding: 20px;
-    min-height: 300px;
   }
 } 
