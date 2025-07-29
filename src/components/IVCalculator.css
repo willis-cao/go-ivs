@@ -67,7 +67,7 @@
   border: 2px solid #e9ecef;
   border-top: none;
   border-radius: 0 0 12px 12px;
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: auto;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -103,6 +103,19 @@
 .suggestion span {
   font-size: 1rem;
   color: #2c3e50;
+}
+
+.suggestion-more-results {
+  padding: 8px 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.suggestion-more-results span {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-style: italic;
 }
 
 /* IV Inputs */

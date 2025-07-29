@@ -1,5 +1,5 @@
-// Auto-generated Pokemon data from PokeAPI (including Mega forms) // UPDATED COMMENT
-// Generated on: 2025-07-29T06:45:22.453Z
+// Auto-generated Pokemon data from PokeAPI (including Mega forms and Regional forms) // UPDATED COMMENT
+// Generated on: 2025-07-29T17:42:20.964Z
 // Note: Using correct Pokemon GO stat conversion formula from Pokemon GO Hub
 
 import { Pokemon } from '../types/pokemon'
@@ -2918,7 +2918,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 122,
-    "name": "Mr-mime",
+    "name": "Mr. Mime",
     "types": [
       "Psychic",
       "Fairy"
@@ -10499,7 +10499,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 439,
-    "name": "Mime-jr",
+    "name": "Mime Jr.",
     "types": [
       "Psychic",
       "Fairy"
@@ -11348,7 +11348,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 474,
-    "name": "Porygon-z",
+    "name": "Porygon-Z",
     "types": [
       "Normal"
     ],
@@ -20638,7 +20638,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 866,
-    "name": "Mr-rime",
+    "name": "Mr. Rime",
     "types": [
       "Ice",
       "Psychic"
@@ -25447,6 +25447,1462 @@ export const POKEMON_DATABASE: Pokemon[] = [
     },
     "isMega": true,
     "basePokemonId": 15
+  },
+  {
+    "id": 30091,
+    "name": "Rattata (Alola)",
+    "types": [
+      "Dark",
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 103,
+      "defense": 70,
+      "stamina": 102
+    },
+    "maxCP": 840,
+    "height": 0.3,
+    "weight": 3.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10091.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10091.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 19,
+    "region": "Alola"
+  },
+  {
+    "id": 30092,
+    "name": "Raticate (Alola)",
+    "types": [
+      "Dark",
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 135,
+      "defense": 154,
+      "stamina": 181
+    },
+    "maxCP": 1950,
+    "height": 0.7,
+    "weight": 25.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10092.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10092.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 20,
+    "region": "Alola"
+  },
+  {
+    "id": 30093,
+    "name": "Raticate (Alola)",
+    "types": [
+      "Dark",
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 135,
+      "defense": 154,
+      "stamina": 181
+    },
+    "maxCP": 1950,
+    "height": 1.4,
+    "weight": 105,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10093.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10093.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 20,
+    "region": "Alola"
+  },
+  {
+    "id": 30095,
+    "name": "Pikachu (Hoenn)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10095.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10095.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 25,
+    "region": "Hoenn"
+  },
+  {
+    "id": 30096,
+    "name": "Pikachu (Sinnoh)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10096.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10096.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 25,
+    "region": "Sinnoh"
+  },
+  {
+    "id": 30097,
+    "name": "Pikachu (Unova)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10097.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10097.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 25,
+    "region": "Unova"
+  },
+  {
+    "id": 30098,
+    "name": "Pikachu (Kalos)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10098.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10098.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 25,
+    "region": "Kalos"
+  },
+  {
+    "id": 30099,
+    "name": "Pikachu (Alola)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10099.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10099.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 25,
+    "region": "Alola"
+  },
+  {
+    "id": 30100,
+    "name": "Raichu (Alola)",
+    "types": [
+      "Electric",
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 201,
+      "defense": 154,
+      "stamina": 155
+    },
+    "maxCP": 2616,
+    "height": 0.7,
+    "weight": 21,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10100.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10100.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 26,
+    "region": "Alola"
+  },
+  {
+    "id": 30101,
+    "name": "Sandshrew (Alola)",
+    "types": [
+      "Ice",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 125,
+      "defense": 129,
+      "stamina": 137
+    },
+    "maxCP": 1479,
+    "height": 0.7,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10101.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10101.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 27,
+    "region": "Alola"
+  },
+  {
+    "id": 30102,
+    "name": "Sandslash (Alola)",
+    "types": [
+      "Ice",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 177,
+      "defense": 195,
+      "stamina": 181
+    },
+    "maxCP": 2783,
+    "height": 1.2,
+    "weight": 55,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10102.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10102.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 28,
+    "region": "Alola"
+  },
+  {
+    "id": 30103,
+    "name": "Vulpix (Alola)",
+    "types": [
+      "Ice"
+    ],
+    "baseStats": {
+      "attack": 96,
+      "defense": 109,
+      "stamina": 116
+    },
+    "maxCP": 1010,
+    "height": 0.6,
+    "weight": 9.9,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10103.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10103.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 37,
+    "region": "Alola"
+  },
+  {
+    "id": 30104,
+    "name": "Ninetales (Alola)",
+    "types": [
+      "Ice",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 170,
+      "defense": 193,
+      "stamina": 177
+    },
+    "maxCP": 2641,
+    "height": 1.1,
+    "weight": 19.9,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10104.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10104.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 38,
+    "region": "Alola"
+  },
+  {
+    "id": 30105,
+    "name": "Diglett (Alola)",
+    "types": [
+      "Ground",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 108,
+      "defense": 81,
+      "stamina": 67
+    },
+    "maxCP": 779,
+    "height": 0.2,
+    "weight": 1,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10105.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10105.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 50,
+    "region": "Alola"
+  },
+  {
+    "id": 30106,
+    "name": "Dugtrio (Alola)",
+    "types": [
+      "Ground",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 201,
+      "defense": 142,
+      "stamina": 111
+    },
+    "maxCP": 2170,
+    "height": 0.7,
+    "weight": 66.6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10106.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10106.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 51,
+    "region": "Alola"
+  },
+  {
+    "id": 30107,
+    "name": "Meowth (Alola)",
+    "types": [
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 99,
+      "defense": 78,
+      "stamina": 120
+    },
+    "maxCP": 912,
+    "height": 0.4,
+    "weight": 4.2,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10107.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10107.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 52,
+    "region": "Alola"
+  },
+  {
+    "id": 30108,
+    "name": "Persian (Alola)",
+    "types": [
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 158,
+      "defense": 136,
+      "stamina": 163
+    },
+    "maxCP": 2026,
+    "height": 1.1,
+    "weight": 33,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10108.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10108.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 53,
+    "region": "Alola"
+  },
+  {
+    "id": 30109,
+    "name": "Geodude (Alola)",
+    "types": [
+      "Rock",
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 132,
+      "defense": 132,
+      "stamina": 120
+    },
+    "maxCP": 1479,
+    "height": 0.4,
+    "weight": 20.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10109.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10109.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 74,
+    "region": "Alola"
+  },
+  {
+    "id": 30110,
+    "name": "Graveler (Alola)",
+    "types": [
+      "Rock",
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 164,
+      "defense": 164,
+      "stamina": 146
+    },
+    "maxCP": 2171,
+    "height": 1,
+    "weight": 110,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10110.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10110.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 75,
+    "region": "Alola"
+  },
+  {
+    "id": 30111,
+    "name": "Golem (Alola)",
+    "types": [
+      "Rock",
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 211,
+      "defense": 198,
+      "stamina": 190
+    },
+    "maxCP": 3374,
+    "height": 1.7,
+    "weight": 316,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10111.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10111.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 76,
+    "region": "Alola"
+  },
+  {
+    "id": 30112,
+    "name": "Grimer (Alola)",
+    "types": [
+      "Poison",
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 135,
+      "defense": 90,
+      "stamina": 190
+    },
+    "maxCP": 1572,
+    "height": 0.7,
+    "weight": 42,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10112.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10112.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 88,
+    "region": "Alola"
+  },
+  {
+    "id": 30113,
+    "name": "Muk (Alola)",
+    "types": [
+      "Poison",
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 190,
+      "defense": 172,
+      "stamina": 233
+    },
+    "maxCP": 3154,
+    "height": 1,
+    "weight": 52,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10113.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10113.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 89,
+    "region": "Alola"
+  },
+  {
+    "id": 30114,
+    "name": "Exeggutor (Alola)",
+    "types": [
+      "Grass",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 230,
+      "defense": 153,
+      "stamina": 216
+    },
+    "maxCP": 3448,
+    "height": 10.9,
+    "weight": 415.6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10114.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10114.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 103,
+    "region": "Alola"
+  },
+  {
+    "id": 30115,
+    "name": "Marowak (Alola)",
+    "types": [
+      "Fire",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 144,
+      "defense": 186,
+      "stamina": 155
+    },
+    "maxCP": 2100,
+    "height": 1,
+    "weight": 34,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10115.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10115.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 105,
+    "region": "Alola"
+  },
+  {
+    "id": 30161,
+    "name": "Meowth (Galar)",
+    "types": [
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 115,
+      "defense": 92,
+      "stamina": 137
+    },
+    "maxCP": 1184,
+    "height": 0.4,
+    "weight": 7.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10161.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10161.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 52,
+    "region": "Galar"
+  },
+  {
+    "id": 30162,
+    "name": "Ponyta (Galar)",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 170,
+      "defense": 127,
+      "stamina": 137
+    },
+    "maxCP": 1942,
+    "height": 0.8,
+    "weight": 24,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10162.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10162.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 77,
+    "region": "Galar"
+  },
+  {
+    "id": 30163,
+    "name": "Rapidash (Galar)",
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 207,
+      "defense": 162,
+      "stamina": 163
+    },
+    "maxCP": 2815,
+    "height": 1.7,
+    "weight": 80,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10163.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10163.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 78,
+    "region": "Galar"
+  },
+  {
+    "id": 30164,
+    "name": "Slowpoke (Galar)",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 109,
+      "defense": 98,
+      "stamina": 207
+    },
+    "maxCP": 1403,
+    "height": 1.2,
+    "weight": 36,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10164.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10164.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 79,
+    "region": "Galar"
+  },
+  {
+    "id": 30165,
+    "name": "Slowbro (Galar)",
+    "types": [
+      "Poison",
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 182,
+      "defense": 156,
+      "stamina": 216
+    },
+    "maxCP": 2797,
+    "height": 1.6,
+    "weight": 70.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10165.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10165.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 80,
+    "region": "Galar"
+  },
+  {
+    "id": 30166,
+    "name": "Farfetchd (Galar)",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 174,
+      "defense": 114,
+      "stamina": 141
+    },
+    "maxCP": 1915,
+    "height": 0.8,
+    "weight": 42,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10166.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10166.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 83,
+    "region": "Galar"
+  },
+  {
+    "id": 30167,
+    "name": "Weezing (Galar)",
+    "types": [
+      "Poison",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 174,
+      "defense": 197,
+      "stamina": 163
+    },
+    "maxCP": 2623,
+    "height": 3,
+    "weight": 16,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10167.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10167.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 110,
+    "region": "Galar"
+  },
+  {
+    "id": 30168,
+    "name": "Mr. Mime (Galar)",
+    "types": [
+      "Ice",
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 183,
+      "defense": 169,
+      "stamina": 137
+    },
+    "maxCP": 2366,
+    "height": 1.4,
+    "weight": 56.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10168.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10168.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 122,
+    "region": "Galar"
+  },
+  {
+    "id": 30169,
+    "name": "Articuno (Galar)",
+    "types": [
+      "Psychic",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 250,
+      "defense": 197,
+      "stamina": 207
+    },
+    "maxCP": 4107,
+    "height": 1.7,
+    "weight": 50.9,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10169.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10169.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 144,
+    "region": "Galar"
+  },
+  {
+    "id": 30170,
+    "name": "Zapdos (Galar)",
+    "types": [
+      "Fighting",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 252,
+      "defense": 189,
+      "stamina": 207
+    },
+    "maxCP": 4059,
+    "height": 1.6,
+    "weight": 58.2,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10170.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10170.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 145,
+    "region": "Galar"
+  },
+  {
+    "id": 30171,
+    "name": "Moltres (Galar)",
+    "types": [
+      "Dark",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 202,
+      "defense": 231,
+      "stamina": 207
+    },
+    "maxCP": 3623,
+    "height": 2,
+    "weight": 66,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10171.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10171.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 146,
+    "region": "Galar"
+  },
+  {
+    "id": 30172,
+    "name": "Slowking (Galar)",
+    "types": [
+      "Poison",
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 190,
+      "defense": 180,
+      "stamina": 216
+    },
+    "maxCP": 3108,
+    "height": 1.8,
+    "weight": 79.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10172.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10172.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 199,
+    "region": "Galar"
+  },
+  {
+    "id": 30173,
+    "name": "Corsola (Galar)",
+    "types": [
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 116,
+      "defense": 182,
+      "stamina": 155
+    },
+    "maxCP": 1712,
+    "height": 0.6,
+    "weight": 0.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10173.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10173.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 222,
+    "region": "Galar"
+  },
+  {
+    "id": 30174,
+    "name": "Zigzagoon (Galar)",
+    "types": [
+      "Dark",
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 58,
+      "defense": 80,
+      "stamina": 116
+    },
+    "maxCP": 581,
+    "height": 0.4,
+    "weight": 17.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10174.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10174.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 263,
+    "region": "Galar"
+  },
+  {
+    "id": 30175,
+    "name": "Linoone (Galar)",
+    "types": [
+      "Dark",
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 142,
+      "defense": 128,
+      "stamina": 186
+    },
+    "maxCP": 1901,
+    "height": 0.5,
+    "weight": 32.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10175.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10175.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 264,
+    "region": "Galar"
+  },
+  {
+    "id": 30176,
+    "name": "Darumaka (Galar)",
+    "types": [
+      "Ice"
+    ],
+    "baseStats": {
+      "attack": 153,
+      "defense": 86,
+      "stamina": 172
+    },
+    "maxCP": 1649,
+    "height": 0.7,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10176.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10176.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 554,
+    "region": "Galar"
+  },
+  {
+    "id": 30177,
+    "name": "Darmanitan (Galar)",
+    "types": [
+      "Ice"
+    ],
+    "baseStats": {
+      "attack": 263,
+      "defense": 114,
+      "stamina": 233
+    },
+    "maxCP": 3552,
+    "height": 1.7,
+    "weight": 120,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10177.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10177.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 555,
+    "region": "Galar"
+  },
+  {
+    "id": 30178,
+    "name": "Darmanitan (Galar)",
+    "types": [
+      "Ice",
+      "Fire"
+    ],
+    "baseStats": {
+      "attack": 323,
+      "defense": 123,
+      "stamina": 233
+    },
+    "maxCP": 4467,
+    "height": 1.7,
+    "weight": 120,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10178.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10178.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 555,
+    "region": "Galar"
+  },
+  {
+    "id": 30179,
+    "name": "Yamask (Galar)",
+    "types": [
+      "Ground",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 95,
+      "defense": 141,
+      "stamina": 116
+    },
+    "maxCP": 1123,
+    "height": 0.5,
+    "weight": 1.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10179.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10179.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 562,
+    "region": "Galar"
+  },
+  {
+    "id": 30180,
+    "name": "Stunfisk (Galar)",
+    "types": [
+      "Ground",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 144,
+      "defense": 171,
+      "stamina": 240
+    },
+    "maxCP": 2474,
+    "height": 0.7,
+    "weight": 20.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10180.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10180.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 618,
+    "region": "Galar"
+  },
+  {
+    "id": 30229,
+    "name": "Growlithe (Hisui)",
+    "types": [
+      "Fire",
+      "Rock"
+    ],
+    "baseStats": {
+      "attack": 142,
+      "defense": 92,
+      "stamina": 155
+    },
+    "maxCP": 1512,
+    "height": 0.8,
+    "weight": 22.7,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10229.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10229.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 58,
+    "region": "Hisui"
+  },
+  {
+    "id": 30230,
+    "name": "Arcanine (Hisui)",
+    "types": [
+      "Fire",
+      "Rock"
+    ],
+    "baseStats": {
+      "attack": 232,
+      "defense": 165,
+      "stamina": 216
+    },
+    "maxCP": 3598,
+    "height": 2,
+    "weight": 168,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10230.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10230.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 59,
+    "region": "Hisui"
+  },
+  {
+    "id": 30231,
+    "name": "Voltorb (Hisui)",
+    "types": [
+      "Electric",
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 109,
+      "defense": 111,
+      "stamina": 120
+    },
+    "maxCP": 1155,
+    "height": 0.5,
+    "weight": 13,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10231.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10231.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 100,
+    "region": "Hisui"
+  },
+  {
+    "id": 30232,
+    "name": "Electrode (Hisui)",
+    "types": [
+      "Electric",
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 176,
+      "defense": 176,
+      "stamina": 155
+    },
+    "maxCP": 2459,
+    "height": 1.2,
+    "weight": 71,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10232.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10232.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 101,
+    "region": "Hisui"
+  },
+  {
+    "id": 30233,
+    "name": "Typhlosion (Hisui)",
+    "types": [
+      "Fire",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 238,
+      "defense": 172,
+      "stamina": 177
+    },
+    "maxCP": 3425,
+    "height": 1.6,
+    "weight": 69.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10233.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10233.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 157,
+    "region": "Hisui"
+  },
+  {
+    "id": 30234,
+    "name": "Qwilfish (Hisui)",
+    "types": [
+      "Dark",
+      "Poison"
+    ],
+    "baseStats": {
+      "attack": 184,
+      "defense": 151,
+      "stamina": 163
+    },
+    "maxCP": 2444,
+    "height": 0.5,
+    "weight": 3.9,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10234.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10234.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 211,
+    "region": "Hisui"
+  },
+  {
+    "id": 30235,
+    "name": "Sneasel (Hisui)",
+    "types": [
+      "Fighting",
+      "Poison"
+    ],
+    "baseStats": {
+      "attack": 189,
+      "defense": 146,
+      "stamina": 146
+    },
+    "maxCP": 2346,
+    "height": 0.9,
+    "weight": 27,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10235.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10235.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 215,
+    "region": "Hisui"
+  },
+  {
+    "id": 30236,
+    "name": "Samurott (Hisui)",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 218,
+      "defense": 152,
+      "stamina": 207
+    },
+    "maxCP": 3205,
+    "height": 1.5,
+    "weight": 58.2,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10236.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10236.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 503,
+    "region": "Hisui"
+  },
+  {
+    "id": 30237,
+    "name": "Lilligant (Hisui)",
+    "types": [
+      "Grass",
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 208,
+      "defense": 159,
+      "stamina": 172
+    },
+    "maxCP": 2874,
+    "height": 1.2,
+    "weight": 19.2,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10237.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10237.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 549,
+    "region": "Hisui"
+  },
+  {
+    "id": 30238,
+    "name": "Zorua (Hisui)",
+    "types": [
+      "Normal",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 162,
+      "defense": 79,
+      "stamina": 111
+    },
+    "maxCP": 1376,
+    "height": 0.7,
+    "weight": 12.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10238.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10238.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 570,
+    "region": "Hisui"
+  },
+  {
+    "id": 30239,
+    "name": "Zoroark (Hisui)",
+    "types": [
+      "Normal",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 261,
+      "defense": 128,
+      "stamina": 146
+    },
+    "maxCP": 2992,
+    "height": 1.6,
+    "weight": 73,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10239.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10239.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 571,
+    "region": "Hisui"
+  },
+  {
+    "id": 30240,
+    "name": "Braviary (Hisui)",
+    "types": [
+      "Psychic",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 213,
+      "defense": 137,
+      "stamina": 242
+    },
+    "maxCP": 3219,
+    "height": 1.7,
+    "weight": 43.4,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10240.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10240.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 628,
+    "region": "Hisui"
+  },
+  {
+    "id": 30241,
+    "name": "Sliggoo (Hisui)",
+    "types": [
+      "Steel",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 153,
+      "defense": 190,
+      "stamina": 151
+    },
+    "maxCP": 2214,
+    "height": 0.7,
+    "weight": 68.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10241.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10241.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 705,
+    "region": "Hisui"
+  },
+  {
+    "id": 30242,
+    "name": "Goodra (Hisui)",
+    "types": [
+      "Steel",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 211,
+      "defense": 255,
+      "stamina": 190
+    },
+    "maxCP": 3799,
+    "height": 1.7,
+    "weight": 334.1,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10242.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10242.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 706,
+    "region": "Hisui"
+  },
+  {
+    "id": 30243,
+    "name": "Avalugg (Hisui)",
+    "types": [
+      "Ice",
+      "Rock"
+    ],
+    "baseStats": {
+      "attack": 214,
+      "defense": 238,
+      "stamina": 216
+    },
+    "maxCP": 3955,
+    "height": 1.4,
+    "weight": 262.4,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10243.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10243.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 713,
+    "region": "Hisui"
+  },
+  {
+    "id": 30244,
+    "name": "Decidueye (Hisui)",
+    "types": [
+      "Grass",
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 213,
+      "defense": 174,
+      "stamina": 204
+    },
+    "maxCP": 3314,
+    "height": 1.6,
+    "weight": 37,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10244.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10244.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 724,
+    "region": "Hisui"
+  },
+  {
+    "id": 30250,
+    "name": "Tauros (Paldea)",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 210,
+      "defense": 193,
+      "stamina": 181
+    },
+    "maxCP": 3246,
+    "height": 1.4,
+    "weight": 115,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10250.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10250.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 128,
+    "region": "Paldea"
+  },
+  {
+    "id": 30251,
+    "name": "Tauros (Paldea)",
+    "types": [
+      "Fighting",
+      "Fire"
+    ],
+    "baseStats": {
+      "attack": 210,
+      "defense": 193,
+      "stamina": 181
+    },
+    "maxCP": 3246,
+    "height": 1.4,
+    "weight": 85,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10251.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10251.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 128,
+    "region": "Paldea"
+  },
+  {
+    "id": 30252,
+    "name": "Tauros (Paldea)",
+    "types": [
+      "Fighting",
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 210,
+      "defense": 193,
+      "stamina": 181
+    },
+    "maxCP": 3246,
+    "height": 1.4,
+    "weight": 110,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10252.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10252.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 128,
+    "region": "Paldea"
+  },
+  {
+    "id": 30253,
+    "name": "Wooper (Paldea)",
+    "types": [
+      "Poison",
+      "Ground"
+    ],
+    "baseStats": {
+      "attack": 75,
+      "defense": 66,
+      "stamina": 146
+    },
+    "maxCP": 734,
+    "height": 0.4,
+    "weight": 11,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10253.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10253.png"
+    },
+    "isRegional": true,
+    "basePokemonId": 194,
+    "region": "Paldea"
   }
 ] // Use allPokemon
 
@@ -25455,9 +26911,23 @@ export const findPokemonById = (id: number): Pokemon | undefined => {
 }
 
 export const findPokemonByName = (name: string): Pokemon | undefined => {
-  return POKEMON_DATABASE.find(pokemon => 
-    pokemon.name.toLowerCase().includes(name.toLowerCase())
-  )
+  const lowerName = name.toLowerCase()
+  return POKEMON_DATABASE.find(pokemon => {
+    // Normal name matching
+    if (pokemon.name.toLowerCase().includes(lowerName)) {
+      return true
+    }
+    
+    // Handle hyphenated names - convert hyphens to spaces for search
+    const normalizedName = pokemon.name.toLowerCase().replace(/-/g, ' ')
+    if (normalizedName.includes(lowerName)) {
+      return true
+    }
+    
+    // Handle spaced names - convert spaces to hyphens for search
+    const hyphenatedName = pokemon.name.toLowerCase().replace(/\s+/g, '-')
+    return hyphenatedName.includes(lowerName)
+  })
 }
 
 export const getAllPokemon = (): Pokemon[] => {
@@ -25466,8 +26936,25 @@ export const getAllPokemon = (): Pokemon[] => {
 
 export const searchPokemon = (query: string): Pokemon[] => {
   const lowerQuery = query.toLowerCase()
-  return POKEMON_DATABASE.filter(pokemon => 
-    pokemon.name.toLowerCase().includes(lowerQuery) ||
-    pokemon.types.some(type => type.toLowerCase().includes(lowerQuery))
-  )
+  return POKEMON_DATABASE.filter(pokemon => {
+    // Normal name matching
+    if (pokemon.name.toLowerCase().includes(lowerQuery)) {
+      return true
+    }
+    
+    // Handle hyphenated names - convert hyphens to spaces for search
+    const normalizedName = pokemon.name.toLowerCase().replace(/-/g, ' ')
+    if (normalizedName.includes(lowerQuery)) {
+      return true
+    }
+    
+    // Handle spaced names - convert spaces to hyphens for search
+    const hyphenatedName = pokemon.name.toLowerCase().replace(/\s+/g, '-')
+    if (hyphenatedName.includes(lowerQuery)) {
+      return true
+    }
+    
+    // Type matching
+    return pokemon.types.some(type => type.toLowerCase().includes(lowerQuery))
+  })
 }

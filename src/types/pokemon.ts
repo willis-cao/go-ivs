@@ -17,6 +17,8 @@ export interface Pokemon {
   evolutionChain?: number[]
   isMega?: boolean // Indicates if this is a Mega form
   basePokemonId?: number // ID of the base Pokemon (for Mega forms)
+  isRegional?: boolean // Indicates if this is a regional form
+  region?: string // Region name (Alola, Galar, Hisui, Paldea, etc.)
 }
 
 export interface IVs {

@@ -72,8 +72,9 @@ const IVCalculator: React.FC = () => {
     if (searchTerm.trim() === '') {
       setFilteredPokemon(pokemon.slice(0, 10))
     } else {
-      const filtered = searchPokemon(searchTerm).slice(0, 10)
-      setFilteredPokemon(filtered)
+      const filtered = searchPokemon(searchTerm)
+      // Show up to 100 results to balance usability and performance
+      setFilteredPokemon(filtered.slice(0, 100))
     }
     setSuggestionIndex(0)
   }, [searchTerm])
@@ -450,6 +451,11 @@ const IVCalculator: React.FC = () => {
                     <span>{pokemon.name}</span>
                   </div>
                 ))}
+                {searchPokemon(searchTerm).length > 100 && (
+                  <div className="suggestion-more-results">
+                    <span>Showing 100 of {searchPokemon(searchTerm).length} results. Type more to narrow down.</span>
+                  </div>
+                )}
               </div>
             )}
           </div>

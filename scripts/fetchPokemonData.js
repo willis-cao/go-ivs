@@ -214,26 +214,27 @@ async function fetchEvolutionChain(evolutionChainUrl) {
 async function fetchAllPokemonData() {
   const totalPokemon = 1025 // Fetch ALL Pokemon (up to current generation)
   const pokemonData = []
-  const megaForms = [] // NEW: Array to store Mega forms
-  
+  const megaForms = [] // Array to store Mega forms
+  const regionalForms = [] // NEW: Array to store regional forms
+
   console.log(`Fetching data for ${totalPokemon} Pokemon...`)
-  
+
   // Process in batches of 10 to avoid overwhelming the API
   const batchSize = 10
-  
+
   for (let batchStart = 1; batchStart <= totalPokemon; batchStart += batchSize) {
     const batchEnd = Math.min(batchStart + batchSize - 1, totalPokemon)
     console.log(`Fetching batch ${batchStart}-${batchEnd}/${totalPokemon}...`)
-    
+
     const batchPromises = []
-    
+
     for (let id = batchStart; id <= batchEnd; id++) {
       batchPromises.push(fetchPokemonWithForms(id))
     }
-    
+
     try {
       const batchResults = await Promise.all(batchPromises)
-      
+
       for (const result of batchResults) {
         if (result.pokemon) {
           pokemonData.push(result.pokemon)
@@ -241,24 +242,27 @@ async function fetchAllPokemonData() {
         if (result.megaForms && result.megaForms.length > 0) {
           megaForms.push(...result.megaForms)
         }
+        if (result.regionalForms && result.regionalForms.length > 0) {
+          regionalForms.push(...result.regionalForms)
+        }
       }
     } catch (error) {
       console.error(`Error in batch ${batchStart}-${batchEnd}:`, error)
     }
-    
+
     // Small delay between batches
     await new Promise(resolve => setTimeout(resolve, 50)) // Reduced batch delay for faster fetching
   }
-  
-  // NEW: Combine regular Pokemon and Mega forms
-  const allPokemon = [...pokemonData, ...megaForms]
-  
+
+  // NEW: Combine regular Pokemon, Mega forms, and regional forms
+  const allPokemon = [...pokemonData, ...megaForms, ...regionalForms]
+
   // Sort by ID
   allPokemon.sort((a, b) => a.id - b.id) // Sort the combined array
-  
+
   // Write to file
   const outputPath = path.join(__dirname, '..', 'src', 'data', 'pokemonFromAPI.ts')
-  const fileContent = `// Auto-generated Pokemon data from PokeAPI (including Mega forms) // UPDATED COMMENT
+  const fileContent = `// Auto-generated Pokemon data from PokeAPI (including Mega forms and Regional forms) // UPDATED COMMENT
 // Generated on: ${new Date().toISOString()}
 // Note: Using correct Pokemon GO stat conversion formula from Pokemon GO Hub
 
@@ -271,7 +275,7 @@ export const findPokemonById = (id: number): Pokemon | undefined => {
 }
 
 export const findPokemonByName = (name: string): Pokemon | undefined => {
-  return POKEMON_DATABASE.find(pokemon => 
+  return POKEMON_DATABASE.find(pokemon =>
     pokemon.name.toLowerCase().includes(name.toLowerCase())
   )
 }
@@ -282,15 +286,15 @@ export const getAllPokemon = (): Pokemon[] => {
 
 export const searchPokemon = (query: string): Pokemon[] => {
   const lowerQuery = query.toLowerCase()
-  return POKEMON_DATABASE.filter(pokemon => 
+  return POKEMON_DATABASE.filter(pokemon =>
     pokemon.name.toLowerCase().includes(lowerQuery) ||
     pokemon.types.some(type => type.toLowerCase().includes(lowerQuery))
   )
 }
 `
-  
+
   fs.writeFileSync(outputPath, fileContent)
-  console.log(`✅ Successfully generated Pokemon data for ${pokemonData.length} regular Pokemon and ${megaForms.length} Mega forms`) // UPDATED LOG
+  console.log(`✅ Successfully generated Pokemon data for ${pokemonData.length} regular Pokemon, ${megaForms.length} Mega forms, and ${regionalForms.length} regional forms`) // UPDATED LOG
   console.log(`📁 Data saved to: ${outputPath}`)
 }
 
@@ -321,15 +325,138 @@ async function fetchPokemonWithForms(id) {
     } catch (error) {
       console.warn(`Could not fetch Mega forms for Pokemon ${id}`)
     }
+
+    // NEW: Fetch regional forms if available
+    let regionalForms = []
+    try {
+      const regional = await fetchRegionalForms(id)
+      if (regional.length > 0) {
+        regionalForms = regional
+        console.log(`Found ${regional.length} regional form(s) for ${pokemon.name}`)
+      }
+    } catch (error) {
+      console.warn(`Could not fetch regional forms for Pokemon ${id}`)
+    }
     
     // Small delay between individual Pokemon requests
     await new Promise(resolve => setTimeout(resolve, 10)) // 10ms delay for faster fetching
     
-    return { pokemon, megaForms }
+    return { pokemon, megaForms, regionalForms }
     
   } catch (error) {
     console.error(`Failed to fetch Pokemon ${id}:`, error)
-    return { pokemon: null, megaForms: [] }
+    return { pokemon: null, megaForms: [], regionalForms: [] }
+  }
+}
+
+// Helper function to fetch regional forms for a Pokemon
+async function fetchRegionalForms(id) {
+  try {
+    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+    const species = response.data
+
+    if (!species.varieties || species.varieties.length <= 1) {
+      return [] // No additional forms
+    }
+
+    const forms = []
+
+    for (const variety of species.varieties) {
+      if (variety.is_default) continue // Skip the default form (already fetched)
+
+      try {
+        const formResponse = await axios.get(variety.pokemon.url)
+        const formData = formResponse.data
+
+        // Check if this is a regional form (not Mega)
+        const isRegionalForm = formData.name.includes('-alola') || 
+                              formData.name.includes('-galar') || 
+                              formData.name.includes('-hisui') || 
+                              formData.name.includes('-paldea') ||
+                              formData.name.includes('-kanto') ||
+                              formData.name.includes('-johto') ||
+                              formData.name.includes('-hoenn') ||
+                              formData.name.includes('-sinnoh') ||
+                              formData.name.includes('-unova') ||
+                              formData.name.includes('-kalos')
+
+        if (isRegionalForm && !formData.name.includes('mega')) {
+          const baseStats = convertToPokemonGOStats(formData.stats)
+          const maxCP = calculateMaxCP(baseStats)
+
+          // Create a unique ID for the regional form
+          const regionalId = parseInt(formData.id) + 20000 // Use 20000+ for regional forms
+
+          // Format the name naturally
+          let displayName = formData.name
+          
+          if (formData.name.includes('-alola')) {
+            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
+            displayName = `${baseName} (Alola)`
+          } else if (formData.name.includes('-galar')) {
+            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
+            displayName = `${baseName} (Galar)`
+          } else if (formData.name.includes('-hisui')) {
+            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
+            displayName = `${baseName} (Hisui)`
+          } else if (formData.name.includes('-paldea')) {
+            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
+            displayName = `${baseName} (Paldea)`
+          } else if (formData.name.includes('-kanto')) {
+            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
+            displayName = `${baseName} (Kanto)`
+          } else if (formData.name.includes('-johto')) {
+            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
+            displayName = `${baseName} (Johto)`
+          } else if (formData.name.includes('-hoenn')) {
+            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
+            displayName = `${baseName} (Hoenn)`
+          } else if (formData.name.includes('-sinnoh')) {
+            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
+            displayName = `${baseName} (Sinnoh)`
+          } else if (formData.name.includes('-unova')) {
+            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
+            displayName = `${baseName} (Unova)`
+          } else if (formData.name.includes('-kalos')) {
+            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
+            displayName = `${baseName} (Kalos)`
+          }
+
+          forms.push({
+            id: regionalId,
+            name: displayName,
+            types: formData.types.map(t => t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1)),
+            baseStats,
+            maxCP,
+            height: formData.height / 10,
+            weight: formData.weight / 10,
+            sprites: {
+              front_default: formData.sprites.front_default,
+              official_artwork: formData.sprites.other['official-artwork'].front_default
+            },
+            isRegional: true,
+            basePokemonId: id,
+            region: formData.name.includes('-alola') ? 'Alola' :
+                   formData.name.includes('-galar') ? 'Galar' :
+                   formData.name.includes('-hisui') ? 'Hisui' :
+                   formData.name.includes('-paldea') ? 'Paldea' :
+                   formData.name.includes('-kanto') ? 'Kanto' :
+                   formData.name.includes('-johto') ? 'Johto' :
+                   formData.name.includes('-hoenn') ? 'Hoenn' :
+                   formData.name.includes('-sinnoh') ? 'Sinnoh' :
+                   formData.name.includes('-unova') ? 'Unova' :
+                   formData.name.includes('-kalos') ? 'Kalos' : 'Unknown'
+          })
+        }
+      } catch (error) {
+        console.warn(`Could not fetch regional form ${variety.pokemon.name} for Pokemon ${id}`)
+      }
+    }
+
+    return forms
+  } catch (error) {
+    console.warn(`Could not fetch regional forms for Pokemon ${id}`)
+    return []
   }
 }
 
