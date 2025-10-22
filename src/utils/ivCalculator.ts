@@ -124,6 +124,26 @@ function halfLevelIndexToLevel(halfLevelIndex: number): number {
   return (halfLevelIndex / 2) + 1
 }
 
+// Helper: Calculate stats at a given level
+interface StatsAtLevel {
+  attack: number
+  defense: number
+  stamina: number
+  statProduct: number
+}
+
+function calculateStatsAtLevel(pokemon: Pokemon, ivs: IVs, level: number): StatsAtLevel {
+  const halfLevelIndex = levelToHalfLevelIndex(level)
+  const cpMultiplier = CP_MULTIPLIERS[halfLevelIndex]
+
+  const attack = (pokemon.baseStats.attack + (ivs.attack || 0)) * cpMultiplier
+  const defense = (pokemon.baseStats.defense + (ivs.defense || 0)) * cpMultiplier
+  const stamina = Math.floor((pokemon.baseStats.stamina + (ivs.stamina || 0)) * cpMultiplier)
+  const statProduct = attack * defense * stamina
+
+  return { attack, defense, stamina, statProduct }
+}
+
 // Correct Pokemon GO CP calculation formula
 export const calculateCP = (pokemon: Pokemon, ivs: IVs, level: number): number => {
   const attack = (pokemon.baseStats.attack + (ivs.attack || 0))
@@ -141,7 +161,7 @@ export const calculateTotalIV = (ivs: IVs): number => {
 }
 
 export const calculateIVPercentage = (ivs: IVs): number => {
-  return Math.round(((ivs.attack || 0) + (ivs.defense || 0) + (ivs.stamina || 0)) / 45 * 100)
+  return Math.round(calculateTotalIV(ivs) / 45 * 100)
 }
 
 export const findOptimalLevel = (pokemon: Pokemon, ivs: IVs, league: League, maxLevel: number): { level: number; cp: number } => {
@@ -149,14 +169,14 @@ export const findOptimalLevel = (pokemon: Pokemon, ivs: IVs, league: League, max
   let optimalLevel = 1
   let optimalCP = 0
 
-  // Check levels from 1 to maxLevel (max level in Pokemon GO)
-  // We need to check every 0.5 level (half-levels) for true optimality
   for (let level = 1; level <= maxLevel; level += 0.5) {
     const cp = calculateCP(pokemon, ivs, level)
     if (cp <= cpLimit && cp > optimalCP) {
       optimalCP = cp
       optimalLevel = level
     }
+
+    if (cp >= cpLimit) break
   }
 
   return { level: optimalLevel, cp: optimalCP }
@@ -167,16 +187,14 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
   const totalIV = calculateTotalIV(ivs)
   const ivPercentage = calculateIVPercentage(ivs)
 
-  // Determine max level based on advanced options
-  let maxLevel = 40 // Default max level
+  let maxLevel = 40
   if (useXLCandy) {
     maxLevel = 50
   }
   if (bestBuddyBoost) {
-    maxLevel += 1 // 41 if XL Candy is off, 51 if XL Candy is on
+    maxLevel += 1
   }
 
-  // If currentCP is provided, we need to reverse-calculate the level
   let currentLevel: number | null = null
   if (currentCP !== null && currentCP !== undefined) {
     currentLevel = reverseCalculateLevel(pokemon, ivs, currentCP)
@@ -188,17 +206,16 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
 
   leagues.forEach(league => {
     let rank = 0
-    let percentage = 0
     let cp = 0
     let level = 0
     let percentPerfect = 0
 
     if (league === 'Master League') {
-      // For Master League, rank based on total IVs (15/15/15 is #1)
-      // Always calculate at max level for ranking display (Master League shows max CP)
+      // For Master League, rank based on stat product at max level
+      // Always calculate at max level (no CP limit in Master League)
       level = maxLevel
       cp = calculateCP(pokemon, ivs, level)
-      
+
       // If current CP is provided, check if it exceeds any reasonable limit
       if (currentCP !== null && currentCP !== undefined) {
         const maxReasonableCP = 5000 // Arbitrary high limit for Master League
@@ -214,22 +231,30 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
           return
         }
       }
-      
-      // Normal Master League ranking logic
+
+      // Calculate stat product at max level for the current IVs
+      const currentStats = calculateStatsAtLevel(pokemon, ivs, level)
       let betterCombinations = 0
+      let rank1StatProduct = 0
+
+      // Calculate stat product for all IV combinations at max level
       for (let a = 0; a <= 15; a++) {
         for (let d = 0; d <= 15; d++) {
           for (let s = 0; s <= 15; s++) {
-            const otherTotal = a + d + s
-            if (otherTotal > totalIV) {
+            const otherStats = calculateStatsAtLevel(pokemon, { attack: a, defense: d, stamina: s }, level)
+
+            // Track the best stat product for percent perfect calculation
+            if (otherStats.statProduct > rank1StatProduct) {
+              rank1StatProduct = otherStats.statProduct
+            }
+
+            // Higher stat product = better performance
+            if (otherStats.statProduct > currentStats.statProduct) {
               betterCombinations++
-            } else if (otherTotal === totalIV) {
-              // If same total, compare individual stats (attack first, then defense, then stamina)
-              if (a > (ivs.attack || 0)) {
-                betterCombinations++
-              } else if (a === (ivs.attack || 0) && d > (ivs.defense || 0)) {
-                betterCombinations++
-              } else if (a === (ivs.attack || 0) && d === (ivs.defense || 0) && s > (ivs.stamina || 0)) {
+            } else if (otherStats.statProduct === currentStats.statProduct) {
+              // If same stat product, prefer higher total IVs
+              const otherTotal = a + d + s
+              if (otherTotal > totalIV) {
                 betterCombinations++
               }
             }
@@ -237,8 +262,11 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
         }
       }
       rank = betterCombinations + 1
-      // For Master League, percent perfect is based on total IVs
-      percentPerfect = (totalIV / 45) * 100
+
+      // Calculate percent perfect based on stat product
+      if (rank1StatProduct > 0) {
+        percentPerfect = (currentStats.statProduct / rank1StatProduct) * 100
+      }
     } else {
       // For Great and Ultra League, rank based on stat product at optimal level
       const optimal = findOptimalLevel(pokemon, ivs, league, maxLevel)
@@ -260,71 +288,34 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
         }
       }
 
-      const currentHalfLevelIndex = levelToHalfLevelIndex(level)
-      const currentCpMultiplier = CP_MULTIPLIERS[currentHalfLevelIndex]
-      
-      // Calculate current stat product using correct formula
-      const currentAttack = (pokemon.baseStats.attack + (ivs.attack || 0)) * currentCpMultiplier
-      const currentDefense = (pokemon.baseStats.defense + (ivs.defense || 0)) * currentCpMultiplier
-      const currentStamina = Math.floor((pokemon.baseStats.stamina + (ivs.stamina || 0)) * currentCpMultiplier)
-      const currentStatProduct = currentStamina * currentAttack * currentDefense
-      
+      // Calculate current stat product
+      const currentStats = calculateStatsAtLevel(pokemon, ivs, level)
       let betterCombinations = 0
-      let totalValidCombinations = 0
       let rank1StatProduct = 0
-      
-      // First pass: find rank 1 stat product
+
+      // Single pass: find rank 1 stat product AND calculate ranking
       for (let a = 0; a <= 15; a++) {
         for (let d = 0; d <= 15; d++) {
           for (let s = 0; s <= 15; s++) {
             const otherIvs = { attack: a, defense: d, stamina: s }
             const otherOptimal = findOptimalLevel(pokemon, otherIvs, league, maxLevel)
-            
-            if (otherOptimal.cp > 0 && otherOptimal.cp <= LEAGUE_LIMITS[league]) {
-              const otherHalfLevelIndex = levelToHalfLevelIndex(otherOptimal.level)
-              const otherCpMultiplier = CP_MULTIPLIERS[otherHalfLevelIndex]
-              
-              const otherAttack = (pokemon.baseStats.attack + a) * otherCpMultiplier
-              const otherDefense = (pokemon.baseStats.defense + d) * otherCpMultiplier
-              const otherStamina = Math.floor((pokemon.baseStats.stamina + s) * otherCpMultiplier)
-              const otherStatProduct = otherStamina * otherAttack * otherDefense
-              
-              if (rank1StatProduct === 0 || otherStatProduct > rank1StatProduct) {
-                rank1StatProduct = otherStatProduct
-              }
-            }
-          }
-        }
-      }
-      
-      // Second pass: calculate ranking and percent perfect
-      for (let a = 0; a <= 15; a++) {
-        for (let d = 0; d <= 15; d++) {
-          for (let s = 0; s <= 15; s++) {
-            const otherIvs = { attack: a, defense: d, stamina: s }
-            const otherOptimal = findOptimalLevel(pokemon, otherIvs, league, maxLevel)
-            
+
             // Only compare if the other combination can fit within the league CP limit
-            // and has a valid CP (greater than 0)
             if (otherOptimal.cp > 0 && otherOptimal.cp <= LEAGUE_LIMITS[league]) {
-              totalValidCombinations++
-              const otherHalfLevelIndex = levelToHalfLevelIndex(otherOptimal.level)
-              const otherCpMultiplier = CP_MULTIPLIERS[otherHalfLevelIndex]
-              
-              // Calculate other stat product using correct formula
-              const otherAttack = (pokemon.baseStats.attack + a) * otherCpMultiplier
-              const otherDefense = (pokemon.baseStats.defense + d) * otherCpMultiplier
-              const otherStamina = Math.floor((pokemon.baseStats.stamina + s) * otherCpMultiplier)
-              const otherStatProduct = otherStamina * otherAttack * otherDefense
-              
+              const otherStats = calculateStatsAtLevel(pokemon, otherIvs, otherOptimal.level)
+
+              // Track the best stat product for percent perfect calculation
+              if (otherStats.statProduct > rank1StatProduct) {
+                rank1StatProduct = otherStats.statProduct
+              }
+
               // Higher stat product = better performance
-              if (otherStatProduct > currentStatProduct) {
+              if (otherStats.statProduct > currentStats.statProduct) {
                 betterCombinations++
-              } else if (otherStatProduct === currentStatProduct) {
+              } else if (otherStats.statProduct === currentStats.statProduct) {
                 // If same stat product, prefer higher total IVs
                 const otherTotal = a + d + s
-                const currentTotal = (ivs.attack || 0) + (ivs.defense || 0) + (ivs.stamina || 0)
-                if (otherTotal > currentTotal) {
+                if (otherTotal > totalIV) {
                   betterCombinations++
                 }
               }
@@ -332,14 +323,12 @@ export const calculatePvPRanking = (pokemon: Pokemon, ivs: IVs, currentCP?: numb
           }
         }
       }
-      
-      // Rank is how many combinations are better + 1
-      // But we need to ensure we're ranking within the valid combinations only
+
       rank = betterCombinations + 1
-      
+
       // Calculate percent perfect
       if (rank1StatProduct > 0) {
-        percentPerfect = (currentStatProduct / rank1StatProduct) * 100
+        percentPerfect = (currentStats.statProduct / rank1StatProduct) * 100
       }
     }
     
