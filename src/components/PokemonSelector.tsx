@@ -43,12 +43,12 @@ const PokemonSelector: React.FC<PokemonSelectorProps> = ({
 
   return (
     <div className="pokemon-selector">
-      <h3>Select Pokemon</h3>
-      
+      <h3>Select Pokémon</h3>
+
       <div className="search-container">
         <input
           type="text"
-          placeholder="Search Pokemon by name or type..."
+          placeholder="Search Pokémon by name or type..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
           className="search-input"

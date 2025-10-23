@@ -136,14 +136,14 @@ async function fetchEvolutionChain(evolutionChainUrl: string): Promise<number[]>
 async function fetchAllPokemonData(): Promise<void> {
   const totalPokemon = 151 // Start with original 151 Pokemon
   const pokemonData: PokemonData[] = []
-  
+
   console.log(`Fetching data for ${totalPokemon} Pokemon...`)
-  
+
   for (let id = 1; id <= totalPokemon; id++) {
     try {
       console.log(`Fetching Pokemon ${id}/${totalPokemon}...`)
       const pokemon = await fetchPokemonData(id)
-      
+
       // Fetch evolution chain if available
       try {
         const speciesResponse = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
@@ -153,12 +153,12 @@ async function fetchAllPokemonData(): Promise<void> {
       } catch (error) {
         console.warn(`Could not fetch evolution chain for Pokemon ${id}`)
       }
-      
+
       pokemonData.push(pokemon)
-      
+
       // Add a small delay to be respectful to the API
       await new Promise(resolve => setTimeout(resolve, 100))
-      
+
     } catch (error) {
       console.error(`Failed to fetch Pokemon ${id}:`, error)
     }
@@ -181,7 +181,7 @@ export const findPokemonById = (id: number): Pokemon | undefined => {
 }
 
 export const findPokemonByName = (name: string): Pokemon | undefined => {
-  return POKEMON_DATABASE.find(pokemon => 
+  return POKEMON_DATABASE.find(pokemon =>
     pokemon.name.toLowerCase().includes(name.toLowerCase())
   )
 }
@@ -192,13 +192,13 @@ export const getAllPokemon = (): Pokemon[] => {
 
 export const searchPokemon = (query: string): Pokemon[] => {
   const lowerQuery = query.toLowerCase()
-  return POKEMON_DATABASE.filter(pokemon => 
+  return POKEMON_DATABASE.filter(pokemon =>
     pokemon.name.toLowerCase().includes(lowerQuery) ||
     pokemon.types.some(type => type.toLowerCase().includes(lowerQuery))
   )
 }
 `
-  
+
   fs.writeFileSync(outputPath, fileContent)
   console.log(`✅ Successfully generated Pokemon data for ${pokemonData.length} Pokemon`)
   console.log(`📁 Data saved to: ${outputPath}`)

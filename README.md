@@ -1,44 +1,33 @@
-# Pokemon GO IV Calculator
+# GO IVs - Pokémon GO Competitive Assistant
 
-A React + TypeScript web application for calculating Pokemon GO IVs and PvP rankings across all leagues.
+A React + TypeScript web application for calculating Pokémon GO IVs and PvP rankings.
 
-**🌐 Live Demo: [https://go-ivs.vercel.app/](https://go-ivs.vercel.app/)**
+Live Demo: [https://go-ivs.vercel.app/](https://go-ivs.vercel.app/)
 
-## Key Features
+## Features
 
-- **Instant PvP Rankings**: Get rankings for Great League (≤1500 CP), Ultra League (≤2500 CP), Master League (no limit), and Little Cup (≤500 CP)
-- **Evolution Support**: See rankings for evolved forms when searching unevolved Pokemon
-- **CP Integration**: Optional CP field to check if your Pokemon exceeds league limits
-- **Accurate Calculations**: Uses precise Pokemon GO formulas for CP and stat product calculations
-- **Responsive Design**: Works on desktop and mobile devices
+**GBL PvP IV Rankings:** Calculate stat product rankings across Great League (1500 CP), Ultra League (2500 CP), Master League (unlimited), and Little Cup (500 CP).
 
-## Quick Start
+**Evolutions:** Automatically see the rankings for all possible evolutions of your Pokémon, allowing you to easily determine which evolution you should choose (e.g., Primeape or Annihilape).
 
-1. **Search Pokemon**: Type a Pokemon name and press Enter to select
-2. **Enter IVs**: Input Attack, Defense, and HP IVs (0-15)
-3. **Optional CP**: Add current CP to check league eligibility
-4. **View Results**: See rankings, percentages, and optimal CPs for each league
+**Current CP Entry:** Optionally enter your Pokémon's current CP to calculate your Pokémon's level, allowing you to quickly evaluate if your Pokémon will exceed CP limits once evolved.
 
-## Development
+**Advanced Options:** Factor in Best Buddy boost, XL Candy usage, and customize your view with toggleable league displays.
+
+**Search History:** Keep track of previously analyzed Pokémon for quick reference and comparison.
+
+## Installation
 
 ```bash
 npm install
+```
+
+## Usage
+
+```bash
 npm run dev
 ```
 
-## Data Source
-
-This application uses [PokeAPI](https://pokeapi.co/) to fetch Pokemon data including base stats, sprites, and evolution chains.
-
-## Disclaimer
-
-This is an unofficial Pokemon GO tool created for educational and entertainment purposes. 
-
-- **Not affiliated with**: Pokemon Company, Niantic, Nintendo, or any official Pokemon GO entities
-- **Data accuracy**: While we strive for accuracy, rankings may vary from other sources
-- **Game updates**: Pokemon GO mechanics and formulas may change, affecting calculation accuracy
-- **Use at your own risk**: This tool is provided "as is" without warranties
-
 ## License
 
-MIT License - feel free to use, modify, and distribute.
+MIT License

@@ -442,7 +442,7 @@ const IVCalculator: React.FC = () => {
               }}
               onKeyDown={handlePokemonKeyDown}
               onFocus={handlePokemonInputFocus}
-              placeholder="Search Pokemon..."
+              placeholder="Search Pokémon..."
               className="pokemon-input"
             />
               {showSuggestions && filteredPokemon.length > 0 && (
@@ -570,16 +570,16 @@ const IVCalculator: React.FC = () => {
               <strong>GBL PvP IV Rankings:</strong> Calculate stat product rankings across Great League (1500 CP), Ultra League (2500 CP), Master League (unlimited), and Little Cup (500 CP).
             </p>
             <p>
-              <strong>Evolutions:</strong> Automatically see the rankings for all possible evolutions of your Pokemon, allowing you to easily determine which evolution you should choose (e.g., Primeape or Annihilape).
+              <strong>Evolutions:</strong> Automatically see the rankings for all possible evolutions of your Pokémon, allowing you to easily determine which evolution you should choose (e.g., Primeape or Annihilape).
             </p>
             <p>
-              <strong>Current CP Entry:</strong> Optionally enter your Pokemon's current CP to calculate your Pokemon's level, allowing you to quickly evaluate if your Pokemon will exceed CP limits once evolved.
+              <strong>Current CP Entry:</strong> Optionally enter your Pokémon's current CP to calculate your Pokémon's level, allowing you to quickly evaluate if your Pokémon will exceed CP limits once evolved.
             </p>
             <p>
               <strong>Advanced Options:</strong> Factor in Best Buddy boost, XL Candy usage, and customize your view with toggleable league displays.
             </p>
             <p>
-              <strong>Search History:</strong> Keep track of previously analyzed Pokemon for quick reference and comparison.
+              <strong>Search History:</strong> Keep track of previously analyzed Pokémon for quick reference and comparison.
             </p>
           </div>
         </div>
