@@ -67,9 +67,6 @@ const PokemonRankingModule: React.FC<PokemonRankingModuleProps> = ({
             <img src={pokemon.sprites.front_default} alt={pokemon.name} />
             <h3>{pokemon.name}</h3>
           </div>
-          <div className="iv-display">
-            {(ivs.attack ?? '-')}/{(ivs.defense ?? '-')}/{(ivs.stamina ?? '-')}
-          </div>
         </div>
         {renderRankingCards()}
       </div>
@@ -82,9 +79,6 @@ const PokemonRankingModule: React.FC<PokemonRankingModuleProps> = ({
         <div className="name-sprite-container">
           <img src={pokemon.sprites.front_default} alt={pokemon.name} />
           <h2>{pokemon.name}</h2>
-        </div>
-        <div className="iv-display">
-          {(ivs.attack ?? '-')}/{(ivs.defense ?? '-')}/{(ivs.stamina ?? '-')}
         </div>
       </div>
       {renderRankingCards()}

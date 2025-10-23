@@ -1,5 +1,6 @@
-// Auto-generated Pokemon data from PokeAPI (including Mega forms and Regional forms) // UPDATED COMMENT
-// Generated on: 2025-07-29T17:42:20.964Z
+// Auto-generated Pokemon data from PokeAPI
+// Generated on: 2025-10-23T16:52:29.505Z
+// Includes: Base Pokemon, Mega forms, Regional forms, and Special forms
 // Note: Using correct Pokemon GO stat conversion formula from Pokemon GO Hub
 
 import { Pokemon } from '../types/pokemon'
@@ -684,7 +685,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 29,
-    "name": "Nidoran-f",
+    "name": "Nidoran-F",
     "types": [
       "Poison"
     ],
@@ -757,7 +758,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 32,
-    "name": "Nidoran-m",
+    "name": "Nidoran-M",
     "types": [
       "Poison"
     ],
@@ -6000,7 +6001,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 250,
-    "name": "Ho-oh",
+    "name": "Ho-Oh",
     "types": [
       "Fire",
       "Flying"
@@ -9238,7 +9239,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 386,
-    "name": "Deoxys-normal",
+    "name": "Deoxys (Normal)",
     "types": [
       "Psychic"
     ],
@@ -9888,7 +9889,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 413,
-    "name": "Wormadam-plant",
+    "name": "Wormadam (Plant)",
     "types": [
       "Bug",
       "Grass"
@@ -10499,7 +10500,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 439,
-    "name": "Mime Jr.",
+    "name": "Mime-Jr",
     "types": [
       "Psychic",
       "Fairy"
@@ -11651,7 +11652,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 487,
-    "name": "Giratina-altered",
+    "name": "Giratina (Altered)",
     "types": [
       "Ghost",
       "Dragon"
@@ -11764,7 +11765,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 492,
-    "name": "Shaymin-land",
+    "name": "Shaymin (Land)",
     "types": [
       "Grass"
     ],
@@ -13141,7 +13142,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 550,
-    "name": "Basculin-red-striped",
+    "name": "Basculin (Red Striped)",
     "types": [
       "Water"
     ],
@@ -13262,7 +13263,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 555,
-    "name": "Darmanitan-standard",
+    "name": "Darmanitan (Standard)",
     "types": [
       "Fire"
     ],
@@ -15299,7 +15300,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 641,
-    "name": "Tornadus-incarnate",
+    "name": "Tornadus (Incarnate)",
     "types": [
       "Flying"
     ],
@@ -15321,7 +15322,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 642,
-    "name": "Thundurus-incarnate",
+    "name": "Thundurus (Incarnate)",
     "types": [
       "Electric",
       "Flying"
@@ -15390,7 +15391,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 645,
-    "name": "Landorus-incarnate",
+    "name": "Landorus (Incarnate)",
     "types": [
       "Ground",
       "Flying"
@@ -15436,7 +15437,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 647,
-    "name": "Keldeo-ordinary",
+    "name": "Keldeo (Ordinary)",
     "types": [
       "Water",
       "Fighting"
@@ -15459,7 +15460,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 648,
-    "name": "Meloetta-aria",
+    "name": "Meloetta (Aria)",
     "types": [
       "Normal",
       "Psychic"
@@ -16177,7 +16178,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 678,
-    "name": "Meowstic-male",
+    "name": "Meowstic (Male)",
     "types": [
       "Psychic"
     ],
@@ -16250,7 +16251,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 681,
-    "name": "Aegislash-shield",
+    "name": "Aegislash (Shield)",
     "types": [
       "Steel",
       "Ghost"
@@ -16943,7 +16944,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 710,
-    "name": "Pumpkaboo-average",
+    "name": "Pumpkaboo (Average)",
     "types": [
       "Ghost",
       "Grass"
@@ -16967,7 +16968,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 711,
-    "name": "Gourgeist-average",
+    "name": "Gourgeist (Average)",
     "types": [
       "Ghost",
       "Grass"
@@ -17130,7 +17131,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 718,
-    "name": "Zygarde-50",
+    "name": "Zygarde (50)",
     "types": [
       "Dragon",
       "Ground"
@@ -17685,7 +17686,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 741,
-    "name": "Oricorio-baile",
+    "name": "Oricorio (Baile)",
     "types": [
       "Fire",
       "Flying"
@@ -17779,7 +17780,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 745,
-    "name": "Lycanroc-midday",
+    "name": "Lycanroc (Midday)",
     "types": [
       "Rock"
     ],
@@ -17802,7 +17803,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 746,
-    "name": "Wishiwashi-solo",
+    "name": "Wishiwashi (Solo)",
     "types": [
       "Water"
     ],
@@ -18413,7 +18414,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 772,
-    "name": "Type-null",
+    "name": "Type-Null",
     "types": [
       "Normal"
     ],
@@ -18459,7 +18460,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 774,
-    "name": "Minior-red-meteor",
+    "name": "Minior (Red Meteor)",
     "types": [
       "Rock",
       "Flying"
@@ -18550,7 +18551,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 778,
-    "name": "Mimikyu-disguised",
+    "name": "Mimikyu (Disguised)",
     "types": [
       "Ghost",
       "Fairy"
@@ -18642,7 +18643,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 782,
-    "name": "Jangmo-o",
+    "name": "Jangmo-O",
     "types": [
       "Dragon"
     ],
@@ -18666,7 +18667,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 783,
-    "name": "Hakamo-o",
+    "name": "Hakamo-O",
     "types": [
       "Dragon",
       "Fighting"
@@ -18691,7 +18692,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 784,
-    "name": "Kommo-o",
+    "name": "Kommo-O",
     "types": [
       "Dragon",
       "Fighting"
@@ -18716,7 +18717,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 785,
-    "name": "Tapu-koko",
+    "name": "Tapu-Koko",
     "types": [
       "Electric",
       "Fairy"
@@ -18739,7 +18740,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 786,
-    "name": "Tapu-lele",
+    "name": "Tapu-Lele",
     "types": [
       "Psychic",
       "Fairy"
@@ -18762,7 +18763,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 787,
-    "name": "Tapu-bulu",
+    "name": "Tapu-Bulu",
     "types": [
       "Grass",
       "Fairy"
@@ -18785,7 +18786,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 788,
-    "name": "Tapu-fini",
+    "name": "Tapu-Fini",
     "types": [
       "Water",
       "Fairy"
@@ -20231,7 +20232,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 849,
-    "name": "Toxtricity-amped",
+    "name": "Toxtricity (Amped)",
     "types": [
       "Electric",
       "Poison"
@@ -20848,7 +20849,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 875,
-    "name": "Eiscue-ice",
+    "name": "Eiscue (Ice)",
     "types": [
       "Ice"
     ],
@@ -20870,7 +20871,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 876,
-    "name": "Indeedee-male",
+    "name": "Indeedee (Male)",
     "types": [
       "Psychic",
       "Normal"
@@ -20893,7 +20894,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 877,
-    "name": "Morpeko-full-belly",
+    "name": "Morpeko (Full Belly)",
     "types": [
       "Electric",
       "Dark"
@@ -21243,7 +21244,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 892,
-    "name": "Urshifu-single-strike",
+    "name": "Urshifu (Single Strike)",
     "types": [
       "Fighting",
       "Dark"
@@ -21475,7 +21476,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 902,
-    "name": "Basculegion-male",
+    "name": "Basculegion (Male)",
     "types": [
       "Water",
       "Ghost"
@@ -21548,7 +21549,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 905,
-    "name": "Enamorus-incarnate",
+    "name": "Enamorus (Incarnate)",
     "types": [
       "Fairy",
       "Flying"
@@ -21813,7 +21814,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 916,
-    "name": "Oinkologne-male",
+    "name": "Oinkologne (Male)",
     "types": [
       "Normal"
     ],
@@ -22026,7 +22027,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 925,
-    "name": "Maushold-family-of-four",
+    "name": "Maushold (Family Of Four)",
     "types": [
       "Normal"
     ],
@@ -22170,7 +22171,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 931,
-    "name": "Squawkabilly-green-plumage",
+    "name": "Squawkabilly (Green Plumage)",
     "types": [
       "Normal",
       "Flying"
@@ -22952,7 +22953,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 964,
-    "name": "Palafin-zero",
+    "name": "Palafin (Zero)",
     "types": [
       "Water"
     ],
@@ -23276,7 +23277,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 978,
-    "name": "Tatsugiri-curly",
+    "name": "Tatsugiri (Curly)",
     "types": [
       "Dragon",
       "Water"
@@ -23373,7 +23374,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 982,
-    "name": "Dudunsparce-two-segment",
+    "name": "Dudunsparce (Two Segment)",
     "types": [
       "Normal"
     ],
@@ -23421,7 +23422,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 984,
-    "name": "Great-tusk",
+    "name": "Great-Tusk",
     "types": [
       "Ground",
       "Fighting"
@@ -23444,7 +23445,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 985,
-    "name": "Scream-tail",
+    "name": "Scream-Tail",
     "types": [
       "Fairy",
       "Psychic"
@@ -23467,7 +23468,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 986,
-    "name": "Brute-bonnet",
+    "name": "Brute-Bonnet",
     "types": [
       "Grass",
       "Dark"
@@ -23490,7 +23491,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 987,
-    "name": "Flutter-mane",
+    "name": "Flutter-Mane",
     "types": [
       "Ghost",
       "Fairy"
@@ -23513,7 +23514,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 988,
-    "name": "Slither-wing",
+    "name": "Slither-Wing",
     "types": [
       "Bug",
       "Fighting"
@@ -23536,7 +23537,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 989,
-    "name": "Sandy-shocks",
+    "name": "Sandy-Shocks",
     "types": [
       "Electric",
       "Ground"
@@ -23559,7 +23560,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 990,
-    "name": "Iron-treads",
+    "name": "Iron-Treads",
     "types": [
       "Ground",
       "Steel"
@@ -23582,7 +23583,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 991,
-    "name": "Iron-bundle",
+    "name": "Iron-Bundle",
     "types": [
       "Ice",
       "Water"
@@ -23605,7 +23606,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 992,
-    "name": "Iron-hands",
+    "name": "Iron-Hands",
     "types": [
       "Fighting",
       "Electric"
@@ -23628,7 +23629,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 993,
-    "name": "Iron-jugulis",
+    "name": "Iron-Jugulis",
     "types": [
       "Dark",
       "Flying"
@@ -23651,7 +23652,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 994,
-    "name": "Iron-moth",
+    "name": "Iron-Moth",
     "types": [
       "Fire",
       "Poison"
@@ -23674,7 +23675,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 995,
-    "name": "Iron-thorns",
+    "name": "Iron-Thorns",
     "types": [
       "Rock",
       "Electric"
@@ -23819,7 +23820,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1001,
-    "name": "Wo-chien",
+    "name": "Wo-Chien",
     "types": [
       "Dark",
       "Grass"
@@ -23842,7 +23843,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1002,
-    "name": "Chien-pao",
+    "name": "Chien-Pao",
     "types": [
       "Dark",
       "Ice"
@@ -23865,7 +23866,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1003,
-    "name": "Ting-lu",
+    "name": "Ting-Lu",
     "types": [
       "Dark",
       "Ground"
@@ -23888,7 +23889,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1004,
-    "name": "Chi-yu",
+    "name": "Chi-Yu",
     "types": [
       "Dark",
       "Fire"
@@ -23911,7 +23912,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1005,
-    "name": "Roaring-moon",
+    "name": "Roaring-Moon",
     "types": [
       "Dragon",
       "Dark"
@@ -23934,7 +23935,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1006,
-    "name": "Iron-valiant",
+    "name": "Iron-Valiant",
     "types": [
       "Fairy",
       "Fighting"
@@ -24003,7 +24004,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1009,
-    "name": "Walking-wake",
+    "name": "Walking-Wake",
     "types": [
       "Water",
       "Dragon"
@@ -24026,7 +24027,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1010,
-    "name": "Iron-leaves",
+    "name": "Iron-Leaves",
     "types": [
       "Grass",
       "Psychic"
@@ -24266,7 +24267,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1020,
-    "name": "Gouging-fire",
+    "name": "Gouging-Fire",
     "types": [
       "Fire",
       "Dragon"
@@ -24289,7 +24290,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1021,
-    "name": "Raging-bolt",
+    "name": "Raging-Bolt",
     "types": [
       "Electric",
       "Dragon"
@@ -24312,7 +24313,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1022,
-    "name": "Iron-boulder",
+    "name": "Iron-Boulder",
     "types": [
       "Rock",
       "Psychic"
@@ -24335,7 +24336,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
   },
   {
     "id": 1023,
-    "name": "Iron-crown",
+    "name": "Iron-Crown",
     "types": [
       "Steel",
       "Psychic"
@@ -24420,7 +24421,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10033.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10033.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 3
   },
   {
@@ -24442,7 +24443,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10034.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10034.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 6
   },
   {
@@ -24464,7 +24465,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10035.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10035.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 6
   },
   {
@@ -24485,7 +24486,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10036.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10036.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 9
   },
   {
@@ -24506,7 +24507,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10037.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10037.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 65
   },
   {
@@ -24528,7 +24529,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10038.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10038.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 94
   },
   {
@@ -24549,7 +24550,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10039.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10039.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 115
   },
   {
@@ -24571,7 +24572,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10040.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10040.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 127
   },
   {
@@ -24593,7 +24594,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10041.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10041.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 130
   },
   {
@@ -24615,7 +24616,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10042.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10042.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 142
   },
   {
@@ -24637,7 +24638,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10043.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10043.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 150
   },
   {
@@ -24658,7 +24659,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10044.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10044.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 150
   },
   {
@@ -24680,7 +24681,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10045.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10045.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 181
   },
   {
@@ -24702,7 +24703,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10046.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10046.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 212
   },
   {
@@ -24724,7 +24725,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10047.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10047.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 214
   },
   {
@@ -24746,7 +24747,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10048.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10048.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 229
   },
   {
@@ -24768,7 +24769,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10049.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10049.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 248
   },
   {
@@ -24790,7 +24791,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10050.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10050.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 257
   },
   {
@@ -24812,7 +24813,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10051.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10051.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 282
   },
   {
@@ -24834,7 +24835,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10052.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10052.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 303
   },
   {
@@ -24855,7 +24856,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10053.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10053.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 306
   },
   {
@@ -24877,7 +24878,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10054.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10054.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 308
   },
   {
@@ -24898,7 +24899,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10055.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10055.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 310
   },
   {
@@ -24919,7 +24920,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10056.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10056.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 354
   },
   {
@@ -24940,7 +24941,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10057.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10057.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 359
   },
   {
@@ -24962,7 +24963,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10058.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10058.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 445
   },
   {
@@ -24984,7 +24985,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10059.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10059.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 448
   },
   {
@@ -25006,7 +25007,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10060.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10060.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 460
   },
   {
@@ -25028,7 +25029,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10062.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10062.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 380
   },
   {
@@ -25050,7 +25051,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10063.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10063.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 381
   },
   {
@@ -25072,7 +25073,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10064.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10064.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 260
   },
   {
@@ -25094,7 +25095,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10065.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10065.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 254
   },
   {
@@ -25116,7 +25117,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10066.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10066.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 302
   },
   {
@@ -25138,7 +25139,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10067.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10067.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 334
   },
   {
@@ -25160,7 +25161,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10068.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10068.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 475
   },
   {
@@ -25182,7 +25183,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10069.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10069.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 531
   },
   {
@@ -25204,7 +25205,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10070.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10070.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 319
   },
   {
@@ -25226,7 +25227,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10071.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10071.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 80
   },
   {
@@ -25248,7 +25249,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10072.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10072.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 208
   },
   {
@@ -25270,7 +25271,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10073.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10073.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 18
   },
   {
@@ -25291,7 +25292,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10074.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10074.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 362
   },
   {
@@ -25313,7 +25314,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10075.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10075.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 719
   },
   {
@@ -25335,7 +25336,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10076.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10076.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 376
   },
   {
@@ -25357,7 +25358,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10079.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10079.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 384
   },
   {
@@ -25379,7 +25380,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10087.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10087.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 323
   },
   {
@@ -25401,7 +25402,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10088.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10088.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 428
   },
   {
@@ -25423,7 +25424,7 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10089.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10089.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 373
   },
   {
@@ -25445,8 +25446,577 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10090.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10090.png"
     },
-    "isMega": true,
+    "formType": "mega",
     "basePokemonId": 15
+  },
+  {
+    "id": 20278,
+    "name": "Mega Clefable",
+    "types": [
+      "Fairy",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 253,
+      "defense": 205,
+      "stamina": 216
+    },
+    "maxCP": 4316,
+    "height": 1.7,
+    "weight": 42.3,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 36
+  },
+  {
+    "id": 20279,
+    "name": "Mega Victreebel",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "attack": 265,
+      "defense": 181,
+      "stamina": 190
+    },
+    "maxCP": 4010,
+    "height": 4.5,
+    "weight": 125.5,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 71
+  },
+  {
+    "id": 20280,
+    "name": "Mega Starmie",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 303,
+      "defense": 229,
+      "stamina": 155
+    },
+    "maxCP": 4627,
+    "height": 2.3,
+    "weight": 80,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 121
+  },
+  {
+    "id": 20281,
+    "name": "Mega Dragonite",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 299,
+      "defense": 255,
+      "stamina": 209
+    },
+    "maxCP": 5517,
+    "height": 5.5,
+    "weight": 290,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 149
+  },
+  {
+    "id": 20282,
+    "name": "Mega Meganium",
+    "types": [
+      "Grass",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 276,
+      "defense": 232,
+      "stamina": 190
+    },
+    "maxCP": 4678,
+    "height": 2.4,
+    "weight": 201,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 154
+  },
+  {
+    "id": 20283,
+    "name": "Mega Feraligatr",
+    "types": [
+      "Water",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 304,
+      "defense": 227,
+      "stamina": 198
+    },
+    "maxCP": 5174,
+    "height": 2.3,
+    "weight": 108.8,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 160
+  },
+  {
+    "id": 20284,
+    "name": "Mega Skarmory",
+    "types": [
+      "Steel",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 273,
+      "defense": 228,
+      "stamina": 163
+    },
+    "maxCP": 4279,
+    "height": 1.7,
+    "weight": 40.4,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 227
+  },
+  {
+    "id": 20285,
+    "name": "Mega Froslass",
+    "types": [
+      "Ice",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 289,
+      "defense": 194,
+      "stamina": 172
+    },
+    "maxCP": 4294,
+    "height": 2.6,
+    "weight": 29.6,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 478
+  },
+  {
+    "id": 20286,
+    "name": "Mega Emboar",
+    "types": [
+      "Fire",
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 287,
+      "defense": 194,
+      "stamina": 242
+    },
+    "maxCP": 5001,
+    "height": 1.8,
+    "weight": 180.3,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 500
+  },
+  {
+    "id": 20287,
+    "name": "Mega Excadrill",
+    "types": [
+      "Ground",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 322,
+      "defense": 184,
+      "stamina": 242
+    },
+    "maxCP": 5445,
+    "height": 0.9,
+    "weight": 60,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 530
+  },
+  {
+    "id": 20288,
+    "name": "Mega Scolipede",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "baseStats": {
+      "attack": 257,
+      "defense": 254,
+      "stamina": 155
+    },
+    "maxCP": 4156,
+    "height": 3.2,
+    "weight": 230.5,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 545
+  },
+  {
+    "id": 20289,
+    "name": "Mega Scrafty",
+    "types": [
+      "Dark",
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 238,
+      "defense": 266,
+      "stamina": 163
+    },
+    "maxCP": 4043,
+    "height": 1.1,
+    "weight": 31,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 560
+  },
+  {
+    "id": 20290,
+    "name": "Mega Eelektross",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 291,
+      "defense": 175,
+      "stamina": 198
+    },
+    "maxCP": 4398,
+    "height": 3,
+    "weight": 180,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 604
+  },
+  {
+    "id": 20291,
+    "name": "Mega Chandelure",
+    "types": [
+      "Ghost",
+      "Fire"
+    ],
+    "baseStats": {
+      "attack": 335,
+      "defense": 227,
+      "stamina": 155
+    },
+    "maxCP": 5072,
+    "height": 2.5,
+    "weight": 69.6,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 609
+  },
+  {
+    "id": 20292,
+    "name": "Mega Chesnaught",
+    "types": [
+      "Grass",
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 242,
+      "defense": 282,
+      "stamina": 204
+    },
+    "maxCP": 4683,
+    "height": 1.6,
+    "weight": 90,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 652
+  },
+  {
+    "id": 20293,
+    "name": "Mega Delphox",
+    "types": [
+      "Fire",
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 331,
+      "defense": 235,
+      "stamina": 181
+    },
+    "maxCP": 5472,
+    "height": 1.5,
+    "weight": 39,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 655
+  },
+  {
+    "id": 20294,
+    "name": "Mega Greninja",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 299,
+      "defense": 180,
+      "stamina": 176
+    },
+    "maxCP": 4329,
+    "height": 1.5,
+    "weight": 40,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 658
+  },
+  {
+    "id": 20295,
+    "name": "Mega Pyroar",
+    "types": [
+      "Fire",
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 273,
+      "defense": 198,
+      "stamina": 200
+    },
+    "maxCP": 4403,
+    "height": 1.5,
+    "weight": 93.3,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 668
+  },
+  {
+    "id": 20296,
+    "name": "Mega Floette",
+    "types": [
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 309,
+      "defense": 264,
+      "stamina": 179
+    },
+    "maxCP": 5386,
+    "height": 0.2,
+    "weight": 100.8,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 670
+  },
+  {
+    "id": 20297,
+    "name": "Mega Malamar",
+    "types": [
+      "Dark",
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 208,
+      "defense": 222,
+      "stamina": 200
+    },
+    "maxCP": 3596,
+    "height": 2.9,
+    "weight": 69.8,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 687
+  },
+  {
+    "id": 20298,
+    "name": "Mega Barbaracle",
+    "types": [
+      "Rock",
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 268,
+      "defense": 248,
+      "stamina": 176
+    },
+    "maxCP": 4532,
+    "height": 2.2,
+    "weight": 100,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 689
+  },
+  {
+    "id": 20299,
+    "name": "Mega Dragalge",
+    "types": [
+      "Poison",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 236,
+      "defense": 265,
+      "stamina": 163
+    },
+    "maxCP": 4003,
+    "height": 2.1,
+    "weight": 100.3,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 691
+  },
+  {
+    "id": 20300,
+    "name": "Mega Hawlucha",
+    "types": [
+      "Fighting",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 280,
+      "defense": 212,
+      "stamina": 186
+    },
+    "maxCP": 4502,
+    "height": 1,
+    "weight": 25,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 701
+  },
+  {
+    "id": 20301,
+    "name": "Mega Zygarde",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "baseStats": {
+      "attack": 416,
+      "defense": 187,
+      "stamina": 428
+    },
+    "maxCP": 9212,
+    "height": 7.7,
+    "weight": 610,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 718
+  },
+  {
+    "id": 20302,
+    "name": "Mega Drampa",
+    "types": [
+      "Normal",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 278,
+      "defense": 210,
+      "stamina": 186
+    },
+    "maxCP": 4452,
+    "height": 3,
+    "weight": 240.5,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 780
+  },
+  {
+    "id": 20303,
+    "name": "Mega Falinks",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 267,
+      "defense": 229,
+      "stamina": 163
+    },
+    "maxCP": 4199,
+    "height": 1.6,
+    "weight": 99,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "mega",
+    "basePokemonId": 870
   },
   {
     "id": 30091,
@@ -25467,9 +26037,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10091.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10091.png"
     },
-    "isRegional": true,
-    "basePokemonId": 19,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 19
   },
   {
     "id": 30092,
@@ -25490,9 +26059,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10092.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10092.png"
     },
-    "isRegional": true,
-    "basePokemonId": 20,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 20
   },
   {
     "id": 30093,
@@ -25513,97 +26081,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10093.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10093.png"
     },
-    "isRegional": true,
-    "basePokemonId": 20,
-    "region": "Alola"
-  },
-  {
-    "id": 30095,
-    "name": "Pikachu (Hoenn)",
-    "types": [
-      "Electric"
-    ],
-    "baseStats": {
-      "attack": 112,
-      "defense": 96,
-      "stamina": 111
-    },
-    "maxCP": 1073,
-    "height": 0.4,
-    "weight": 6,
-    "sprites": {
-      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10095.png",
-      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10095.png"
-    },
-    "isRegional": true,
-    "basePokemonId": 25,
-    "region": "Hoenn"
-  },
-  {
-    "id": 30096,
-    "name": "Pikachu (Sinnoh)",
-    "types": [
-      "Electric"
-    ],
-    "baseStats": {
-      "attack": 112,
-      "defense": 96,
-      "stamina": 111
-    },
-    "maxCP": 1073,
-    "height": 0.4,
-    "weight": 6,
-    "sprites": {
-      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10096.png",
-      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10096.png"
-    },
-    "isRegional": true,
-    "basePokemonId": 25,
-    "region": "Sinnoh"
-  },
-  {
-    "id": 30097,
-    "name": "Pikachu (Unova)",
-    "types": [
-      "Electric"
-    ],
-    "baseStats": {
-      "attack": 112,
-      "defense": 96,
-      "stamina": 111
-    },
-    "maxCP": 1073,
-    "height": 0.4,
-    "weight": 6,
-    "sprites": {
-      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10097.png",
-      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10097.png"
-    },
-    "isRegional": true,
-    "basePokemonId": 25,
-    "region": "Unova"
-  },
-  {
-    "id": 30098,
-    "name": "Pikachu (Kalos)",
-    "types": [
-      "Electric"
-    ],
-    "baseStats": {
-      "attack": 112,
-      "defense": 96,
-      "stamina": 111
-    },
-    "maxCP": 1073,
-    "height": 0.4,
-    "weight": 6,
-    "sprites": {
-      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10098.png",
-      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10098.png"
-    },
-    "isRegional": true,
-    "basePokemonId": 25,
-    "region": "Kalos"
+    "formType": "regional",
+    "basePokemonId": 20
   },
   {
     "id": 30099,
@@ -25623,9 +26102,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10099.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10099.png"
     },
-    "isRegional": true,
-    "basePokemonId": 25,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 25
   },
   {
     "id": 30100,
@@ -25646,9 +26124,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10100.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10100.png"
     },
-    "isRegional": true,
-    "basePokemonId": 26,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 26
   },
   {
     "id": 30101,
@@ -25669,9 +26146,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10101.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10101.png"
     },
-    "isRegional": true,
-    "basePokemonId": 27,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 27
   },
   {
     "id": 30102,
@@ -25692,9 +26168,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10102.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10102.png"
     },
-    "isRegional": true,
-    "basePokemonId": 28,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 28
   },
   {
     "id": 30103,
@@ -25714,9 +26189,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10103.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10103.png"
     },
-    "isRegional": true,
-    "basePokemonId": 37,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 37
   },
   {
     "id": 30104,
@@ -25737,9 +26211,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10104.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10104.png"
     },
-    "isRegional": true,
-    "basePokemonId": 38,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 38
   },
   {
     "id": 30105,
@@ -25760,9 +26233,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10105.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10105.png"
     },
-    "isRegional": true,
-    "basePokemonId": 50,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 50
   },
   {
     "id": 30106,
@@ -25783,9 +26255,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10106.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10106.png"
     },
-    "isRegional": true,
-    "basePokemonId": 51,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 51
   },
   {
     "id": 30107,
@@ -25805,9 +26276,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10107.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10107.png"
     },
-    "isRegional": true,
-    "basePokemonId": 52,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 52
   },
   {
     "id": 30108,
@@ -25827,9 +26297,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10108.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10108.png"
     },
-    "isRegional": true,
-    "basePokemonId": 53,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 53
   },
   {
     "id": 30109,
@@ -25850,9 +26319,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10109.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10109.png"
     },
-    "isRegional": true,
-    "basePokemonId": 74,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 74
   },
   {
     "id": 30110,
@@ -25873,9 +26341,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10110.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10110.png"
     },
-    "isRegional": true,
-    "basePokemonId": 75,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 75
   },
   {
     "id": 30111,
@@ -25896,9 +26363,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10111.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10111.png"
     },
-    "isRegional": true,
-    "basePokemonId": 76,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 76
   },
   {
     "id": 30112,
@@ -25919,9 +26385,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10112.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10112.png"
     },
-    "isRegional": true,
-    "basePokemonId": 88,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 88
   },
   {
     "id": 30113,
@@ -25942,9 +26407,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10113.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10113.png"
     },
-    "isRegional": true,
-    "basePokemonId": 89,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 89
   },
   {
     "id": 30114,
@@ -25965,9 +26429,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10114.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10114.png"
     },
-    "isRegional": true,
-    "basePokemonId": 103,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 103
   },
   {
     "id": 30115,
@@ -25988,9 +26451,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10115.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10115.png"
     },
-    "isRegional": true,
-    "basePokemonId": 105,
-    "region": "Alola"
+    "formType": "regional",
+    "basePokemonId": 105
   },
   {
     "id": 30161,
@@ -26010,9 +26472,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10161.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10161.png"
     },
-    "isRegional": true,
-    "basePokemonId": 52,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 52
   },
   {
     "id": 30162,
@@ -26032,9 +26493,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10162.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10162.png"
     },
-    "isRegional": true,
-    "basePokemonId": 77,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 77
   },
   {
     "id": 30163,
@@ -26055,9 +26515,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10163.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10163.png"
     },
-    "isRegional": true,
-    "basePokemonId": 78,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 78
   },
   {
     "id": 30164,
@@ -26077,9 +26536,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10164.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10164.png"
     },
-    "isRegional": true,
-    "basePokemonId": 79,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 79
   },
   {
     "id": 30165,
@@ -26100,9 +26558,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10165.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10165.png"
     },
-    "isRegional": true,
-    "basePokemonId": 80,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 80
   },
   {
     "id": 30166,
@@ -26122,9 +26579,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10166.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10166.png"
     },
-    "isRegional": true,
-    "basePokemonId": 83,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 83
   },
   {
     "id": 30167,
@@ -26145,9 +26601,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10167.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10167.png"
     },
-    "isRegional": true,
-    "basePokemonId": 110,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 110
   },
   {
     "id": 30168,
@@ -26168,9 +26623,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10168.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10168.png"
     },
-    "isRegional": true,
-    "basePokemonId": 122,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 122
   },
   {
     "id": 30169,
@@ -26191,9 +26645,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10169.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10169.png"
     },
-    "isRegional": true,
-    "basePokemonId": 144,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 144
   },
   {
     "id": 30170,
@@ -26214,9 +26667,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10170.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10170.png"
     },
-    "isRegional": true,
-    "basePokemonId": 145,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 145
   },
   {
     "id": 30171,
@@ -26237,9 +26689,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10171.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10171.png"
     },
-    "isRegional": true,
-    "basePokemonId": 146,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 146
   },
   {
     "id": 30172,
@@ -26260,9 +26711,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10172.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10172.png"
     },
-    "isRegional": true,
-    "basePokemonId": 199,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 199
   },
   {
     "id": 30173,
@@ -26282,9 +26732,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10173.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10173.png"
     },
-    "isRegional": true,
-    "basePokemonId": 222,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 222
   },
   {
     "id": 30174,
@@ -26305,9 +26754,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10174.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10174.png"
     },
-    "isRegional": true,
-    "basePokemonId": 263,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 263
   },
   {
     "id": 30175,
@@ -26328,9 +26776,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10175.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10175.png"
     },
-    "isRegional": true,
-    "basePokemonId": 264,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 264
   },
   {
     "id": 30176,
@@ -26350,9 +26797,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10176.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10176.png"
     },
-    "isRegional": true,
-    "basePokemonId": 554,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 554
   },
   {
     "id": 30177,
@@ -26372,9 +26818,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10177.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10177.png"
     },
-    "isRegional": true,
-    "basePokemonId": 555,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 555
   },
   {
     "id": 30178,
@@ -26395,9 +26840,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10178.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10178.png"
     },
-    "isRegional": true,
-    "basePokemonId": 555,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 555
   },
   {
     "id": 30179,
@@ -26418,9 +26862,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10179.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10179.png"
     },
-    "isRegional": true,
-    "basePokemonId": 562,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 562
   },
   {
     "id": 30180,
@@ -26441,9 +26884,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10180.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10180.png"
     },
-    "isRegional": true,
-    "basePokemonId": 618,
-    "region": "Galar"
+    "formType": "regional",
+    "basePokemonId": 618
   },
   {
     "id": 30229,
@@ -26464,9 +26906,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10229.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10229.png"
     },
-    "isRegional": true,
-    "basePokemonId": 58,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 58
   },
   {
     "id": 30230,
@@ -26487,9 +26928,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10230.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10230.png"
     },
-    "isRegional": true,
-    "basePokemonId": 59,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 59
   },
   {
     "id": 30231,
@@ -26510,9 +26950,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10231.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10231.png"
     },
-    "isRegional": true,
-    "basePokemonId": 100,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 100
   },
   {
     "id": 30232,
@@ -26533,9 +26972,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10232.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10232.png"
     },
-    "isRegional": true,
-    "basePokemonId": 101,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 101
   },
   {
     "id": 30233,
@@ -26556,9 +26994,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10233.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10233.png"
     },
-    "isRegional": true,
-    "basePokemonId": 157,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 157
   },
   {
     "id": 30234,
@@ -26579,9 +27016,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10234.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10234.png"
     },
-    "isRegional": true,
-    "basePokemonId": 211,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 211
   },
   {
     "id": 30235,
@@ -26602,9 +27038,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10235.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10235.png"
     },
-    "isRegional": true,
-    "basePokemonId": 215,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 215
   },
   {
     "id": 30236,
@@ -26625,9 +27060,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10236.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10236.png"
     },
-    "isRegional": true,
-    "basePokemonId": 503,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 503
   },
   {
     "id": 30237,
@@ -26648,9 +27082,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10237.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10237.png"
     },
-    "isRegional": true,
-    "basePokemonId": 549,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 549
   },
   {
     "id": 30238,
@@ -26671,9 +27104,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10238.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10238.png"
     },
-    "isRegional": true,
-    "basePokemonId": 570,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 570
   },
   {
     "id": 30239,
@@ -26694,9 +27126,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10239.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10239.png"
     },
-    "isRegional": true,
-    "basePokemonId": 571,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 571
   },
   {
     "id": 30240,
@@ -26717,9 +27148,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10240.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10240.png"
     },
-    "isRegional": true,
-    "basePokemonId": 628,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 628
   },
   {
     "id": 30241,
@@ -26740,9 +27170,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10241.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10241.png"
     },
-    "isRegional": true,
-    "basePokemonId": 705,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 705
   },
   {
     "id": 30242,
@@ -26763,9 +27192,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10242.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10242.png"
     },
-    "isRegional": true,
-    "basePokemonId": 706,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 706
   },
   {
     "id": 30243,
@@ -26786,9 +27214,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10243.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10243.png"
     },
-    "isRegional": true,
-    "basePokemonId": 713,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 713
   },
   {
     "id": 30244,
@@ -26809,9 +27236,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10244.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10244.png"
     },
-    "isRegional": true,
-    "basePokemonId": 724,
-    "region": "Hisui"
+    "formType": "regional",
+    "basePokemonId": 724
   },
   {
     "id": 30250,
@@ -26831,9 +27257,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10250.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10250.png"
     },
-    "isRegional": true,
-    "basePokemonId": 128,
-    "region": "Paldea"
+    "formType": "regional",
+    "basePokemonId": 128
   },
   {
     "id": 30251,
@@ -26854,9 +27279,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10251.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10251.png"
     },
-    "isRegional": true,
-    "basePokemonId": 128,
-    "region": "Paldea"
+    "formType": "regional",
+    "basePokemonId": 128
   },
   {
     "id": 30252,
@@ -26877,9 +27301,8 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10252.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10252.png"
     },
-    "isRegional": true,
-    "basePokemonId": 128,
-    "region": "Paldea"
+    "formType": "regional",
+    "basePokemonId": 128
   },
   {
     "id": 30253,
@@ -26900,34 +27323,3681 @@ export const POKEMON_DATABASE: Pokemon[] = [
       "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10253.png",
       "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10253.png"
     },
-    "isRegional": true,
-    "basePokemonId": 194,
-    "region": "Paldea"
+    "formType": "regional",
+    "basePokemonId": 194
+  },
+  {
+    "id": 40001,
+    "name": "Deoxys (Attack)",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 414,
+      "defense": 46,
+      "stamina": 137
+    },
+    "maxCP": 2951,
+    "height": 1.7,
+    "weight": 60.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10001.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10001.png"
+    },
+    "formType": "special",
+    "basePokemonId": 386
+  },
+  {
+    "id": 40002,
+    "name": "Deoxys (Defense)",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 144,
+      "defense": 330,
+      "stamina": 137
+    },
+    "maxCP": 2601,
+    "height": 1.7,
+    "weight": 60.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10002.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10002.png"
+    },
+    "formType": "special",
+    "basePokemonId": 386
+  },
+  {
+    "id": 40003,
+    "name": "Deoxys (Speed)",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 230,
+      "defense": 218,
+      "stamina": 137
+    },
+    "maxCP": 3294,
+    "height": 1.7,
+    "weight": 60.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10003.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10003.png"
+    },
+    "formType": "special",
+    "basePokemonId": 386
+  },
+  {
+    "id": 40004,
+    "name": "Wormadam (Sandy)",
+    "types": [
+      "Bug",
+      "Ground"
+    ],
+    "baseStats": {
+      "attack": 141,
+      "defense": 180,
+      "stamina": 155
+    },
+    "maxCP": 2029,
+    "height": 0.5,
+    "weight": 6.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10004.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10004.png"
+    },
+    "formType": "special",
+    "basePokemonId": 413
+  },
+  {
+    "id": 40005,
+    "name": "Wormadam (Trash)",
+    "types": [
+      "Bug",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 127,
+      "defense": 175,
+      "stamina": 155
+    },
+    "maxCP": 1823,
+    "height": 0.5,
+    "weight": 6.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10005.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10005.png"
+    },
+    "formType": "special",
+    "basePokemonId": 413
+  },
+  {
+    "id": 40006,
+    "name": "Shaymin (Sky)",
+    "types": [
+      "Grass",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 261,
+      "defense": 166,
+      "stamina": 225
+    },
+    "maxCP": 4110,
+    "height": 0.4,
+    "weight": 5.2,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10006.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10006.png"
+    },
+    "formType": "special",
+    "basePokemonId": 492
+  },
+  {
+    "id": 40007,
+    "name": "Giratina (Origin)",
+    "types": [
+      "Ghost",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 247,
+      "defense": 206,
+      "stamina": 312
+    },
+    "maxCP": 5032,
+    "height": 6.9,
+    "weight": 650,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10007.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10007.png"
+    },
+    "formType": "special",
+    "basePokemonId": 487
+  },
+  {
+    "id": 40008,
+    "name": "Rotom (Heat)",
+    "types": [
+      "Electric",
+      "Fire"
+    ],
+    "baseStats": {
+      "attack": 204,
+      "defense": 219,
+      "stamina": 137
+    },
+    "maxCP": 2951,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10008.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10008.png"
+    },
+    "formType": "special",
+    "basePokemonId": 479
+  },
+  {
+    "id": 40009,
+    "name": "Rotom (Wash)",
+    "types": [
+      "Electric",
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 204,
+      "defense": 219,
+      "stamina": 137
+    },
+    "maxCP": 2951,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10009.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10009.png"
+    },
+    "formType": "special",
+    "basePokemonId": 479
+  },
+  {
+    "id": 40010,
+    "name": "Rotom (Frost)",
+    "types": [
+      "Electric",
+      "Ice"
+    ],
+    "baseStats": {
+      "attack": 204,
+      "defense": 219,
+      "stamina": 137
+    },
+    "maxCP": 2951,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10010.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10010.png"
+    },
+    "formType": "special",
+    "basePokemonId": 479
+  },
+  {
+    "id": 40011,
+    "name": "Rotom (Fan)",
+    "types": [
+      "Electric",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 204,
+      "defense": 219,
+      "stamina": 137
+    },
+    "maxCP": 2951,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10011.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10011.png"
+    },
+    "formType": "special",
+    "basePokemonId": 479
+  },
+  {
+    "id": 40012,
+    "name": "Rotom (Mow)",
+    "types": [
+      "Electric",
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 204,
+      "defense": 219,
+      "stamina": 137
+    },
+    "maxCP": 2951,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10012.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10012.png"
+    },
+    "formType": "special",
+    "basePokemonId": 479
+  },
+  {
+    "id": 40013,
+    "name": "Castform (Sunny)",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "attack": 139,
+      "defense": 139,
+      "stamina": 172
+    },
+    "maxCP": 1867,
+    "height": 0.3,
+    "weight": 0.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10013.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10013.png"
+    },
+    "formType": "special",
+    "basePokemonId": 351
+  },
+  {
+    "id": 40014,
+    "name": "Castform (Rainy)",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 139,
+      "defense": 139,
+      "stamina": 172
+    },
+    "maxCP": 1867,
+    "height": 0.3,
+    "weight": 0.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10014.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10014.png"
+    },
+    "formType": "special",
+    "basePokemonId": 351
+  },
+  {
+    "id": 40015,
+    "name": "Castform (Snowy)",
+    "types": [
+      "Ice"
+    ],
+    "baseStats": {
+      "attack": 139,
+      "defense": 139,
+      "stamina": 172
+    },
+    "maxCP": 1867,
+    "height": 0.3,
+    "weight": 0.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10015.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10015.png"
+    },
+    "formType": "special",
+    "basePokemonId": 351
+  },
+  {
+    "id": 40016,
+    "name": "Basculin (Blue Striped)",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 189,
+      "defense": 129,
+      "stamina": 172
+    },
+    "maxCP": 2391,
+    "height": 1,
+    "weight": 18,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10016.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10016.png"
+    },
+    "formType": "special",
+    "basePokemonId": 550
+  },
+  {
+    "id": 40017,
+    "name": "Darmanitan (Zen)",
+    "types": [
+      "Fire",
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 243,
+      "defense": 202,
+      "stamina": 233
+    },
+    "maxCP": 4276,
+    "height": 1.3,
+    "weight": 92.9,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10017.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10017.png"
+    },
+    "formType": "special",
+    "basePokemonId": 555
+  },
+  {
+    "id": 40018,
+    "name": "Meloetta (Pirouette)",
+    "types": [
+      "Normal",
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 269,
+      "defense": 188,
+      "stamina": 225
+    },
+    "maxCP": 4479,
+    "height": 0.6,
+    "weight": 6.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10018.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10018.png"
+    },
+    "formType": "special",
+    "basePokemonId": 648
+  },
+  {
+    "id": 40019,
+    "name": "Tornadus (Therian)",
+    "types": [
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 238,
+      "defense": 189,
+      "stamina": 188
+    },
+    "maxCP": 3678,
+    "height": 1.4,
+    "weight": 63,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10019.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10019.png"
+    },
+    "formType": "special",
+    "basePokemonId": 641
+  },
+  {
+    "id": 40020,
+    "name": "Thundurus (Therian)",
+    "types": [
+      "Electric",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 295,
+      "defense": 161,
+      "stamina": 188
+    },
+    "maxCP": 4186,
+    "height": 3,
+    "weight": 61,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10020.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10020.png"
+    },
+    "formType": "special",
+    "basePokemonId": 642
+  },
+  {
+    "id": 40021,
+    "name": "Landorus (Therian)",
+    "types": [
+      "Ground",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 289,
+      "defense": 179,
+      "stamina": 205
+    },
+    "maxCP": 4487,
+    "height": 1.3,
+    "weight": 68,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10021.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10021.png"
+    },
+    "formType": "special",
+    "basePokemonId": 645
+  },
+  {
+    "id": 40022,
+    "name": "Kyurem (Black)",
+    "types": [
+      "Dragon",
+      "Ice"
+    ],
+    "baseStats": {
+      "attack": 341,
+      "defense": 201,
+      "stamina": 268
+    },
+    "maxCP": 6289,
+    "height": 3.3,
+    "weight": 325,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10022.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10022.png"
+    },
+    "formType": "special",
+    "basePokemonId": 646
+  },
+  {
+    "id": 40023,
+    "name": "Kyurem (White)",
+    "types": [
+      "Dragon",
+      "Ice"
+    ],
+    "baseStats": {
+      "attack": 341,
+      "defense": 201,
+      "stamina": 268
+    },
+    "maxCP": 6289,
+    "height": 3.6,
+    "weight": 325,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10023.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10023.png"
+    },
+    "formType": "special",
+    "basePokemonId": 646
+  },
+  {
+    "id": 40024,
+    "name": "Keldeo (Resolute)",
+    "types": [
+      "Water",
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 260,
+      "defense": 192,
+      "stamina": 209
+    },
+    "maxCP": 4231,
+    "height": 1.4,
+    "weight": 48.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10024.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10024.png"
+    },
+    "formType": "special",
+    "basePokemonId": 647
+  },
+  {
+    "id": 40025,
+    "name": "Meowstic (Female)",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 166,
+      "defense": 167,
+      "stamina": 179
+    },
+    "maxCP": 2430,
+    "height": 0.6,
+    "weight": 8.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10025.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10025.png"
+    },
+    "formType": "special",
+    "basePokemonId": 678
+  },
+  {
+    "id": 40026,
+    "name": "Aegislash (Blade)",
+    "types": [
+      "Steel",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 272,
+      "defense": 97,
+      "stamina": 155
+    },
+    "maxCP": 2829,
+    "height": 1.7,
+    "weight": 53,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10026.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10026.png"
+    },
+    "formType": "special",
+    "basePokemonId": 681
+  },
+  {
+    "id": 40027,
+    "name": "Pumpkaboo (Small)",
+    "types": [
+      "Ghost",
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 122,
+      "defense": 124,
+      "stamina": 127
+    },
+    "maxCP": 1375,
+    "height": 0.3,
+    "weight": 3.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10027.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10027.png"
+    },
+    "formType": "special",
+    "basePokemonId": 710
+  },
+  {
+    "id": 40028,
+    "name": "Pumpkaboo (Large)",
+    "types": [
+      "Ghost",
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 120,
+      "defense": 122,
+      "stamina": 144
+    },
+    "maxCP": 1423,
+    "height": 0.5,
+    "weight": 7.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10028.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10028.png"
+    },
+    "formType": "special",
+    "basePokemonId": 710
+  },
+  {
+    "id": 40029,
+    "name": "Pumpkaboo (Super)",
+    "types": [
+      "Ghost",
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 118,
+      "defense": 120,
+      "stamina": 153
+    },
+    "maxCP": 1431,
+    "height": 0.8,
+    "weight": 15,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10029.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10029.png"
+    },
+    "formType": "special",
+    "basePokemonId": 710
+  },
+  {
+    "id": 40030,
+    "name": "Gourgeist (Small)",
+    "types": [
+      "Ghost",
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 171,
+      "defense": 219,
+      "stamina": 146
+    },
+    "maxCP": 2579,
+    "height": 0.7,
+    "weight": 9.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10030.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10030.png"
+    },
+    "formType": "special",
+    "basePokemonId": 711
+  },
+  {
+    "id": 40031,
+    "name": "Gourgeist (Large)",
+    "types": [
+      "Ghost",
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 179,
+      "defense": 206,
+      "stamina": 181
+    },
+    "maxCP": 2885,
+    "height": 1.1,
+    "weight": 14,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10031.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10031.png"
+    },
+    "formType": "special",
+    "basePokemonId": 711
+  },
+  {
+    "id": 40032,
+    "name": "Gourgeist (Super)",
+    "types": [
+      "Ghost",
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 182,
+      "defense": 200,
+      "stamina": 198
+    },
+    "maxCP": 3012,
+    "height": 1.7,
+    "weight": 39,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10032.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10032.png"
+    },
+    "formType": "special",
+    "basePokemonId": 711
+  },
+  {
+    "id": 40061,
+    "name": "Floette (Eternal)",
+    "types": [
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 243,
+      "defense": 217,
+      "stamina": 179
+    },
+    "maxCP": 3910,
+    "height": 0.2,
+    "weight": 0.9,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10061.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10061.png"
+    },
+    "formType": "special",
+    "basePokemonId": 670
+  },
+  {
+    "id": 40077,
+    "name": "Kyogre (Primal)",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 364,
+      "defense": 276,
+      "stamina": 225
+    },
+    "maxCP": 7156,
+    "height": 9.8,
+    "weight": 430,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10077.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10077.png"
+    },
+    "formType": "special",
+    "basePokemonId": 382
+  },
+  {
+    "id": 40078,
+    "name": "Groudon (Primal)",
+    "types": [
+      "Ground",
+      "Fire"
+    ],
+    "baseStats": {
+      "attack": 364,
+      "defense": 276,
+      "stamina": 225
+    },
+    "maxCP": 7156,
+    "height": 5,
+    "weight": 999.7,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10078.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10078.png"
+    },
+    "formType": "special",
+    "basePokemonId": 383
+  },
+  {
+    "id": 40080,
+    "name": "Pikachu (Rock Star)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10080.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10080.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40081,
+    "name": "Pikachu (Belle)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10081.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10081.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40082,
+    "name": "Pikachu (Pop Star)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10082.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10082.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40083,
+    "name": "Pikachu (Phd)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10083.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10083.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40084,
+    "name": "Pikachu (Libre)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10084.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10084.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40085,
+    "name": "Pikachu (Cosplay)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10085.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10085.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40086,
+    "name": "Hoopa (Unbound)",
+    "types": [
+      "Psychic",
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 341,
+      "defense": 210,
+      "stamina": 190
+    },
+    "maxCP": 5463,
+    "height": 6.5,
+    "weight": 490,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10086.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10086.png"
+    },
+    "formType": "special",
+    "basePokemonId": 720
+  },
+  {
+    "id": 40094,
+    "name": "Pikachu (Original Cap)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10094.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10094.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40095,
+    "name": "Pikachu (Hoenn Cap)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10095.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10095.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40096,
+    "name": "Pikachu (Sinnoh Cap)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10096.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10096.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40097,
+    "name": "Pikachu (Unova Cap)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10097.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10097.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40098,
+    "name": "Pikachu (Kalos Cap)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10098.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10098.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40116,
+    "name": "Greninja (Battle Bond)",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 223,
+      "defense": 152,
+      "stamina": 176
+    },
+    "maxCP": 3037,
+    "height": 1.5,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10116.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10116.png"
+    },
+    "formType": "special",
+    "basePokemonId": 658
+  },
+  {
+    "id": 40117,
+    "name": "Greninja (Ash)",
+    "types": [
+      "Water",
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 339,
+      "defense": 155,
+      "stamina": 176
+    },
+    "maxCP": 4557,
+    "height": 1.5,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10117.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10117.png"
+    },
+    "formType": "special",
+    "basePokemonId": 658
+  },
+  {
+    "id": 40118,
+    "name": "Zygarde (10 Power Construct)",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "baseStats": {
+      "attack": 205,
+      "defense": 173,
+      "stamina": 144
+    },
+    "maxCP": 2717,
+    "height": 1.2,
+    "weight": 33.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10118.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10118.png"
+    },
+    "formType": "special",
+    "basePokemonId": 718
+  },
+  {
+    "id": 40119,
+    "name": "Zygarde (50 Power Construct)",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "baseStats": {
+      "attack": 203,
+      "defense": 232,
+      "stamina": 239
+    },
+    "maxCP": 3901,
+    "height": 5,
+    "weight": 305,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10119.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10119.png"
+    },
+    "formType": "special",
+    "basePokemonId": 718
+  },
+  {
+    "id": 40120,
+    "name": "Zygarde (Complete)",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "baseStats": {
+      "attack": 202,
+      "defense": 227,
+      "stamina": 428
+    },
+    "maxCP": 5076,
+    "height": 4.5,
+    "weight": 610,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10120.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10120.png"
+    },
+    "formType": "special",
+    "basePokemonId": 718
+  },
+  {
+    "id": 40121,
+    "name": "Gumshoos (Totem)",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 194,
+      "defense": 113,
+      "stamina": 204
+    },
+    "maxCP": 2500,
+    "height": 1.4,
+    "weight": 60,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10121.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10121.png"
+    },
+    "formType": "special",
+    "basePokemonId": 735
+  },
+  {
+    "id": 40122,
+    "name": "Vikavolt (Totem)",
+    "types": [
+      "Bug",
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 254,
+      "defense": 158,
+      "stamina": 184
+    },
+    "maxCP": 3566,
+    "height": 2.6,
+    "weight": 147.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10122.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10122.png"
+    },
+    "formType": "special",
+    "basePokemonId": 738
+  },
+  {
+    "id": 40123,
+    "name": "Oricorio (Pom Pom)",
+    "types": [
+      "Electric",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 196,
+      "defense": 145,
+      "stamina": 181
+    },
+    "maxCP": 2669,
+    "height": 0.6,
+    "weight": 3.4,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10123.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10123.png"
+    },
+    "formType": "special",
+    "basePokemonId": 741
+  },
+  {
+    "id": 40124,
+    "name": "Oricorio (Pau)",
+    "types": [
+      "Psychic",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 196,
+      "defense": 145,
+      "stamina": 181
+    },
+    "maxCP": 2669,
+    "height": 0.6,
+    "weight": 3.4,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10124.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10124.png"
+    },
+    "formType": "special",
+    "basePokemonId": 741
+  },
+  {
+    "id": 40125,
+    "name": "Oricorio (Sensu)",
+    "types": [
+      "Ghost",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 196,
+      "defense": 145,
+      "stamina": 181
+    },
+    "maxCP": 2669,
+    "height": 0.6,
+    "weight": 3.4,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10125.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10125.png"
+    },
+    "formType": "special",
+    "basePokemonId": 741
+  },
+  {
+    "id": 40126,
+    "name": "Lycanroc (Midnight)",
+    "types": [
+      "Rock"
+    ],
+    "baseStats": {
+      "attack": 218,
+      "defense": 152,
+      "stamina": 198
+    },
+    "maxCP": 3139,
+    "height": 1.1,
+    "weight": 25,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10126.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10126.png"
+    },
+    "formType": "special",
+    "basePokemonId": 745
+  },
+  {
+    "id": 40127,
+    "name": "Wishiwashi (School)",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 255,
+      "defense": 242,
+      "stamina": 128
+    },
+    "maxCP": 3698,
+    "height": 8.2,
+    "weight": 78.6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10127.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10127.png"
+    },
+    "formType": "special",
+    "basePokemonId": 746
+  },
+  {
+    "id": 40128,
+    "name": "Lurantis (Totem)",
+    "types": [
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 192,
+      "defense": 169,
+      "stamina": 172
+    },
+    "maxCP": 2743,
+    "height": 1.5,
+    "weight": 58,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10128.png"
+    },
+    "formType": "special",
+    "basePokemonId": 754
+  },
+  {
+    "id": 40129,
+    "name": "Salazzle (Totem)",
+    "types": [
+      "Poison",
+      "Fire"
+    ],
+    "baseStats": {
+      "attack": 228,
+      "defense": 130,
+      "stamina": 169
+    },
+    "maxCP": 2836,
+    "height": 2.1,
+    "weight": 81,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10129.png"
+    },
+    "formType": "special",
+    "basePokemonId": 758
+  },
+  {
+    "id": 40130,
+    "name": "Minior (Orange Meteor)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 116,
+      "defense": 194,
+      "stamina": 155
+    },
+    "maxCP": 1764,
+    "height": 0.3,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10130.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10130.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40131,
+    "name": "Minior (Yellow Meteor)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 116,
+      "defense": 194,
+      "stamina": 155
+    },
+    "maxCP": 1764,
+    "height": 0.3,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10131.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10131.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40132,
+    "name": "Minior (Green Meteor)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 116,
+      "defense": 194,
+      "stamina": 155
+    },
+    "maxCP": 1764,
+    "height": 0.3,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10132.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10132.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40133,
+    "name": "Minior (Blue Meteor)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 116,
+      "defense": 194,
+      "stamina": 155
+    },
+    "maxCP": 1764,
+    "height": 0.3,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10133.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10133.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40134,
+    "name": "Minior (Indigo Meteor)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 116,
+      "defense": 194,
+      "stamina": 155
+    },
+    "maxCP": 1764,
+    "height": 0.3,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10134.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10134.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40135,
+    "name": "Minior (Violet Meteor)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 116,
+      "defense": 194,
+      "stamina": 155
+    },
+    "maxCP": 1764,
+    "height": 0.3,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10135.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10135.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40136,
+    "name": "Minior (Red)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 218,
+      "defense": 131,
+      "stamina": 155
+    },
+    "maxCP": 2622,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10136.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10136.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40137,
+    "name": "Minior (Orange)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 218,
+      "defense": 131,
+      "stamina": 155
+    },
+    "maxCP": 2622,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10137.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10137.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40138,
+    "name": "Minior (Yellow)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 218,
+      "defense": 131,
+      "stamina": 155
+    },
+    "maxCP": 2622,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10138.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10138.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40139,
+    "name": "Minior (Green)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 218,
+      "defense": 131,
+      "stamina": 155
+    },
+    "maxCP": 2622,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10139.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10139.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40140,
+    "name": "Minior (Blue)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 218,
+      "defense": 131,
+      "stamina": 155
+    },
+    "maxCP": 2622,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10140.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10140.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40141,
+    "name": "Minior (Indigo)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 218,
+      "defense": 131,
+      "stamina": 155
+    },
+    "maxCP": 2622,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10141.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10141.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40142,
+    "name": "Minior (Violet)",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 218,
+      "defense": 131,
+      "stamina": 155
+    },
+    "maxCP": 2622,
+    "height": 0.3,
+    "weight": 0.3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10142.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10142.png"
+    },
+    "formType": "special",
+    "basePokemonId": 774
+  },
+  {
+    "id": 40143,
+    "name": "Mimikyu (Busted)",
+    "types": [
+      "Ghost",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 177,
+      "defense": 199,
+      "stamina": 146
+    },
+    "maxCP": 2546,
+    "height": 0.2,
+    "weight": 0.7,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10143.png",
+      "official_artwork": null
+    },
+    "formType": "special",
+    "basePokemonId": 778
+  },
+  {
+    "id": 40144,
+    "name": "Mimikyu (Totem Disguised)",
+    "types": [
+      "Ghost",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 177,
+      "defense": 199,
+      "stamina": 146
+    },
+    "maxCP": 2546,
+    "height": 0.4,
+    "weight": 2.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10144.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10144.png"
+    },
+    "formType": "special",
+    "basePokemonId": 778
+  },
+  {
+    "id": 40145,
+    "name": "Mimikyu (Totem Busted)",
+    "types": [
+      "Ghost",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 177,
+      "defense": 199,
+      "stamina": 146
+    },
+    "maxCP": 2546,
+    "height": 0.4,
+    "weight": 2.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10145.png",
+      "official_artwork": null
+    },
+    "formType": "special",
+    "basePokemonId": 778
+  },
+  {
+    "id": 40146,
+    "name": "Kommo-O (Totem)",
+    "types": [
+      "Dragon",
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 222,
+      "defense": 240,
+      "stamina": 181
+    },
+    "maxCP": 3785,
+    "height": 2.4,
+    "weight": 207.5,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10146.png"
+    },
+    "formType": "special",
+    "basePokemonId": 784
+  },
+  {
+    "id": 40147,
+    "name": "Magearna (Original)",
+    "types": [
+      "Steel",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 246,
+      "defense": 225,
+      "stamina": 190
+    },
+    "maxCP": 4136,
+    "height": 1,
+    "weight": 80.5,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10147.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10147.png"
+    },
+    "formType": "special",
+    "basePokemonId": 801
+  },
+  {
+    "id": 40148,
+    "name": "Pikachu (Partner Cap)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10148.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10148.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40149,
+    "name": "Marowak (Totem)",
+    "types": [
+      "Fire",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 144,
+      "defense": 186,
+      "stamina": 155
+    },
+    "maxCP": 2100,
+    "height": 1.7,
+    "weight": 98,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10149.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10149.png"
+    },
+    "formType": "special",
+    "basePokemonId": 105
+  },
+  {
+    "id": 40150,
+    "name": "Ribombee (Totem)",
+    "types": [
+      "Bug",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 198,
+      "defense": 146,
+      "stamina": 155
+    },
+    "maxCP": 2517,
+    "height": 0.4,
+    "weight": 2,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10150.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10150.png"
+    },
+    "formType": "special",
+    "basePokemonId": 743
+  },
+  {
+    "id": 40151,
+    "name": "Rockruff (Own Tempo)",
+    "types": [
+      "Rock"
+    ],
+    "baseStats": {
+      "attack": 117,
+      "defense": 78,
+      "stamina": 128
+    },
+    "maxCP": 1087,
+    "height": 0.5,
+    "weight": 9.2,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10151.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10151.png"
+    },
+    "formType": "special",
+    "basePokemonId": 744
+  },
+  {
+    "id": 40152,
+    "name": "Lycanroc (Dusk)",
+    "types": [
+      "Rock"
+    ],
+    "baseStats": {
+      "attack": 234,
+      "defense": 139,
+      "stamina": 181
+    },
+    "maxCP": 3091,
+    "height": 0.8,
+    "weight": 25,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10152.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10152.png"
+    },
+    "formType": "special",
+    "basePokemonId": 745
+  },
+  {
+    "id": 40153,
+    "name": "Araquanid (Totem)",
+    "types": [
+      "Water",
+      "Bug"
+    ],
+    "baseStats": {
+      "attack": 126,
+      "defense": 219,
+      "stamina": 169
+    },
+    "maxCP": 2090,
+    "height": 3.1,
+    "weight": 217.5,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10153.png"
+    },
+    "formType": "special",
+    "basePokemonId": 752
+  },
+  {
+    "id": 40154,
+    "name": "Togedemaru (Totem)",
+    "types": [
+      "Electric",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 190,
+      "defense": 145,
+      "stamina": 163
+    },
+    "maxCP": 2471,
+    "height": 0.6,
+    "weight": 13,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10154.png"
+    },
+    "formType": "special",
+    "basePokemonId": 777
+  },
+  {
+    "id": 40155,
+    "name": "Necrozma (Dusk)",
+    "types": [
+      "Psychic",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 304,
+      "defense": 242,
+      "stamina": 219
+    },
+    "maxCP": 5589,
+    "height": 3.8,
+    "weight": 460,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10155.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10155.png"
+    },
+    "formType": "special",
+    "basePokemonId": 800
+  },
+  {
+    "id": 40156,
+    "name": "Necrozma (Dawn)",
+    "types": [
+      "Psychic",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 304,
+      "defense": 242,
+      "stamina": 219
+    },
+    "maxCP": 5589,
+    "height": 4.2,
+    "weight": 350,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10156.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10156.png"
+    },
+    "formType": "special",
+    "basePokemonId": 800
+  },
+  {
+    "id": 40157,
+    "name": "Necrozma (Ultra)",
+    "types": [
+      "Psychic",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 370,
+      "defense": 215,
+      "stamina": 219
+    },
+    "maxCP": 6381,
+    "height": 7.5,
+    "weight": 230,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10157.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10157.png"
+    },
+    "formType": "special",
+    "basePokemonId": 800
+  },
+  {
+    "id": 40158,
+    "name": "Pikachu (Starter)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 173,
+      "defense": 123,
+      "stamina": 128
+    },
+    "maxCP": 1887,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10158.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40159,
+    "name": "Eevee (Starter)",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 148,
+      "defense": 159,
+      "stamina": 163
+    },
+    "maxCP": 2049,
+    "height": 0.3,
+    "weight": 6.5,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10159.png"
+    },
+    "formType": "special",
+    "basePokemonId": 133
+  },
+  {
+    "id": 40160,
+    "name": "Pikachu (World Cap)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 0.4,
+    "weight": 6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10160.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10160.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40181,
+    "name": "Zygarde (10)",
+    "types": [
+      "Dragon",
+      "Ground"
+    ],
+    "baseStats": {
+      "attack": 205,
+      "defense": 173,
+      "stamina": 144
+    },
+    "maxCP": 2717,
+    "height": 1.2,
+    "weight": 33.5,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10181.png"
+    },
+    "formType": "special",
+    "basePokemonId": 718
+  },
+  {
+    "id": 40182,
+    "name": "Cramorant (Gulping)",
+    "types": [
+      "Flying",
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 173,
+      "defense": 163,
+      "stamina": 172
+    },
+    "maxCP": 2450,
+    "height": 0.8,
+    "weight": 18,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10182.png"
+    },
+    "formType": "special",
+    "basePokemonId": 845
+  },
+  {
+    "id": 40183,
+    "name": "Cramorant (Gorging)",
+    "types": [
+      "Flying",
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 173,
+      "defense": 163,
+      "stamina": 172
+    },
+    "maxCP": 2450,
+    "height": 0.8,
+    "weight": 18,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10183.png"
+    },
+    "formType": "special",
+    "basePokemonId": 845
+  },
+  {
+    "id": 40184,
+    "name": "Toxtricity (Low Key)",
+    "types": [
+      "Electric",
+      "Poison"
+    ],
+    "baseStats": {
+      "attack": 224,
+      "defense": 140,
+      "stamina": 181
+    },
+    "maxCP": 2976,
+    "height": 1.6,
+    "weight": 40,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10184.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10184.png"
+    },
+    "formType": "special",
+    "basePokemonId": 849
+  },
+  {
+    "id": 40185,
+    "name": "Eiscue (Noice)",
+    "types": [
+      "Ice"
+    ],
+    "baseStats": {
+      "attack": 173,
+      "defense": 139,
+      "stamina": 181
+    },
+    "maxCP": 2333,
+    "height": 1.4,
+    "weight": 89,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10185.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10185.png"
+    },
+    "formType": "special",
+    "basePokemonId": 875
+  },
+  {
+    "id": 40186,
+    "name": "Indeedee (Female)",
+    "types": [
+      "Psychic",
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 184,
+      "defense": 184,
+      "stamina": 172
+    },
+    "maxCP": 2742,
+    "height": 0.9,
+    "weight": 28,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10186.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10186.png"
+    },
+    "formType": "special",
+    "basePokemonId": 876
+  },
+  {
+    "id": 40187,
+    "name": "Morpeko (Hangry)",
+    "types": [
+      "Electric",
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 192,
+      "defense": 121,
+      "stamina": 151
+    },
+    "maxCP": 2222,
+    "height": 0.3,
+    "weight": 3,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10187.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10187.png"
+    },
+    "formType": "special",
+    "basePokemonId": 877
+  },
+  {
+    "id": 40188,
+    "name": "Zacian (Crowned)",
+    "types": [
+      "Fairy",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 324,
+      "defense": 264,
+      "stamina": 211
+    },
+    "maxCP": 6082,
+    "height": 2.8,
+    "weight": 355,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10188.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10188.png"
+    },
+    "formType": "special",
+    "basePokemonId": 888
+  },
+  {
+    "id": 40189,
+    "name": "Zamazenta (Crowned)",
+    "types": [
+      "Fighting",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 254,
+      "defense": 310,
+      "stamina": 211
+    },
+    "maxCP": 5209,
+    "height": 2.9,
+    "weight": 785,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10189.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10189.png"
+    },
+    "formType": "special",
+    "basePokemonId": 889
+  },
+  {
+    "id": 40190,
+    "name": "Eternatus (Eternamax)",
+    "types": [
+      "Poison",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 275,
+      "defense": 555,
+      "stamina": 496
+    },
+    "maxCP": 11183,
+    "height": 100,
+    "weight": 0,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10190.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10190.png"
+    },
+    "formType": "special",
+    "basePokemonId": 890
+  },
+  {
+    "id": 40191,
+    "name": "Urshifu (Rapid Strike)",
+    "types": [
+      "Fighting",
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 254,
+      "defense": 177,
+      "stamina": 225
+    },
+    "maxCP": 4126,
+    "height": 1.9,
+    "weight": 105,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10191.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10191.png"
+    },
+    "formType": "special",
+    "basePokemonId": 892
+  },
+  {
+    "id": 40192,
+    "name": "Zarude (Dada)",
+    "types": [
+      "Dark",
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 242,
+      "defense": 215,
+      "stamina": 233
+    },
+    "maxCP": 4385,
+    "height": 1.8,
+    "weight": 70,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10192.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10192.png"
+    },
+    "formType": "special",
+    "basePokemonId": 893
+  },
+  {
+    "id": 40193,
+    "name": "Calyrex (Ice)",
+    "types": [
+      "Psychic",
+      "Ice"
+    ],
+    "baseStats": {
+      "attack": 295,
+      "defense": 271,
+      "stamina": 225
+    },
+    "maxCP": 5803,
+    "height": 2.4,
+    "weight": 809.1,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10193.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10193.png"
+    },
+    "formType": "special",
+    "basePokemonId": 898
+  },
+  {
+    "id": 40194,
+    "name": "Calyrex (Shadow)",
+    "types": [
+      "Psychic",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 357,
+      "defense": 213,
+      "stamina": 225
+    },
+    "maxCP": 6217,
+    "height": 2.4,
+    "weight": 53.6,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10194.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10194.png"
+    },
+    "formType": "special",
+    "basePokemonId": 898
+  },
+  {
+    "id": 40195,
+    "name": "Venusaur (Gmax)",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "attack": 198,
+      "defense": 189,
+      "stamina": 190
+    },
+    "maxCP": 3112,
+    "height": 24,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10195.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10195.png"
+    },
+    "formType": "special",
+    "basePokemonId": 3
+  },
+  {
+    "id": 40196,
+    "name": "Charizard (Gmax)",
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 223,
+      "defense": 173,
+      "stamina": 186
+    },
+    "maxCP": 3305,
+    "height": 28,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10196.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10196.png"
+    },
+    "formType": "special",
+    "basePokemonId": 6
+  },
+  {
+    "id": 40197,
+    "name": "Blastoise (Gmax)",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 171,
+      "defense": 207,
+      "stamina": 188
+    },
+    "maxCP": 2821,
+    "height": 25,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10197.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10197.png"
+    },
+    "formType": "special",
+    "basePokemonId": 9
+  },
+  {
+    "id": 40198,
+    "name": "Butterfree (Gmax)",
+    "types": [
+      "Bug",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 167,
+      "defense": 137,
+      "stamina": 155
+    },
+    "maxCP": 2090,
+    "height": 17,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10198.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10198.png"
+    },
+    "formType": "special",
+    "basePokemonId": 12
+  },
+  {
+    "id": 40199,
+    "name": "Pikachu (Gmax)",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "attack": 112,
+      "defense": 96,
+      "stamina": 111
+    },
+    "maxCP": 1073,
+    "height": 21,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10199.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10199.png"
+    },
+    "formType": "special",
+    "basePokemonId": 25
+  },
+  {
+    "id": 40200,
+    "name": "Meowth (Gmax)",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 92,
+      "defense": 78,
+      "stamina": 120
+    },
+    "maxCP": 856,
+    "height": 33,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10200.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10200.png"
+    },
+    "formType": "special",
+    "basePokemonId": 52
+  },
+  {
+    "id": 40201,
+    "name": "Machamp (Gmax)",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "attack": 234,
+      "defense": 159,
+      "stamina": 207
+    },
+    "maxCP": 3496,
+    "height": 25,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10201.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10201.png"
+    },
+    "formType": "special",
+    "basePokemonId": 68
+  },
+  {
+    "id": 40202,
+    "name": "Gengar (Gmax)",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "baseStats": {
+      "attack": 261,
+      "defense": 149,
+      "stamina": 155
+    },
+    "maxCP": 3292,
+    "height": 20,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10202.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10202.png"
+    },
+    "formType": "special",
+    "basePokemonId": 94
+  },
+  {
+    "id": 40203,
+    "name": "Kingler (Gmax)",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 240,
+      "defense": 181,
+      "stamina": 146
+    },
+    "maxCP": 3236,
+    "height": 19,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10203.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10203.png"
+    },
+    "formType": "special",
+    "basePokemonId": 99
+  },
+  {
+    "id": 40204,
+    "name": "Lapras (Gmax)",
+    "types": [
+      "Water",
+      "Ice"
+    ],
+    "baseStats": {
+      "attack": 165,
+      "defense": 174,
+      "stamina": 277
+    },
+    "maxCP": 3021,
+    "height": 24,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10204.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10204.png"
+    },
+    "formType": "special",
+    "basePokemonId": 131
+  },
+  {
+    "id": 40205,
+    "name": "Eevee (Gmax)",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 104,
+      "defense": 114,
+      "stamina": 146
+    },
+    "maxCP": 1225,
+    "height": 18,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10205.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10205.png"
+    },
+    "formType": "special",
+    "basePokemonId": 133
+  },
+  {
+    "id": 40206,
+    "name": "Snorlax (Gmax)",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 190,
+      "defense": 169,
+      "stamina": 330
+    },
+    "maxCP": 3690,
+    "height": 35,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10206.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10206.png"
+    },
+    "formType": "special",
+    "basePokemonId": 143
+  },
+  {
+    "id": 40207,
+    "name": "Garbodor (Gmax)",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "attack": 181,
+      "defense": 164,
+      "stamina": 190
+    },
+    "maxCP": 2682,
+    "height": 21,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10207.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10207.png"
+    },
+    "formType": "special",
+    "basePokemonId": 569
+  },
+  {
+    "id": 40208,
+    "name": "Melmetal (Gmax)",
+    "types": [
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 248,
+      "defense": 209,
+      "stamina": 286
+    },
+    "maxCP": 4879,
+    "height": 25,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10208.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10208.png"
+    },
+    "formType": "special",
+    "basePokemonId": 809
+  },
+  {
+    "id": 40209,
+    "name": "Rillaboom (Gmax)",
+    "types": [
+      "Grass"
+    ],
+    "baseStats": {
+      "attack": 239,
+      "defense": 168,
+      "stamina": 225
+    },
+    "maxCP": 3803,
+    "height": 28,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10209.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10209.png"
+    },
+    "formType": "special",
+    "basePokemonId": 812
+  },
+  {
+    "id": 40210,
+    "name": "Cinderace (Gmax)",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "attack": 238,
+      "defense": 163,
+      "stamina": 190
+    },
+    "maxCP": 3453,
+    "height": 27,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10210.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10210.png"
+    },
+    "formType": "special",
+    "basePokemonId": 815
+  },
+  {
+    "id": 40211,
+    "name": "Inteleon (Gmax)",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 262,
+      "defense": 142,
+      "stamina": 172
+    },
+    "maxCP": 3391,
+    "height": 40,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10211.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10211.png"
+    },
+    "formType": "special",
+    "basePokemonId": 818
+  },
+  {
+    "id": 40212,
+    "name": "Corviknight (Gmax)",
+    "types": [
+      "Flying",
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 163,
+      "defense": 192,
+      "stamina": 221
+    },
+    "maxCP": 2811,
+    "height": 14,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10212.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10212.png"
+    },
+    "formType": "special",
+    "basePokemonId": 823
+  },
+  {
+    "id": 40213,
+    "name": "Orbeetle (Gmax)",
+    "types": [
+      "Bug",
+      "Psychic"
+    ],
+    "baseStats": {
+      "attack": 156,
+      "defense": 240,
+      "stamina": 155
+    },
+    "maxCP": 2543,
+    "height": 14,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10213.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10213.png"
+    },
+    "formType": "special",
+    "basePokemonId": 826
+  },
+  {
+    "id": 40214,
+    "name": "Drednaw (Gmax)",
+    "types": [
+      "Water",
+      "Rock"
+    ],
+    "baseStats": {
+      "attack": 213,
+      "defense": 164,
+      "stamina": 207
+    },
+    "maxCP": 3247,
+    "height": 24,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10214.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10214.png"
+    },
+    "formType": "special",
+    "basePokemonId": 834
+  },
+  {
+    "id": 40215,
+    "name": "Coalossal (Gmax)",
+    "types": [
+      "Rock",
+      "Fire"
+    ],
+    "baseStats": {
+      "attack": 146,
+      "defense": 198,
+      "stamina": 242
+    },
+    "maxCP": 2691,
+    "height": 42,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10215.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10215.png"
+    },
+    "formType": "special",
+    "basePokemonId": 839
+  },
+  {
+    "id": 40216,
+    "name": "Flapple (Gmax)",
+    "types": [
+      "Grass",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 214,
+      "defense": 144,
+      "stamina": 172
+    },
+    "maxCP": 2821,
+    "height": 24,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10216.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10216.png"
+    },
+    "formType": "special",
+    "basePokemonId": 841
+  },
+  {
+    "id": 40217,
+    "name": "Appletun (Gmax)",
+    "types": [
+      "Grass",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 178,
+      "defense": 146,
+      "stamina": 242
+    },
+    "maxCP": 2805,
+    "height": 24,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10217.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10217.png"
+    },
+    "formType": "special",
+    "basePokemonId": 842
+  },
+  {
+    "id": 40218,
+    "name": "Sandaconda (Gmax)",
+    "types": [
+      "Ground"
+    ],
+    "baseStats": {
+      "attack": 202,
+      "defense": 207,
+      "stamina": 176
+    },
+    "maxCP": 3192,
+    "height": 22,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10218.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10218.png"
+    },
+    "formType": "special",
+    "basePokemonId": 844
+  },
+  {
+    "id": 40219,
+    "name": "Toxtricity (Amped Gmax)",
+    "types": [
+      "Electric",
+      "Poison"
+    ],
+    "baseStats": {
+      "attack": 224,
+      "defense": 140,
+      "stamina": 181
+    },
+    "maxCP": 2976,
+    "height": 24,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10219.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10219.png"
+    },
+    "formType": "special",
+    "basePokemonId": 849
+  },
+  {
+    "id": 40220,
+    "name": "Centiskorch (Gmax)",
+    "types": [
+      "Fire",
+      "Bug"
+    ],
+    "baseStats": {
+      "attack": 220,
+      "defense": 158,
+      "stamina": 225
+    },
+    "maxCP": 3421,
+    "height": 75,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10220.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10220.png"
+    },
+    "formType": "special",
+    "basePokemonId": 851
+  },
+  {
+    "id": 40221,
+    "name": "Hatterene (Gmax)",
+    "types": [
+      "Psychic",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 237,
+      "defense": 182,
+      "stamina": 149
+    },
+    "maxCP": 3236,
+    "height": 26,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10221.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10221.png"
+    },
+    "formType": "special",
+    "basePokemonId": 858
+  },
+  {
+    "id": 40222,
+    "name": "Grimmsnarl (Gmax)",
+    "types": [
+      "Dark",
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 227,
+      "defense": 139,
+      "stamina": 216
+    },
+    "maxCP": 3261,
+    "height": 32,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10222.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10222.png"
+    },
+    "formType": "special",
+    "basePokemonId": 861
+  },
+  {
+    "id": 40223,
+    "name": "Alcremie (Gmax)",
+    "types": [
+      "Fairy"
+    ],
+    "baseStats": {
+      "attack": 203,
+      "defense": 203,
+      "stamina": 163
+    },
+    "maxCP": 3068,
+    "height": 30,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10223.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10223.png"
+    },
+    "formType": "special",
+    "basePokemonId": 869
+  },
+  {
+    "id": 40224,
+    "name": "Copperajah (Gmax)",
+    "types": [
+      "Steel"
+    ],
+    "baseStats": {
+      "attack": 226,
+      "defense": 126,
+      "stamina": 263
+    },
+    "maxCP": 3409,
+    "height": 23,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10224.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10224.png"
+    },
+    "formType": "special",
+    "basePokemonId": 879
+  },
+  {
+    "id": 40225,
+    "name": "Duraludon (Gmax)",
+    "types": [
+      "Steel",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 239,
+      "defense": 185,
+      "stamina": 172
+    },
+    "maxCP": 3509,
+    "height": 43,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10225.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10225.png"
+    },
+    "formType": "special",
+    "basePokemonId": 884
+  },
+  {
+    "id": 40226,
+    "name": "Urshifu (Single Strike Gmax)",
+    "types": [
+      "Fighting",
+      "Dark"
+    ],
+    "baseStats": {
+      "attack": 254,
+      "defense": 177,
+      "stamina": 225
+    },
+    "maxCP": 4126,
+    "height": 29,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10226.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10226.png"
+    },
+    "formType": "special",
+    "basePokemonId": 892
+  },
+  {
+    "id": 40227,
+    "name": "Urshifu (Rapid Strike Gmax)",
+    "types": [
+      "Fighting",
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 254,
+      "defense": 177,
+      "stamina": 225
+    },
+    "maxCP": 4126,
+    "height": 26,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10227.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10227.png"
+    },
+    "formType": "special",
+    "basePokemonId": 892
+  },
+  {
+    "id": 40228,
+    "name": "Toxtricity (Low Key Gmax)",
+    "types": [
+      "Electric",
+      "Poison"
+    ],
+    "baseStats": {
+      "attack": 224,
+      "defense": 140,
+      "stamina": 181
+    },
+    "maxCP": 2976,
+    "height": 24,
+    "weight": 1000,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10228.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10228.png"
+    },
+    "formType": "special",
+    "basePokemonId": 849
+  },
+  {
+    "id": 40245,
+    "name": "Dialga (Origin)",
+    "types": [
+      "Steel",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 297,
+      "defense": 247,
+      "stamina": 225
+    },
+    "maxCP": 5590,
+    "height": 7,
+    "weight": 848.7,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10245.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10245.png"
+    },
+    "formType": "special",
+    "basePokemonId": 483
+  },
+  {
+    "id": 40246,
+    "name": "Palkia (Origin)",
+    "types": [
+      "Water",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 314,
+      "defense": 245,
+      "stamina": 207
+    },
+    "maxCP": 5647,
+    "height": 6.3,
+    "weight": 659,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10246.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10246.png"
+    },
+    "formType": "special",
+    "basePokemonId": 484
+  },
+  {
+    "id": 40247,
+    "name": "Basculin (White Striped)",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 189,
+      "defense": 129,
+      "stamina": 172
+    },
+    "maxCP": 2391,
+    "height": 1,
+    "weight": 18,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10247.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10247.png"
+    },
+    "formType": "special",
+    "basePokemonId": 550
+  },
+  {
+    "id": 40248,
+    "name": "Basculegion (Female)",
+    "types": [
+      "Water",
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 199,
+      "defense": 144,
+      "stamina": 260
+    },
+    "maxCP": 3197,
+    "height": 3,
+    "weight": 110,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10248.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10248.png"
+    },
+    "formType": "special",
+    "basePokemonId": 902
+  },
+  {
+    "id": 40249,
+    "name": "Enamorus (Therian)",
+    "types": [
+      "Fairy",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 250,
+      "defense": 201,
+      "stamina": 179
+    },
+    "maxCP": 3876,
+    "height": 1.6,
+    "weight": 48,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10249.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10249.png"
+    },
+    "formType": "special",
+    "basePokemonId": 905
+  },
+  {
+    "id": 40254,
+    "name": "Oinkologne (Female)",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 169,
+      "defense": 162,
+      "stamina": 251
+    },
+    "maxCP": 2852,
+    "height": 1,
+    "weight": 120,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10254.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10254.png"
+    },
+    "formType": "special",
+    "basePokemonId": 916
+  },
+  {
+    "id": 40255,
+    "name": "Dudunsparce (Three Segment)",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 188,
+      "defense": 150,
+      "stamina": 268
+    },
+    "maxCP": 3134,
+    "height": 4.5,
+    "weight": 47.4,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10255.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10255.png"
+    },
+    "formType": "special",
+    "basePokemonId": 982
+  },
+  {
+    "id": 40256,
+    "name": "Palafin (Hero)",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 322,
+      "defense": 196,
+      "stamina": 225
+    },
+    "maxCP": 5418,
+    "height": 1.8,
+    "weight": 97.4,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10256.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10256.png"
+    },
+    "formType": "special",
+    "basePokemonId": 964
+  },
+  {
+    "id": 40257,
+    "name": "Maushold (Family Of Three)",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 159,
+      "defense": 157,
+      "stamina": 179
+    },
+    "maxCP": 2271,
+    "height": 0.3,
+    "weight": 2.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10257.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10257.png"
+    },
+    "formType": "special",
+    "basePokemonId": 925
+  },
+  {
+    "id": 40258,
+    "name": "Tatsugiri (Droopy)",
+    "types": [
+      "Dragon",
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 226,
+      "defense": 166,
+      "stamina": 169
+    },
+    "maxCP": 3142,
+    "height": 0.3,
+    "weight": 8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10258.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10258.png"
+    },
+    "formType": "special",
+    "basePokemonId": 978
+  },
+  {
+    "id": 40259,
+    "name": "Tatsugiri (Stretchy)",
+    "types": [
+      "Dragon",
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 226,
+      "defense": 166,
+      "stamina": 169
+    },
+    "maxCP": 3142,
+    "height": 0.3,
+    "weight": 8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10259.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10259.png"
+    },
+    "formType": "special",
+    "basePokemonId": 978
+  },
+  {
+    "id": 40260,
+    "name": "Squawkabilly (Blue Plumage)",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 185,
+      "defense": 105,
+      "stamina": 193
+    },
+    "maxCP": 2257,
+    "height": 0.6,
+    "weight": 2.4,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10260.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10260.png"
+    },
+    "formType": "special",
+    "basePokemonId": 931
+  },
+  {
+    "id": 40261,
+    "name": "Squawkabilly (Yellow Plumage)",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 185,
+      "defense": 105,
+      "stamina": 193
+    },
+    "maxCP": 2257,
+    "height": 0.6,
+    "weight": 2.4,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10261.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10261.png"
+    },
+    "formType": "special",
+    "basePokemonId": 931
+  },
+  {
+    "id": 40262,
+    "name": "Squawkabilly (White Plumage)",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "attack": 185,
+      "defense": 105,
+      "stamina": 193
+    },
+    "maxCP": 2257,
+    "height": 0.6,
+    "weight": 2.4,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10262.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10262.png"
+    },
+    "formType": "special",
+    "basePokemonId": 931
+  },
+  {
+    "id": 40263,
+    "name": "Gimmighoul (Roaming)",
+    "types": [
+      "Ghost"
+    ],
+    "baseStats": {
+      "attack": 140,
+      "defense": 76,
+      "stamina": 128
+    },
+    "maxCP": 1263,
+    "height": 0.1,
+    "weight": 1,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10263.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10263.png"
+    },
+    "formType": "special",
+    "basePokemonId": 999
+  },
+  {
+    "id": 40264,
+    "name": "Koraidon (Limited Build)",
+    "types": [
+      "Fighting",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 289,
+      "defense": 245,
+      "stamina": 225
+    },
+    "maxCP": 5426,
+    "height": 3.5,
+    "weight": 303,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "special",
+    "basePokemonId": 1007
+  },
+  {
+    "id": 40265,
+    "name": "Koraidon (Sprinting Build)",
+    "types": [
+      "Fighting",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 289,
+      "defense": 245,
+      "stamina": 225
+    },
+    "maxCP": 5426,
+    "height": 3.5,
+    "weight": 303,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "special",
+    "basePokemonId": 1007
+  },
+  {
+    "id": 40266,
+    "name": "Koraidon (Swimming Build)",
+    "types": [
+      "Fighting",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 289,
+      "defense": 245,
+      "stamina": 225
+    },
+    "maxCP": 5426,
+    "height": 3.5,
+    "weight": 303,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "special",
+    "basePokemonId": 1007
+  },
+  {
+    "id": 40267,
+    "name": "Koraidon (Gliding Build)",
+    "types": [
+      "Fighting",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 289,
+      "defense": 245,
+      "stamina": 225
+    },
+    "maxCP": 5426,
+    "height": 3.5,
+    "weight": 303,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "special",
+    "basePokemonId": 1007
+  },
+  {
+    "id": 40268,
+    "name": "Miraidon (Low Power Mode)",
+    "types": [
+      "Electric",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 289,
+      "defense": 245,
+      "stamina": 225
+    },
+    "maxCP": 5426,
+    "height": 2.8,
+    "weight": 240,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "special",
+    "basePokemonId": 1008
+  },
+  {
+    "id": 40269,
+    "name": "Miraidon (Drive Mode)",
+    "types": [
+      "Electric",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 289,
+      "defense": 245,
+      "stamina": 225
+    },
+    "maxCP": 5426,
+    "height": 2.8,
+    "weight": 240,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "special",
+    "basePokemonId": 1008
+  },
+  {
+    "id": 40270,
+    "name": "Miraidon (Aquatic Mode)",
+    "types": [
+      "Electric",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 289,
+      "defense": 245,
+      "stamina": 225
+    },
+    "maxCP": 5426,
+    "height": 2.8,
+    "weight": 240,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "special",
+    "basePokemonId": 1008
+  },
+  {
+    "id": 40271,
+    "name": "Miraidon (Glide Mode)",
+    "types": [
+      "Electric",
+      "Dragon"
+    ],
+    "baseStats": {
+      "attack": 289,
+      "defense": 245,
+      "stamina": 225
+    },
+    "maxCP": 5426,
+    "height": 2.8,
+    "weight": 240,
+    "sprites": {
+      "front_default": null,
+      "official_artwork": null
+    },
+    "formType": "special",
+    "basePokemonId": 1008
+  },
+  {
+    "id": 40272,
+    "name": "Ursaluna (Bloodmoon)",
+    "types": [
+      "Ground",
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 242,
+      "defense": 190,
+      "stamina": 247
+    },
+    "maxCP": 4255,
+    "height": 2.4,
+    "weight": 290,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10272.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10272.png"
+    },
+    "formType": "special",
+    "basePokemonId": 901
+  },
+  {
+    "id": 40273,
+    "name": "Ogerpon (Wellspring Mask)",
+    "types": [
+      "Grass",
+      "Water"
+    ],
+    "baseStats": {
+      "attack": 241,
+      "defense": 196,
+      "stamina": 190
+    },
+    "maxCP": 3804,
+    "height": 1.2,
+    "weight": 39.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10273.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10273.png"
+    },
+    "formType": "special",
+    "basePokemonId": 1017
+  },
+  {
+    "id": 40274,
+    "name": "Ogerpon (Hearthflame Mask)",
+    "types": [
+      "Grass",
+      "Fire"
+    ],
+    "baseStats": {
+      "attack": 241,
+      "defense": 196,
+      "stamina": 190
+    },
+    "maxCP": 3804,
+    "height": 1.2,
+    "weight": 39.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10274.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10274.png"
+    },
+    "formType": "special",
+    "basePokemonId": 1017
+  },
+  {
+    "id": 40275,
+    "name": "Ogerpon (Cornerstone Mask)",
+    "types": [
+      "Grass",
+      "Rock"
+    ],
+    "baseStats": {
+      "attack": 241,
+      "defense": 196,
+      "stamina": 190
+    },
+    "maxCP": 3804,
+    "height": 1.2,
+    "weight": 39.8,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10275.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10275.png"
+    },
+    "formType": "special",
+    "basePokemonId": 1017
+  },
+  {
+    "id": 40276,
+    "name": "Terapagos (Terastal)",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 212,
+      "defense": 224,
+      "stamina": 216
+    },
+    "maxCP": 3811,
+    "height": 0.3,
+    "weight": 16,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10276.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10276.png"
+    },
+    "formType": "special",
+    "basePokemonId": 1024
+  },
+  {
+    "id": 40277,
+    "name": "Terapagos (Stellar)",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "attack": 259,
+      "defense": 224,
+      "stamina": 330
+    },
+    "maxCP": 5621,
+    "height": 1.7,
+    "weight": 77,
+    "sprites": {
+      "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10277.png",
+      "official_artwork": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10277.png"
+    },
+    "formType": "special",
+    "basePokemonId": 1024
   }
-] // Use allPokemon
+]
 
 export const findPokemonById = (id: number): Pokemon | undefined => {
   return POKEMON_DATABASE.find(pokemon => pokemon.id === id)
 }
 
 export const findPokemonByName = (name: string): Pokemon | undefined => {
-  const lowerName = name.toLowerCase()
-  return POKEMON_DATABASE.find(pokemon => {
-    // Normal name matching
-    if (pokemon.name.toLowerCase().includes(lowerName)) {
-      return true
-    }
-    
-    // Handle hyphenated names - convert hyphens to spaces for search
-    const normalizedName = pokemon.name.toLowerCase().replace(/-/g, ' ')
-    if (normalizedName.includes(lowerName)) {
-      return true
-    }
-    
-    // Handle spaced names - convert spaces to hyphens for search
-    const hyphenatedName = pokemon.name.toLowerCase().replace(/\s+/g, '-')
-    return hyphenatedName.includes(lowerName)
-  })
+  return POKEMON_DATABASE.find(pokemon =>
+    pokemon.name.toLowerCase().includes(name.toLowerCase())
+  )
 }
 
 export const getAllPokemon = (): Pokemon[] => {
@@ -26936,25 +31006,8 @@ export const getAllPokemon = (): Pokemon[] => {
 
 export const searchPokemon = (query: string): Pokemon[] => {
   const lowerQuery = query.toLowerCase()
-  return POKEMON_DATABASE.filter(pokemon => {
-    // Normal name matching
-    if (pokemon.name.toLowerCase().includes(lowerQuery)) {
-      return true
-    }
-    
-    // Handle hyphenated names - convert hyphens to spaces for search
-    const normalizedName = pokemon.name.toLowerCase().replace(/-/g, ' ')
-    if (normalizedName.includes(lowerQuery)) {
-      return true
-    }
-    
-    // Handle spaced names - convert spaces to hyphens for search
-    const hyphenatedName = pokemon.name.toLowerCase().replace(/\s+/g, '-')
-    if (hyphenatedName.includes(lowerQuery)) {
-      return true
-    }
-    
-    // Type matching
-    return pokemon.types.some(type => type.toLowerCase().includes(lowerQuery))
-  })
+  return POKEMON_DATABASE.filter(pokemon =>
+    pokemon.name.toLowerCase().includes(lowerQuery) ||
+    pokemon.types.some(type => type.toLowerCase().includes(lowerQuery))
+  )
 }

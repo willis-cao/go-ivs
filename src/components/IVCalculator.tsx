@@ -421,9 +421,15 @@ const IVCalculator: React.FC = () => {
 
   return (
     <div className="iv-calculator">
-      <div className="input-section">
-        {/* Pokemon Selection */}
-        <div className="pokemon-input-container">
+      {/* Header */}
+      <div className="app-header">
+        <h1 className="app-title">GO IVs</h1>
+        <p className="app-subtitle">Pokémon GO Competitive Assistant</p>
+      </div>
+
+      {/* Pokemon Selection and IV Inputs Row */}
+      <div className="pokemon-input-container">
+        <div className="search-and-inputs-row">
           <div className="pokemon-input-wrapper">
             <input
               ref={pokemonInputRef}
@@ -439,210 +445,92 @@ const IVCalculator: React.FC = () => {
               placeholder="Search Pokemon..."
               className="pokemon-input"
             />
-            {showSuggestions && filteredPokemon.length > 0 && (
-              <div className="suggestions">
-                {filteredPokemon.map((pokemon, index) => (
-                  <div
-                    key={pokemon.id}
-                    className={`suggestion ${index === suggestionIndex ? 'selected' : ''}`}
-                    onClick={() => handlePokemonSelect(pokemon)}
-                  >
-                    <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-                    <span>{pokemon.name}</span>
-                  </div>
-                ))}
-                {searchPokemon(searchTerm).length > 100 && (
-                  <div className="suggestion-more-results">
-                    <span>Showing 100 of {searchPokemon(searchTerm).length} results. Type more to narrow down.</span>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* IV Inputs */}
-        {selectedPokemon && (
-          <div className="iv-inputs">
-            <div className="iv-input-group">
-              <label htmlFor="atk-input">ATK</label>
-              <input
-                ref={atkInputRef}
-                id="atk-input"
-                type="number"
-                min="0"
-                max="15"
-                value={ivs.attack === null ? '' : ivs.attack.toString()}
-                onChange={(e) => handleIVChange('attack', e.target.value)}
-                onKeyDown={(e) => handleIVKeyDown(e, defInputRef, pokemonInputRef)}
-                onBlur={handleInputBlur}
-                className="iv-input"
-              />
-            </div>
-            <div className="iv-input-group">
-              <label htmlFor="def-input">DEF</label>
-              <input
-                ref={defInputRef}
-                id="def-input"
-                type="number"
-                min="0"
-                max="15"
-                value={ivs.defense === null ? '' : ivs.defense.toString()}
-                onChange={(e) => handleIVChange('defense', e.target.value)}
-                onKeyDown={(e) => handleIVKeyDown(e, hpInputRef, atkInputRef)}
-                onBlur={handleInputBlur}
-                className="iv-input"
-              />
-            </div>
-            <div className="iv-input-group">
-              <label htmlFor="hp-input">HP</label>
-              <input
-                ref={hpInputRef}
-                id="hp-input"
-                type="number"
-                min="0"
-                max="15"
-                value={ivs.stamina === null ? '' : ivs.stamina.toString()}
-                onChange={(e) => handleIVChange('stamina', e.target.value)}
-                onKeyDown={(e) => handleIVKeyDown(e, cpInputRef, defInputRef)}
-                onBlur={handleInputBlur}
-                className="iv-input"
-              />
-            </div>
-            <div className="iv-input-group cp-group">
-              <label htmlFor="cp-input">
-                CP
-                <span className="optional-text">(optional)</span>
-              </label>
-              <input
-                ref={cpInputRef}
-                id="cp-input"
-                type="number"
-                min="0"
-                value={currentCP === null ? '' : currentCP.toString()}
-                onChange={(e) => handleCPChange(e.target.value)}
-                onKeyDown={(e) => handleIVKeyDown(e, undefined, hpInputRef)}
-                onBlur={handleInputBlur}
-                className="iv-input cp-input"
-              />
-            </div>
-          </div>
-        )}
-
-        {/* Advanced Options Panel */}
-        <div className="advanced-options-section">
-          <button
-            className="advanced-options-toggle"
-            onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
-          >
-            Advanced Options {showAdvancedOptions ? '▼' : '▶'}
-          </button>
-          
-          {showAdvancedOptions && (
-            <div className="advanced-options-panel">
-              <div className="advanced-option">
-                <label className="checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={bestBuddyBoost}
-                    onChange={(e) => {
-                      const newBestBuddyBoost = e.target.checked
-                      setBestBuddyBoost(newBestBuddyBoost)
-                      // Recalculate immediately with new values
-                      if (selectedPokemon && validateIVs(ivs)) {
-                        const newMaxLevel = (useXLCandy ? 50 : 40) + (newBestBuddyBoost ? 1 : 0)
-                        calculateResults(selectedPokemon, ivs, currentCP, newBestBuddyBoost, useXLCandy, showLittleCup)
-                      }
-                    }}
-                  />
-                  <span className="checkmark"></span>
-                  Best Buddy Boost (Max Level +1)
-                </label>
-                <div className="option-description">
-                  When checked, increase the max level by 1.
-                </div>
-              </div>
-              
-              <div className="advanced-option">
-                <label className="checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={useXLCandy}
-                    onChange={(e) => {
-                      const newUseXLCandy = e.target.checked
-                      setUseXLCandy(newUseXLCandy)
-                      // Recalculate immediately with new values
-                      if (selectedPokemon && validateIVs(ivs)) {
-                        const newMaxLevel = (newUseXLCandy ? 50 : 40) + (bestBuddyBoost ? 1 : 0)
-                        calculateResults(selectedPokemon, ivs, currentCP, bestBuddyBoost, newUseXLCandy, showLittleCup)
-                      }
-                    }}
-                  />
-                  <span className="checkmark"></span>
-                  Use XL Candy (Max Level 50)
-                </label>
-                <div className="option-description">
-                  When unchecked, the maximum level taken into consideration is 40.
-                </div>
-              </div>
-              
-              <div className="advanced-option">
-                <label className="checkbox-label">
-                  <input
-                    type="checkbox"
-                    checked={showLittleCup}
-                    onChange={(e) => {
-                      const newShowLittleCup = e.target.checked
-                      setShowLittleCup(newShowLittleCup)
-                      // Recalculate immediately with new values
-                      if (selectedPokemon && validateIVs(ivs)) {
-                        calculateResults(selectedPokemon, ivs, currentCP, bestBuddyBoost, useXLCandy, newShowLittleCup)
-                      }
-                    }}
-                  />
-                  <span className="checkmark"></span>
-                  Show Little Cup Rankings
-                </label>
-                <div className="option-description">
-                  When unchecked, Little Cup rankings will not be calculated or displayed.
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* History Section */}
-        <div className="history-section">
-          <h3>History</h3>
-          {history.length > 0 ? (
-            <div className="history-list">
-              {history.map((entry) => (
-                <div
-                  key={entry.id}
-                  className="history-entry"
-                  onClick={() => handleHistoryClick(entry)}
-                >
-                  <img src={entry.pokemon.sprites.front_default} alt={entry.pokemon.name} />
-                  <div className="history-details">
-                    <div className="history-name-ivs-cp">
-                      <span className="history-name">{entry.pokemon.name}</span>
-                      <span className="history-ivs">
-                        {entry.ivs.attack ?? '-'}/{entry.ivs.defense ?? '-'}/{entry.ivs.stamina ?? '-'}
-                      </span>
-                      {entry.cp && <span className="history-cp">{entry.cp} CP</span>}
+              {showSuggestions && filteredPokemon.length > 0 && (
+                <div className="suggestions">
+                  {filteredPokemon.map((pokemon, index) => (
+                    <div
+                      key={pokemon.id}
+                      className={`suggestion ${index === suggestionIndex ? 'selected' : ''}`}
+                      onClick={() => handlePokemonSelect(pokemon)}
+                    >
+                      <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+                      <span>{pokemon.name}</span>
                     </div>
-                    {entry.rankingSummary && (
-                      <div className="history-ranking-summary">
-                        {renderRankingSummary(entry.rankingSummary)}
-                      </div>
-                    )}
-                  </div>
+                  ))}
+                  {searchPokemon(searchTerm).length > 100 && (
+                    <div className="suggestion-more-results">
+                      <span>Showing 100 of {searchPokemon(searchTerm).length} results. Type more to narrow down.</span>
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
-          ) : (
-            <div className="history-empty">
-              Your previous searches will be saved here.
+              )}
+          </div>
+
+          {/* IV Inputs */}
+          {selectedPokemon && (
+            <div className="iv-inputs">
+              <div className="iv-input-group">
+                <label htmlFor="atk-input">ATK</label>
+                <input
+                  ref={atkInputRef}
+                  id="atk-input"
+                  type="number"
+                  min="0"
+                  max="15"
+                  value={ivs.attack === null ? '' : ivs.attack.toString()}
+                  onChange={(e) => handleIVChange('attack', e.target.value)}
+                  onKeyDown={(e) => handleIVKeyDown(e, defInputRef, pokemonInputRef)}
+                  onBlur={handleInputBlur}
+                  className="iv-input"
+                />
+              </div>
+              <div className="iv-input-group">
+                <label htmlFor="def-input">DEF</label>
+                <input
+                  ref={defInputRef}
+                  id="def-input"
+                  type="number"
+                  min="0"
+                  max="15"
+                  value={ivs.defense === null ? '' : ivs.defense.toString()}
+                  onChange={(e) => handleIVChange('defense', e.target.value)}
+                  onKeyDown={(e) => handleIVKeyDown(e, hpInputRef, atkInputRef)}
+                  onBlur={handleInputBlur}
+                  className="iv-input"
+                />
+              </div>
+              <div className="iv-input-group">
+                <label htmlFor="hp-input">HP</label>
+                <input
+                  ref={hpInputRef}
+                  id="hp-input"
+                  type="number"
+                  min="0"
+                  max="15"
+                  value={ivs.stamina === null ? '' : ivs.stamina.toString()}
+                  onChange={(e) => handleIVChange('stamina', e.target.value)}
+                  onKeyDown={(e) => handleIVKeyDown(e, cpInputRef, defInputRef)}
+                  onBlur={handleInputBlur}
+                  className="iv-input"
+                />
+              </div>
+              <div className="iv-input-group cp-group">
+                <label htmlFor="cp-input">
+                  CP
+                  <span className="optional-text">(optional)</span>
+                </label>
+                <input
+                  ref={cpInputRef}
+                  id="cp-input"
+                  type="number"
+                  min="0"
+                  value={currentCP === null ? '' : currentCP.toString()}
+                  onChange={(e) => handleCPChange(e.target.value)}
+                  onKeyDown={(e) => handleIVKeyDown(e, undefined, hpInputRef)}
+                  onBlur={handleInputBlur}
+                  className="iv-input cp-input"
+                />
+              </div>
             </div>
           )}
         </div>
@@ -675,36 +563,154 @@ const IVCalculator: React.FC = () => {
           ))}
         </div>
       ) : (
-        <div className="welcome-section">
-          <div className="welcome-content">
-            <div className="welcome-icon">
-              {/* Clean shield shape - simple inverted pentagon */}
-              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{stopColor: '#667eea', stopOpacity: 1}} />
-                    <stop offset="100%" style={{stopColor: '#764ba2', stopOpacity: 1}} />
-                  </linearGradient>
-                </defs>
-                <path d="M 20 25 L 60 15 L 100 25 Q 100 75 60 110 Q 20 75 20 25 Z" fill="url(#shieldGrad)" stroke="#ffffff" strokeWidth="3"/>
-                <text x="60" y="70" fontFamily="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" fontSize="32" fontWeight="800" textAnchor="middle" fill="#ffffff">IV</text>
-              </svg>
-            </div>
-            <h1 className="welcome-title">GO IVs</h1>
-            <p className="welcome-subtitle">Start typing the name of a Pokemon to begin...</p>
-            <div className="welcome-links">
-              <a 
-                href="https://github.com/willis-cao/go-ivs" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="github-link"
-              >
-                View on GitHub
-              </a>
-            </div>
+        <div className="welcome-placeholder">
+          <div className="welcome-features">
+            <h2>Features</h2>
+            <p>
+              <strong>GBL PvP IV Rankings:</strong> Calculate stat product rankings across Great League (1500 CP), Ultra League (2500 CP), Master League (unlimited), and Little Cup (500 CP).
+            </p>
+            <p>
+              <strong>Evolutions:</strong> Automatically see the rankings for all possible evolutions of your Pokemon, allowing you to easily determine which evolution you should choose (e.g., Primeape or Annihilape).
+            </p>
+            <p>
+              <strong>Current CP Entry:</strong> Optionally enter your Pokemon's current CP to calculate your Pokemon's level, allowing you to quickly evaluate if your Pokemon will exceed CP limits once evolved.
+            </p>
+            <p>
+              <strong>Advanced Options:</strong> Factor in Best Buddy boost, XL Candy usage, and customize your view with toggleable league displays.
+            </p>
+            <p>
+              <strong>Search History:</strong> Keep track of previously analyzed Pokemon for quick reference and comparison.
+            </p>
           </div>
         </div>
       )}
+
+      {/* Advanced Options Panel */}
+      <div className="advanced-options-section">
+        <button
+          className="advanced-options-toggle"
+          onClick={() => setShowAdvancedOptions(!showAdvancedOptions)}
+        >
+          Advanced Options {showAdvancedOptions ? '▼' : '▶'}
+        </button>
+
+        {showAdvancedOptions && (
+          <div className="advanced-options-panel">
+            <div className="advanced-option">
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  checked={bestBuddyBoost}
+                  onChange={(e) => {
+                    const newBestBuddyBoost = e.target.checked
+                    setBestBuddyBoost(newBestBuddyBoost)
+                    // Recalculate immediately with new values
+                    if (selectedPokemon && validateIVs(ivs)) {
+                      const newMaxLevel = (useXLCandy ? 50 : 40) + (newBestBuddyBoost ? 1 : 0)
+                      calculateResults(selectedPokemon, ivs, currentCP, newBestBuddyBoost, useXLCandy, showLittleCup)
+                    }
+                  }}
+                />
+                Best Buddy Boost (Max Level +1)
+              </label>
+              <div className="option-description">
+                When checked, increase the max level by 1.
+              </div>
+            </div>
+
+            <div className="advanced-option">
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  checked={useXLCandy}
+                  onChange={(e) => {
+                    const newUseXLCandy = e.target.checked
+                    setUseXLCandy(newUseXLCandy)
+                    // Recalculate immediately with new values
+                    if (selectedPokemon && validateIVs(ivs)) {
+                      const newMaxLevel = (newUseXLCandy ? 50 : 40) + (bestBuddyBoost ? 1 : 0)
+                      calculateResults(selectedPokemon, ivs, currentCP, bestBuddyBoost, newUseXLCandy, showLittleCup)
+                    }
+                  }}
+                />
+                Use XL Candy (Max Level 50)
+              </label>
+              <div className="option-description">
+                When unchecked, the maximum level taken into consideration is 40.
+              </div>
+            </div>
+
+            <div className="advanced-option">
+              <label className="checkbox-label">
+                <input
+                  type="checkbox"
+                  checked={showLittleCup}
+                  onChange={(e) => {
+                    const newShowLittleCup = e.target.checked
+                    setShowLittleCup(newShowLittleCup)
+                    // Recalculate immediately with new values
+                    if (selectedPokemon && validateIVs(ivs)) {
+                      calculateResults(selectedPokemon, ivs, currentCP, bestBuddyBoost, useXLCandy, newShowLittleCup)
+                    }
+                  }}
+                />
+                Show Little Cup Rankings
+              </label>
+              <div className="option-description">
+                When unchecked, Little Cup rankings will not be calculated or displayed.
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* History Section */}
+      <div className="history-section">
+        <h3>History</h3>
+        {history.length > 0 ? (
+          <div className="history-list">
+            {history.map((entry) => (
+              <div
+                key={entry.id}
+                className="history-entry"
+                onClick={() => handleHistoryClick(entry)}
+              >
+                <img src={entry.pokemon.sprites.front_default} alt={entry.pokemon.name} />
+                <div className="history-details">
+                  <div className="history-name-ivs-cp">
+                    <span className="history-name">{entry.pokemon.name}</span>
+                    <span className="history-ivs">
+                      {entry.ivs.attack ?? '-'}/{entry.ivs.defense ?? '-'}/{entry.ivs.stamina ?? '-'}
+                    </span>
+                    {entry.cp && <span className="history-cp">{entry.cp} CP</span>}
+                  </div>
+                  {entry.rankingSummary && (
+                    <div className="history-ranking-summary">
+                      {renderRankingSummary(entry.rankingSummary)}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="history-empty">
+            Your previous searches will be saved here.
+          </div>
+        )}
+      </div>
+
+      {/* Footer */}
+      <div className="app-footer">
+        <a
+          href="https://github.com/willis-cao/go-ivs"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="github-link"
+        >
+          View on GitHub
+        </a>
+      </div>
     </div>
   )
 }

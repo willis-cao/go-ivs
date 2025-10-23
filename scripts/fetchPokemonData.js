@@ -15,7 +15,7 @@ function convertToPokemonGOStats(pokeAPIStats) {
   pokeAPIStats.forEach(stat => {
     statsMap[stat.stat.name] = stat.base_stat
   })
-  
+
   // Get the required stats
   const attack = statsMap['attack'] || 0
   const specialAttack = statsMap['special-attack'] || 0
@@ -23,23 +23,23 @@ function convertToPokemonGOStats(pokeAPIStats) {
   const defense = statsMap['defense'] || 0
   const specialDefense = statsMap['special-defense'] || 0
   const hp = statsMap['hp'] || 0
-  
+
   // Calculate Base Attack using the correct formula
   const higher = Math.max(attack, specialAttack)
   const lower = Math.min(attack, specialAttack)
   const scaledAttack = Math.round(2 * ((7/8) * higher + (1/8) * lower))
   const speedMod = 1 + ((speed - 75) / 500)
   const baseAttack = Math.round(scaledAttack * speedMod)
-  
+
   // Calculate Base Defense using the correct formula (different weighting)
   const higherDef = Math.max(defense, specialDefense)
   const lowerDef = Math.min(defense, specialDefense)
   const scaledDefense = Math.round(2 * ((5/8) * higherDef + (3/8) * lowerDef))
   const baseDefense = Math.round(scaledDefense * speedMod)
-  
+
   // Calculate Base Stamina using the correct formula
   const baseStamina = Math.floor(hp * 1.75 + 50)
-  
+
   return {
     attack: baseAttack,
     defense: baseDefense,
@@ -52,10 +52,10 @@ function calculateMaxCP(stats) {
   const attack = stats.attack + 15 // Perfect IVs
   const defense = stats.defense + 15
   const stamina = stats.stamina + 15
-  
+
   // Correct CP formula: CP = floor(max(10, (BaseAttack * BaseDefense^0.5 * BaseStamina^0.5 * CPM^2)/(10)))
   const cp = Math.floor(Math.max(10, (attack * Math.sqrt(defense) * Math.sqrt(stamina) * CP_MULTIPLIER_51 * CP_MULTIPLIER_51) / 10))
-  
+
   return cp
 }
 
@@ -63,13 +63,39 @@ async function fetchPokemonData(id) {
   try {
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`)
     const pokemon = response.data
-    
+
     const baseStats = convertToPokemonGOStats(pokemon.stats)
     const maxCP = calculateMaxCP(baseStats)
-    
+
+    // Get the Pokemon's species to determine if this is a form or base Pokemon
+    let pokemonName = pokemon.name
+    let displayName = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1)
+
+    // If the Pokemon name contains a hyphen, check if it's a form or just part of the name
+    if (pokemonName.includes('-')) {
+      try {
+        const speciesResponse = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+        const species = speciesResponse.data
+        // Format the base species name properly (handles Mr. Mime, Ho-Oh, etc.)
+        const baseName = formatBaseName(species.name)
+
+        // Only apply form formatting if this Pokemon has alternate forms AND this is not the base form
+        // If the pokemon name matches the species name, it's the base form
+        if (species.varieties && species.varieties.length > 1 && pokemonName !== species.name) {
+          displayName = formatFormName(pokemonName, baseName)
+        } else {
+          // Either no varieties, or this is the base form - use the formatted base name
+          displayName = baseName
+        }
+      } catch (error) {
+        // If species fetch fails, use formatBaseName for safety
+        displayName = formatBaseName(pokemonName)
+      }
+    }
+
     return {
       id: pokemon.id,
-      name: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
+      name: displayName,
       types: pokemon.types.map(t => t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1)),
       baseStats,
       maxCP,
@@ -86,96 +112,127 @@ async function fetchPokemonData(id) {
   }
 }
 
-async function fetchPokemonForms(id) {
+// Helper function to format base Pokemon names that contain hyphens
+function formatBaseName(name) {
+  // Special case: Mr. Mime family -> "Mr. Mime", "Mr. Rime"
+  if (name.startsWith('mr-')) {
+    const parts = name.split('-')
+    return 'Mr. ' + parts.slice(1).map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ')
+  }
+
+  // For other Pokemon with hyphens in their base name (Ho-Oh, Porygon-Z, Kommo-o, Jangmo-o, etc.)
+  // Just capitalize each part and keep the hyphen
+  return name.split('-')
+    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+    .join('-')
+}
+
+// Helper function to format form names properly
+function formatFormName(formName, baseName) {
+  // Handle Mega forms
+  if (formName.includes('mega-x')) {
+    return `Mega ${baseName} X`
+  } else if (formName.includes('mega-y')) {
+    return `Mega ${baseName} Y`
+  } else if (formName.includes('-mega')) {
+    return `Mega ${baseName}`
+  } else if (formName.startsWith('mega-')) {
+    const parts = formName.split('-')
+    return parts.length >= 3 ? `Mega ${baseName} ${parts[2].toUpperCase()}` : `Mega ${baseName}`
+  }
+
+  // Handle regional forms
+  if (formName.includes('-alola')) return `${baseName} (Alola)`
+  if (formName.includes('-galar')) return `${baseName} (Galar)`
+  if (formName.includes('-hisui')) return `${baseName} (Hisui)`
+  if (formName.includes('-paldea')) return `${baseName} (Paldea)`
+
+  // Handle special forms - use parentheses format: "Pokemon (Form)"
+  // Use baseName instead of extracting from formName to handle Pokemon with hyphens in their base names
+  // Convert baseName to match the format in formName (lowercase, spaces->hyphens)
+  const baseNameNormalized = baseName.toLowerCase().replace(/[.\s]/g, '-')
+
+  // Extract the form suffix by removing the base name portion
+  if (formName.startsWith(baseNameNormalized + '-')) {
+    const formSuffix = formName.slice(baseNameNormalized.length + 1)
+    const formattedSuffix = formSuffix.split('-').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ')
+    return `${baseName} (${formattedSuffix})`
+  }
+
+  // Fallback: if the above logic doesn't work, use the old approach
+  const parts = formName.split('-')
+  if (parts.length >= 2) {
+    const formSuffix = parts.slice(1).map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(' ')
+    return `${baseName} (${formSuffix})`
+  }
+
+  return formName.charAt(0).toUpperCase() + formName.slice(1)
+}
+
+// Improved function to fetch ALL relevant forms for a Pokemon
+async function fetchAllPokemonForms(id) {
   try {
     const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
     const species = response.data
-    
+
     if (!species.varieties || species.varieties.length <= 1) {
       return [] // No additional forms
     }
-    
+
     const forms = []
-    
+
     for (const variety of species.varieties) {
       if (variety.is_default) continue // Skip the default form (already fetched)
-      
+
       try {
         const formResponse = await axios.get(variety.pokemon.url)
         const formData = formResponse.data
-        
-        // Only include Mega forms
+
+        // Determine form type and ID offset
+        let formType = 'special'
+        let idOffset = 30000 // Default for special forms
+
         if (formData.name.includes('mega') || formData.name.includes('megax') || formData.name.includes('megay')) {
-          const baseStats = convertToPokemonGOStats(formData.stats)
-          const maxCP = calculateMaxCP(baseStats)
-          
-          // Create a unique ID for the Mega form
-          const megaId = parseInt(formData.id) + 10000 // Use 10000+ for Mega forms
-          
-          // Fix the naming to be more readable
-          let displayName = formData.name
-          
-          // Handle different Mega naming patterns from the API
-          if (formData.name.endsWith('-mega-x')) {
-            // Pattern: "charizard-mega-x"
-            const parts = formData.name.split('-')
-            const baseName = parts[0].charAt(0).toUpperCase() + parts[0].slice(1)
-            displayName = `Mega ${baseName} X`
-          } else if (formData.name.endsWith('-mega-y')) {
-            // Pattern: "charizard-mega-y"
-            const parts = formData.name.split('-')
-            const baseName = parts[0].charAt(0).toUpperCase() + parts[0].slice(1)
-            displayName = `Mega ${baseName} Y`
-          } else if (formData.name.endsWith('-mega')) {
-            // Pattern: "charizard-mega", "blastoise-mega", etc.
-            const parts = formData.name.split('-')
-            const baseName = parts[0].charAt(0).toUpperCase() + parts[0].slice(1)
-            displayName = `Mega ${baseName}`
-          } else if (formData.name.includes('mega-')) {
-            // Pattern: "mega-charizard-x" or "mega-charizard"
-            const parts = formData.name.split('-')
-            if (parts.length >= 3) {
-              const baseName = parts[1].charAt(0).toUpperCase() + parts[1].slice(1)
-              const megaType = parts[2].toUpperCase()
-              displayName = `Mega ${baseName} ${megaType}`
-            } else if (parts.length === 2) {
-              // Handle cases like "mega-charizard"
-              const baseName = parts[1].charAt(0).toUpperCase() + parts[1].slice(1)
-              displayName = `Mega ${baseName}`
-            }
-          } else if (formData.name.includes('megax')) {
-            // Pattern: "charizard-megax" (fallback)
-            const parts = formData.name.split('-')
-            const baseName = parts[0].charAt(0).toUpperCase() + parts[0].slice(1)
-            displayName = `Mega ${baseName} X`
-          } else if (formData.name.includes('megay')) {
-            // Pattern: "charizard-megay" (fallback)
-            const parts = formData.name.split('-')
-            const baseName = parts[0].charAt(0).toUpperCase() + parts[0].slice(1)
-            displayName = `Mega ${baseName} Y`
-          }
-          
-          forms.push({
-            id: megaId,
-            name: displayName,
-            types: formData.types.map(t => t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1)),
-            baseStats,
-            maxCP,
-            height: formData.height / 10,
-            weight: formData.weight / 10,
-            sprites: {
-              front_default: formData.sprites.front_default,
-              official_artwork: formData.sprites.other['official-artwork'].front_default
-            },
-            isMega: true,
-            basePokemonId: id
-          })
+          formType = 'mega'
+          idOffset = 10000
+        } else if (formData.name.includes('-alola') || formData.name.includes('-galar') ||
+                   formData.name.includes('-hisui') || formData.name.includes('-paldea')) {
+          formType = 'regional'
+          idOffset = 20000
         }
+
+        const baseStats = convertToPokemonGOStats(formData.stats)
+        const maxCP = calculateMaxCP(baseStats)
+
+        // Create unique ID based on form type
+        const formId = parseInt(formData.id) + idOffset
+
+        // Get base Pokemon name for formatting (use formatBaseName to handle hyphens properly)
+        const baseName = formatBaseName(species.name)
+        const displayName = formatFormName(formData.name, baseName)
+
+        forms.push({
+          id: formId,
+          name: displayName,
+          types: formData.types.map(t => t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1)),
+          baseStats,
+          maxCP,
+          height: formData.height / 10,
+          weight: formData.weight / 10,
+          sprites: {
+            front_default: formData.sprites.front_default,
+            official_artwork: formData.sprites.other['official-artwork'].front_default
+          },
+          formType: formType,
+          basePokemonId: id
+        })
+
+        console.log(`  ✓ Found ${formType} form: ${displayName}`)
       } catch (error) {
-        console.warn(`Could not fetch form ${variety.pokemon.name} for Pokemon ${id}`)
+        console.warn(`  ✗ Could not fetch form ${variety.pokemon.name}`)
       }
     }
-    
+
     return forms
   } catch (error) {
     console.warn(`Could not fetch forms for Pokemon ${id}`)
@@ -187,22 +244,22 @@ async function fetchEvolutionChain(evolutionChainUrl) {
   try {
     const response = await axios.get(evolutionChainUrl)
     const chain = response.data.chain
-    
+
     const evolutionIds = []
-    
+
     function traverseChain(chainLink) {
       if (chainLink.species) {
         const pokemonId = parseInt(chainLink.species.url.split('/').slice(-2)[0])
         evolutionIds.push(pokemonId)
       }
-      
+
       if (chainLink.evolves_to) {
         chainLink.evolves_to.forEach((evolution) => {
           traverseChain(evolution)
         })
       }
     }
-    
+
     traverseChain(chain)
     return evolutionIds
   } catch (error) {
@@ -214,8 +271,7 @@ async function fetchEvolutionChain(evolutionChainUrl) {
 async function fetchAllPokemonData() {
   const totalPokemon = 1025 // Fetch ALL Pokemon (up to current generation)
   const pokemonData = []
-  const megaForms = [] // Array to store Mega forms
-  const regionalForms = [] // NEW: Array to store regional forms
+  const allForms = [] // Combined array for all forms
 
   console.log(`Fetching data for ${totalPokemon} Pokemon...`)
 
@@ -224,7 +280,7 @@ async function fetchAllPokemonData() {
 
   for (let batchStart = 1; batchStart <= totalPokemon; batchStart += batchSize) {
     const batchEnd = Math.min(batchStart + batchSize - 1, totalPokemon)
-    console.log(`Fetching batch ${batchStart}-${batchEnd}/${totalPokemon}...`)
+    console.log(`\n📦 Fetching batch ${batchStart}-${batchEnd}/${totalPokemon}...`)
 
     const batchPromises = []
 
@@ -239,11 +295,8 @@ async function fetchAllPokemonData() {
         if (result.pokemon) {
           pokemonData.push(result.pokemon)
         }
-        if (result.megaForms && result.megaForms.length > 0) {
-          megaForms.push(...result.megaForms)
-        }
-        if (result.regionalForms && result.regionalForms.length > 0) {
-          regionalForms.push(...result.regionalForms)
+        if (result.forms && result.forms.length > 0) {
+          allForms.push(...result.forms)
         }
       }
     } catch (error) {
@@ -251,24 +304,30 @@ async function fetchAllPokemonData() {
     }
 
     // Small delay between batches
-    await new Promise(resolve => setTimeout(resolve, 50)) // Reduced batch delay for faster fetching
+    await new Promise(resolve => setTimeout(resolve, 50))
   }
 
-  // NEW: Combine regular Pokemon, Mega forms, and regional forms
-  const allPokemon = [...pokemonData, ...megaForms, ...regionalForms]
+  // Combine regular Pokemon and all forms
+  const allPokemon = [...pokemonData, ...allForms]
 
   // Sort by ID
-  allPokemon.sort((a, b) => a.id - b.id) // Sort the combined array
+  allPokemon.sort((a, b) => a.id - b.id)
+
+  // Count forms by type
+  const megaCount = allForms.filter(f => f.formType === 'mega').length
+  const regionalCount = allForms.filter(f => f.formType === 'regional').length
+  const specialCount = allForms.filter(f => f.formType === 'special').length
 
   // Write to file
   const outputPath = path.join(__dirname, '..', 'src', 'data', 'pokemonFromAPI.ts')
-  const fileContent = `// Auto-generated Pokemon data from PokeAPI (including Mega forms and Regional forms) // UPDATED COMMENT
+  const fileContent = `// Auto-generated Pokemon data from PokeAPI
 // Generated on: ${new Date().toISOString()}
+// Includes: Base Pokemon, Mega forms, Regional forms, and Special forms
 // Note: Using correct Pokemon GO stat conversion formula from Pokemon GO Hub
 
 import { Pokemon } from '../types/pokemon'
 
-export const POKEMON_DATABASE: Pokemon[] = ${JSON.stringify(allPokemon, null, 2)} // Use allPokemon
+export const POKEMON_DATABASE: Pokemon[] = ${JSON.stringify(allPokemon, null, 2)}
 
 export const findPokemonById = (id: number): Pokemon | undefined => {
   return POKEMON_DATABASE.find(pokemon => pokemon.id === id)
@@ -294,16 +353,20 @@ export const searchPokemon = (query: string): Pokemon[] => {
 `
 
   fs.writeFileSync(outputPath, fileContent)
-  console.log(`✅ Successfully generated Pokemon data for ${pokemonData.length} regular Pokemon, ${megaForms.length} Mega forms, and ${regionalForms.length} regional forms`) // UPDATED LOG
+  console.log(`\n✅ Successfully generated Pokemon data:`)
+  console.log(`   📊 ${pokemonData.length} base Pokemon`)
+  console.log(`   ⭐ ${megaCount} Mega forms`)
+  console.log(`   🌍 ${regionalCount} Regional forms`)
+  console.log(`   ✨ ${specialCount} Special forms`)
+  console.log(`   📦 ${allPokemon.length} total entries`)
   console.log(`📁 Data saved to: ${outputPath}`)
 }
 
 // Helper function to fetch a single Pokemon with all its forms
 async function fetchPokemonWithForms(id) {
   try {
-    console.log(`Fetching Pokemon ${id}...`)
     const pokemon = await fetchPokemonData(id)
-    
+
     // Fetch evolution chain if available
     try {
       const speciesResponse = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
@@ -311,154 +374,35 @@ async function fetchPokemonWithForms(id) {
         pokemon.evolutionChain = await fetchEvolutionChain(speciesResponse.data.evolution_chain.url)
       }
     } catch (error) {
-      console.warn(`Could not fetch evolution chain for Pokemon ${id}`)
-    }
-    
-    // NEW: Fetch Mega forms if available
-    let megaForms = []
-    try {
-      const forms = await fetchPokemonForms(id)
-      if (forms.length > 0) {
-        megaForms = forms
-        console.log(`Found ${forms.length} Mega form(s) for ${pokemon.name}`)
-      }
-    } catch (error) {
-      console.warn(`Could not fetch Mega forms for Pokemon ${id}`)
+      // Silent fail for evolution chain
     }
 
-    // NEW: Fetch regional forms if available
-    let regionalForms = []
+    // Fetch ALL forms
+    let forms = []
     try {
-      const regional = await fetchRegionalForms(id)
-      if (regional.length > 0) {
-        regionalForms = regional
-        console.log(`Found ${regional.length} regional form(s) for ${pokemon.name}`)
+      forms = await fetchAllPokemonForms(id)
+      if (forms.length > 0) {
+        console.log(`  🎭 ${pokemon.name} has ${forms.length} form(s)`)
       }
     } catch (error) {
-      console.warn(`Could not fetch regional forms for Pokemon ${id}`)
+      // Silent fail for forms
     }
-    
+
     // Small delay between individual Pokemon requests
-    await new Promise(resolve => setTimeout(resolve, 10)) // 10ms delay for faster fetching
-    
-    return { pokemon, megaForms, regionalForms }
-    
+    await new Promise(resolve => setTimeout(resolve, 10))
+
+    return { pokemon, forms }
+
   } catch (error) {
     console.error(`Failed to fetch Pokemon ${id}:`, error)
-    return { pokemon: null, megaForms: [], regionalForms: [] }
+    return { pokemon: null, forms: [] }
   }
 }
 
-// Helper function to fetch regional forms for a Pokemon
-async function fetchRegionalForms(id) {
-  try {
-    const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
-    const species = response.data
-
-    if (!species.varieties || species.varieties.length <= 1) {
-      return [] // No additional forms
-    }
-
-    const forms = []
-
-    for (const variety of species.varieties) {
-      if (variety.is_default) continue // Skip the default form (already fetched)
-
-      try {
-        const formResponse = await axios.get(variety.pokemon.url)
-        const formData = formResponse.data
-
-        // Check if this is a regional form (not Mega)
-        const isRegionalForm = formData.name.includes('-alola') || 
-                              formData.name.includes('-galar') || 
-                              formData.name.includes('-hisui') || 
-                              formData.name.includes('-paldea') ||
-                              formData.name.includes('-kanto') ||
-                              formData.name.includes('-johto') ||
-                              formData.name.includes('-hoenn') ||
-                              formData.name.includes('-sinnoh') ||
-                              formData.name.includes('-unova') ||
-                              formData.name.includes('-kalos')
-
-        if (isRegionalForm && !formData.name.includes('mega')) {
-          const baseStats = convertToPokemonGOStats(formData.stats)
-          const maxCP = calculateMaxCP(baseStats)
-
-          // Create a unique ID for the regional form
-          const regionalId = parseInt(formData.id) + 20000 // Use 20000+ for regional forms
-
-          // Format the name naturally
-          let displayName = formData.name
-          
-          if (formData.name.includes('-alola')) {
-            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
-            displayName = `${baseName} (Alola)`
-          } else if (formData.name.includes('-galar')) {
-            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
-            displayName = `${baseName} (Galar)`
-          } else if (formData.name.includes('-hisui')) {
-            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
-            displayName = `${baseName} (Hisui)`
-          } else if (formData.name.includes('-paldea')) {
-            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
-            displayName = `${baseName} (Paldea)`
-          } else if (formData.name.includes('-kanto')) {
-            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
-            displayName = `${baseName} (Kanto)`
-          } else if (formData.name.includes('-johto')) {
-            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
-            displayName = `${baseName} (Johto)`
-          } else if (formData.name.includes('-hoenn')) {
-            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
-            displayName = `${baseName} (Hoenn)`
-          } else if (formData.name.includes('-sinnoh')) {
-            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
-            displayName = `${baseName} (Sinnoh)`
-          } else if (formData.name.includes('-unova')) {
-            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
-            displayName = `${baseName} (Unova)`
-          } else if (formData.name.includes('-kalos')) {
-            const baseName = formData.name.split('-')[0].charAt(0).toUpperCase() + formData.name.split('-')[0].slice(1)
-            displayName = `${baseName} (Kalos)`
-          }
-
-          forms.push({
-            id: regionalId,
-            name: displayName,
-            types: formData.types.map(t => t.type.name.charAt(0).toUpperCase() + t.type.name.slice(1)),
-            baseStats,
-            maxCP,
-            height: formData.height / 10,
-            weight: formData.weight / 10,
-            sprites: {
-              front_default: formData.sprites.front_default,
-              official_artwork: formData.sprites.other['official-artwork'].front_default
-            },
-            isRegional: true,
-            basePokemonId: id,
-            region: formData.name.includes('-alola') ? 'Alola' :
-                   formData.name.includes('-galar') ? 'Galar' :
-                   formData.name.includes('-hisui') ? 'Hisui' :
-                   formData.name.includes('-paldea') ? 'Paldea' :
-                   formData.name.includes('-kanto') ? 'Kanto' :
-                   formData.name.includes('-johto') ? 'Johto' :
-                   formData.name.includes('-hoenn') ? 'Hoenn' :
-                   formData.name.includes('-sinnoh') ? 'Sinnoh' :
-                   formData.name.includes('-unova') ? 'Unova' :
-                   formData.name.includes('-kalos') ? 'Kalos' : 'Unknown'
-          })
-        }
-      } catch (error) {
-        console.warn(`Could not fetch regional form ${variety.pokemon.name} for Pokemon ${id}`)
-      }
-    }
-
-    return forms
-  } catch (error) {
-    console.warn(`Could not fetch regional forms for Pokemon ${id}`)
-    return []
-  }
-}
+// Export formatting functions for testing
+export { formatBaseName, formatFormName }
 
 // Run the script
-fetchAllPokemonData().catch(console.error) 
+if (import.meta.url === `file://${process.argv[1]}`) {
+  fetchAllPokemonData().catch(console.error)
+}

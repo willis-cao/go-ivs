@@ -6,13 +6,13 @@
 .results-header {
   margin-bottom: 24px;
   padding-bottom: 16px;
-  border-bottom: 2px solid #e9ecef;
+  border-bottom: 2px solid #E3DDD1;
 }
 
 .results-header h3 {
   margin: 0 0 12px 0;
-  color: #495057;
-  font-size: 20px;
+  color: #3E3830;
+  font-size: 1.25rem;
 }
 
 .pokemon-title {
@@ -23,16 +23,16 @@
 
 .pokemon-title h4 {
   margin: 0;
-  color: #495057;
-  font-size: 18px;
+  color: #3E3830;
+  font-size: 1.125rem;
 }
 
 .pokemon-number {
-  background: #007bff;
+  background: #5F7A5C;
   color: white;
   padding: 4px 8px;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
@@ -42,8 +42,8 @@
 
 .iv-breakdown h4 {
   margin: 0 0 16px 0;
-  color: #495057;
-  font-size: 16px;
+  color: #3E3830;
+  font-size: 1rem;
 }
 
 .iv-stats {
@@ -58,26 +58,26 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
-  background: white;
+  background: #FDFDFB;
   border-radius: 6px;
-  border: 1px solid #e9ecef;
+  border: 1px solid #E3DDD1;
 }
 
 .iv-stat.total {
   grid-column: 1 / -1;
-  background: #f8f9fa;
+  background: #F5F1E8;
   font-weight: 600;
 }
 
 .stat-label {
-  color: #6c757d;
-  font-size: 14px;
+  color: #6B6357;
+  font-size: 0.875rem;
 }
 
 .stat-value {
-  color: #495057;
+  color: #3E3830;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .iv-overview {
@@ -90,31 +90,31 @@
   flex: 1;
   text-align: center;
   padding: 16px;
-  background: white;
+  background: #FDFDFB;
   border-radius: 8px;
-  border: 1px solid #e9ecef;
+  border: 1px solid #E3DDD1;
 }
 
 .percentage-value,
 .rating-value {
   display: block;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
 .percentage-value {
-  color: #007bff;
+  color: #5F7A5C;
 }
 
 .rating-value {
-  color: #28a745;
+  color: #6B8E6B;
 }
 
 .percentage-label,
 .rating-label {
-  font-size: 12px;
-  color: #6c757d;
+  font-size: 0.75rem;
+  color: #6B6357;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -125,8 +125,8 @@
 
 .pvp-rankings h4 {
   margin: 0 0 16px 0;
-  color: #495057;
-  font-size: 16px;
+  color: #3E3830;
+  font-size: 1rem;
 }
 
 .league-rankings {
@@ -136,10 +136,10 @@
 }
 
 .league-ranking {
-  background: white;
+  background: #FDFDFB;
   border-radius: 8px;
   padding: 16px;
-  border: 1px solid #e9ecef;
+  border: 1px solid #E3DDD1;
 }
 
 .league-header {
@@ -151,15 +151,15 @@
 
 .league-header h5 {
   margin: 0;
-  color: #495057;
-  font-size: 16px;
+  color: #3E3830;
+  font-size: 1rem;
 }
 
 .rank-badge {
   padding: 4px 8px;
   border-radius: 12px;
   color: white;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -175,25 +175,25 @@
 .ranking-stat {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .ranking-stat span:first-child {
-  color: #6c757d;
+  color: #6B6357;
 }
 
 .ranking-stat span:last-child {
-  color: #495057;
+  color: #3E3830;
   font-weight: 600;
 }
 
 .rank-number {
-  color: #007bff !important;
+  color: #5F7A5C !important;
 }
 
 .ranking-bar {
   height: 8px;
-  background-color: #e9ecef;
+  background-color: #E3DDD1;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -205,8 +205,8 @@
 
 .recommendations h4 {
   margin: 0 0 16px 0;
-  color: #495057;
-  font-size: 16px;
+  color: #3E3830;
+  font-size: 1rem;
 }
 
 .recommendation-content {
@@ -221,30 +221,30 @@
   gap: 12px;
   padding: 12px 16px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.4;
 }
 
 .recommendation.good {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
+  background-color: #E8F4E6;
+  color: #3E3830;
+  border: 1px solid #6B8E6B;
 }
 
 .recommendation.pvp {
-  background-color: #cce5ff;
-  color: #004085;
-  border: 1px solid #b3d7ff;
+  background-color: #D8E5D6;
+  color: #3E3830;
+  border: 1px solid #6B8B6F;
 }
 
 .recommendation.warning {
-  background-color: #fff3cd;
-  color: #856404;
-  border: 1px solid #ffeaa7;
+  background-color: #F8F0E5;
+  color: #3E3830;
+  border: 1px solid #C4945A;
 }
 
 .recommendation-icon {
-  font-size: 18px;
+  font-size: 1.125rem;
   flex-shrink: 0;
 }
 
