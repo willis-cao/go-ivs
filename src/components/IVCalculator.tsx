@@ -43,9 +43,32 @@ const IVCalculator: React.FC = () => {
     const timer = setTimeout(() => {
       pokemonInputRef.current?.focus()
     }, 100)
-    
+
     return () => clearTimeout(timer)
   }, [])
+
+  // Handle Esc key to clear IV fields and refocus on ATK
+  useEffect(() => {
+    const handleEscKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        // Clear all IV and CP fields
+        setIvs({ attack: null, defense: null, stamina: null })
+        setCurrentCP(null)
+        setResults(null)
+        setEvolutionResults([])
+
+        // Focus on ATK input if a Pokemon is selected
+        if (selectedPokemon) {
+          setTimeout(() => atkInputRef.current?.focus(), 0)
+        }
+      }
+    }
+
+    document.addEventListener('keydown', handleEscKey)
+    return () => {
+      document.removeEventListener('keydown', handleEscKey)
+    }
+  }, [selectedPokemon])
 
   // Handle clicks outside of Pokemon suggestions
   useEffect(() => {
